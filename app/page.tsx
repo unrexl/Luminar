@@ -68,7 +68,7 @@ export default function HomePage() {
                   className="hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <img src="Luminar/puplic/rex-avatar.png" alt="Rex avatar" className="w-14 h-14 rounded-full object-cover" />
+                    <img src="/rex-avatar.png" alt="Rex avatar" className="w-14 h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg">Rex</span>
                       <span className="text-red-400 font-semibold text-sm mb-1">Owner</span>
@@ -85,7 +85,7 @@ export default function HomePage() {
                   className="hover:scale-105 transition-transform duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <img src="Luminar/puplic/fox-avatar.png" alt="Fox avatar" className="w-14 h-14 rounded-full object-cover" />
+                    <img src="/fox-avatar.png" alt="Fox avatar" className="w-14 h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg">Fox</span>
                       <span className="text-orange-400 font-semibold text-sm mb-1">Co-Owner</span>
