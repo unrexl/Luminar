@@ -589,7 +589,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                     {paymentMethod === "crypto" && (
                       <div className="space-y-2">
-                        <label className="text-sm font-medium">Your Optimal Address (Optional):</label>
+                        <label className="text-sm font-medium">Your Payment Wallet Address (Optional):</label>
                         <Input
                           value={formData.optimalAddress}
                           onChange={(e) => handleInputChange("optimalAddress", e.target.value)}
@@ -597,7 +597,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                           className="bg-secondary border-border focus:border-violet-500"
                         />
                         <p className="text-xs text-muted-foreground">
-                          This is optional. If provided, we may use this address for future transactions.
+                          This is optimal, as it helps you receive faster and more efficient support when problems occur.
                         </p>
                       </div>
                     )}
