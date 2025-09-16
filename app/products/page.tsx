@@ -1,7 +1,5 @@
 "use client"
 import { useMemo, useState, useEffect } from "react"
-// Remove this line:
-// import { TooltipProvider } from "@/components/ui/tooltip"
 import { ProductsHeader } from "@/components/products-header"
 import { ProductsSearchBar } from "@/components/products-search-bar"
 import { ServiceCard } from "@/components/service-card"
@@ -122,50 +120,48 @@ export default function ProductsPage() {
   }
 
   return (
-    <TooltipProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <ProductsHeader
-          currency={currency}
-          setCurrency={setCurrency}
-          onChangelogClick={() => setIsChangelogOpen(true)}
-        />
+    <div className="min-h-screen bg-background text-foreground">
+      <ProductsHeader
+        currency={currency}
+        setCurrency={setCurrency}
+        onChangelogClick={() => setIsChangelogOpen(true)}
+      />
 
-        <ProductsSearchBar
-          searchQuery={searchQuery}
-          setSearchQuery={setSearchQuery}
-          selectedNetwork={selectedNetwork}
-          setSelectedNetwork={setSelectedNetwork}
-          networks={networks}
-          currency={currency}
-          setCurrency={setCurrency}
-        />
+      <ProductsSearchBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        selectedNetwork={selectedNetwork}
+        setSelectedNetwork={setSelectedNetwork}
+        networks={networks}
+        currency={currency}
+        setCurrency={setCurrency}
+      />
 
-        {/* Content */}
-        <main className="mx-auto w-full max-w-7xl px-4 md:px-6 py-8">
-          <div className="space-y-8">
-            {Object.entries(groupedServices).map(([category, categoryServices]) => (
-              <ServiceCard
-                key={category}
-                category={category}
-                services={categoryServices}
-                formatPrice={(price, curr) => formatPrice(price, curr)}
-                currency={currency}
-                onServiceClick={openOrder}
-              />
-            ))}
-          </div>
-        </main>
+      {/* Content */}
+      <main className="mx-auto w-full max-w-7xl px-4 md:px-6 py-8">
+        <div className="space-y-8">
+          {Object.entries(groupedServices).map(([category, categoryServices]) => (
+            <ServiceCard
+              key={category}
+              category={category}
+              services={categoryServices}
+              formatPrice={(price, curr) => formatPrice(price, curr)}
+              currency={currency}
+              onServiceClick={openOrder}
+            />
+          ))}
+        </div>
+      </main>
 
-        <OrderDialog
-          selectedService={selectedService}
-          isLoading={isLoading}
-          onClose={closeOrder}
-          formatPrice={(price, curr) => formatPrice(price, curr)}
-          currency={currency}
-        />
+      <OrderDialog
+        selectedService={selectedService}
+        isLoading={isLoading}
+        onClose={closeOrder}
+        formatPrice={(price, curr) => formatPrice(price, curr)}
+        currency={currency}
+      />
 
-        <ChangelogDialog isOpen={isChangelogOpen} onOpenChange={setIsChangelogOpen} />
-      </div>
-    </TooltipProvider>
+      <ChangelogDialog isOpen={isChangelogOpen} onOpenChange={setIsChangelogOpen} />
+    </div>
   )
 }
