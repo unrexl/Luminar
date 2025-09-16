@@ -1,7 +1,7 @@
 "use client"
-
 import { useMemo, useState, useEffect } from "react"
-import { TooltipProvider } from "@/components/ui/tooltip"
+// Remove this line:
+// import { TooltipProvider } from "@/components/ui/tooltip"
 import { ProductsHeader } from "@/components/products-header"
 import { ProductsSearchBar } from "@/components/products-search-bar"
 import { ServiceCard } from "@/components/service-card"
