@@ -512,6 +512,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                           <li>
                             • Order ONLY through Friends & Family! If your payment is not sent via Friends & Family, it
                             will be invalid.
+                             𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗻𝗱 𝘆𝗼𝘂𝗿 𝗽𝗮𝘆𝗺𝗲𝗻𝘁 𝘃𝗶𝗮 𝗣𝗮𝘆𝗣𝗮𝗹 𝘁𝗼: 𝘂𝗻𝗿𝗲𝗮𝗹030    
                           </li>
                         </ul>
                       </div>
