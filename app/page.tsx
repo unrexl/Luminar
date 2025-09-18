@@ -79,7 +79,7 @@ function ProfileModal({ isOpen, onClose }) {
                 isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
                 <h2 className="text-3xl font-bold text-white mb-2">unrexl</h2>
-                <p className="text-red-400/90 font-medium mb-4">@unrexl</p>
+                <p className="text-red-400/90 font-medium mb-4">@unreal030</p>
                 <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">
                   I let designers code and coders design
                 </p>
@@ -201,7 +201,7 @@ export default function HomePage() {
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg">unrexl</span>
                       <span className="text-red-400 font-semibold text-sm mb-1">Owner</span>
-                      <span className="text-gray-400 text-sm">@unrexl</span>
+                      <span className="text-gray-400 text-sm">@unreal030</span>
                     </div>
                   </div>
                 </StarBorder>
