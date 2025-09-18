@@ -1,19 +1,4 @@
-export interface Service {
-  id: string
-  network: string
-  category: string
-  title: string
-  price: number
-  oldPrice?: number
-  discount: number
-  icon: string
-}
 
-export interface Network {
-  id: string
-  name: string
-  icon: string
-}
 
 export const networks: Network[] = [
   { id: "all", name: "All Networks", icon: "/interconnected-networks.png" },
