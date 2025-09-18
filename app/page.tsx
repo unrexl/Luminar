@@ -9,82 +9,126 @@ import { MobileNav } from "@/components/mobile-nav"
 
 // Profile Modal Component
 function ProfileModal({ isOpen, onClose }) {
-  if (!isOpen) return null
-
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center">
-      {/* Backdrop */}
+    <>
+      {/* Backdrop with smooth transition */}
       <div 
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300"
+        className={`fixed inset-0 z-[100] bg-black/60 backdrop-blur-md transition-all duration-700 ease-out ${
+          isOpen 
+            ? 'opacity-100 visible' 
+            : 'opacity-0 invisible'
+        }`}
         onClick={onClose}
       />
       
-      {/* Modal */}
-      <div className="relative z-10 w-full max-w-md mx-4 animate-in zoom-in-95 duration-300 ease-out">
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-2xl">
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors rounded-full p-2 hover:bg-accent"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+      {/* Modal Container */}
+      <div className={`fixed inset-0 z-[101] flex items-center justify-center p-4 transition-all duration-700 ease-out ${
+        isOpen 
+          ? 'opacity-100 visible' 
+          : 'opacity-0 invisible'
+      }`}>
+        <div className={`relative w-full max-w-sm transform transition-all duration-700 ease-out ${
+          isOpen 
+            ? 'scale-100 translate-y-0 opacity-100' 
+            : 'scale-75 translate-y-8 opacity-0'
+        }`}>
+          
+          {/* Glass Card */}
+          <div className="relative bg-black/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl overflow-hidden">
+            
+            {/* Subtle gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 via-transparent to-red-500/10 rounded-3xl" />
+            
+            {/* Close button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-white/60 hover:text-white transition-all duration-300 rounded-full p-2 hover:bg-white/10 hover:scale-110 active:scale-95"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
 
-          {/* Profile Content */}
-          <div className="flex flex-col items-center text-center">
-            {/* Profile Picture */}
-            <div className="relative mb-6">
-              <StarBorder
-                as="div"
-                color="red"
-                speed="3s"
-                className="p-1"
-              >
-                <img 
-                  src="/rex-avatar.png" 
-                  alt="Rex avatar" 
-                  className="w-24 h-24 rounded-full object-cover"
-                />
-              </StarBorder>
-            </div>
-
-            {/* Profile Info */}
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-white mb-1">unrexl</h2>
-              <p className="text-red-400 font-semibold mb-2">@unrexl</p>
-              <p className="text-muted-foreground text-sm mb-4 max-w-xs leading-relaxed">
-                I let designers code and coders design ✨
-              </p>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex flex-col gap-3 w-full">
-              <Button 
-                asChild 
-                className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold shadow-lg hover:shadow-xl hover:shadow-red-500/25 transform hover:scale-105 transition-all duration-300"
-              >
-                <Link href="https://guns.lol/unrexl" target="_blank" rel="noopener noreferrer">
-                  Visit Profile
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </Link>
-              </Button>
+            {/* Content */}
+            <div className="relative flex flex-col items-center text-center">
               
-              <Button 
-                variant="outline" 
-                onClick={onClose}
-                className="border-border hover:bg-accent hover:text-accent-foreground"
-              >
-                Close
-              </Button>
+              {/* Profile Picture with smooth scale animation */}
+              <div className={`mb-6 transform transition-all duration-700 delay-100 ease-out ${
+                isOpen ? 'scale-100 opacity-100' : 'scale-50 opacity-0'
+              }`}>
+                <div className="relative">
+                  <StarBorder
+                    as="div"
+                    color="red"
+                    speed="3s"
+                    className="p-1"
+                  >
+                    <img 
+                      src="https://cdn.discordapp.com/avatars/1027964226544869507/c96f80c5a855a2c80f60c46fd1b35da3.png?size=2048" 
+                      alt="unrexl avatar" 
+                      className="w-28 h-28 rounded-full object-cover"
+                    />
+                  </StarBorder>
+                  {/* Online indicator */}
+                  <div className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-2 border-black/40 animate-pulse" />
+                </div>
+              </div>
+
+              {/* Profile Info with staggered animations */}
+              <div className={`mb-8 transform transition-all duration-700 delay-200 ease-out ${
+                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}>
+                <h2 className="text-3xl font-bold text-white mb-2">unrexl</h2>
+                <p className="text-red-400/90 font-medium mb-4">@unrexl</p>
+                <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">
+                  I let designers code and coders design
+                </p>
+              </div>
+
+              {/* Socials */}
+              <div className={`mb-8 space-y-3 w-full transform transition-all duration-700 delay-300 ease-out ${
+                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}>
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-8 h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.120.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                  </div>
+                  <div className="flex-1 text-left">
+                    <p className="text-white font-medium">Discord</p>
+                    <p className="text-white/60 text-sm">unreal030</p>
+                  </div>
+                  <button 
+                    onClick={() => navigator.clipboard.writeText('1027964226544869507')}
+                    className="text-white/40 hover:text-white/80 transition-colors text-xs px-2 py-1 rounded hover:bg-white/10"
+                  >
+                    Copy ID
+                  </button>
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <div className={`w-full transform transition-all duration-700 delay-400 ease-out ${
+                isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}>
+                <Button 
+                  asChild 
+                  className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 text-white font-medium py-3 rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/20 transform hover:scale-105 active:scale-95 transition-all duration-300 border-0"
+                >
+                  <Link href="https://guns.lol/unrexl" target="_blank" rel="noopener noreferrer">
+                    Visit Profile
+                    <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
@@ -153,9 +197,9 @@ export default function HomePage() {
                   onClick={() => setIsProfileModalOpen(true)}
                 >
                   <div className="flex items-center gap-4">
-                    <img src="/rex-avatar.png" alt="Rex avatar" className="w-14 h-14 rounded-full object-cover" />
+                    <img src="https://cdn.discordapp.com/avatars/1027964226544869507/c96f80c5a855a2c80f60c46fd1b35da3.png?size=2048" alt="unrexl avatar" className="w-14 h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-lg">Rex</span>
+                      <span className="text-white font-bold text-lg">unrexl</span>
                       <span className="text-red-400 font-semibold text-sm mb-1">Owner</span>
                       <span className="text-gray-400 text-sm">@unrexl</span>
                     </div>
