@@ -64,7 +64,7 @@ function ProfileModal({ isOpen, onClose }) {
                     className="p-1"
                   >
                     <img 
-                      src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&" 
+                      src="https://cdn.discordapp.com/avatars/1027964226544869507/c96f80c5a855a2c80f60c46fd1b35da3.png?size=2048" 
                       alt="unrexl avatar" 
                       className="w-28 h-28 rounded-full object-cover"
                     />
@@ -199,7 +199,7 @@ export default function HomePage() {
                   onClick={() => setIsProfileModalOpen(true)}
                 >
                   <div className="flex items-center gap-4">
-                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-14 h-14 rounded-full object-cover" />
+                    <img src="https://cdn.discordapp.com/avatars/1027964226544869507/c96f80c5a855a2c80f60c46fd1b35da3.png?size=2048" alt="unrexl avatar" className="w-14 h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg">unrexl</span>
                       <span className="text-red-400 font-semibold text-sm mb-1">Owner</span>
