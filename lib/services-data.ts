@@ -1312,6 +1312,71 @@ export const services: Service[] = [
     discount: 17,
     icon: "/icons/snapchat.svg",
   },
+{
+  id: "2581",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 50k | No refill | UHQ | Slow",
+  price: 3.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2585",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 100k | No refill | UHQ | Slow",
+  price: 5.50,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2586",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 250k | No refill | UHQ | Slow",
+  price: 12.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2587",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 500k | No refill | UHQ | Slow",
+  price: 18.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2588",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 750k | No refill | UHQ | Slow",
+  price: 23.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2589",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 1M | No refill | UHQ | Slow",
+  price: 27.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2590",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 1.25M | No refill | UHQ | Slow",
+  price: 29.00,
+  icon: "/icons/snapchat.svg"
+},
+{
+  id: "2591",
+  network: "snapchat",
+  category: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!",
+  title: "Snapchat Snapscore Accounts | 1.5M | No refill | UHQ | Slow",
+  price: 30.00,
+  icon: "/icons/snapchat.svg"
+}
+
 
   // WhatsApp Members
   {
