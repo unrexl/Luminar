@@ -81,7 +81,7 @@ function ProfileModal({ isOpen, onClose }) {
                 <h2 className="text-3xl font-bold text-white mb-2">rex</h2>
                 <p className="text-red-400/90 font-medium mb-4">@unreal030</p>
                 <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">
-                  >_<
+                  &gt;_&lt;
                 </p>
               </div>
 
@@ -139,26 +139,27 @@ export default function HomePage() {
     <main className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60 bg-background/80 border-b border-border">
-        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-3">
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-3 sm:px-4 md:px-6 gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <MobileNav />
-            <img src="/luminar-logo.png" alt="Luminar Services Logo" className="h-8 w-auto" />
-            <span className="hidden sm:inline text-sm text-muted-foreground">Luminar Services</span>
+            <img src="/luminar-logo.png" alt="Luminar Services Logo" className="h-6 sm:h-8 w-auto flex-shrink-0" />
+            <span className="hidden lg:inline text-sm text-muted-foreground whitespace-nowrap">Luminar Services</span>
           </div>
-          <nav className="flex items-center gap-3">
+          <nav className="flex items-center gap-1.5 sm:gap-2 md:gap-3">
             <a
               href="https://discord.gg/7QTRtZvDXH"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline px-5 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 rounded-lg transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-violet-500/25 hover:scale-105 border border-violet-500/20"
+              className="hidden md:inline px-3 sm:px-4 md:px-5 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 rounded-lg transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-violet-500/25 hover:scale-105 border border-violet-500/20 whitespace-nowrap"
             >
               Discord
             </a>
             <a
               href="/refund-policy"
-              className="px-5 py-2 text-sm font-medium text-white bg-gray-800/80 rounded-lg hover:bg-gray-700 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105 shadow-sm"
+              className="px-2 sm:px-3 md:px-5 py-2 text-xs sm:text-sm font-medium text-white bg-gray-800/80 rounded-lg hover:bg-gray-700 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105 shadow-sm whitespace-nowrap"
             >
-              Refund Policy
+              <span className="hidden sm:inline">Refund Policy</span>
+              <span className="sm:hidden">Refund</span>
             </a>
           </nav>
         </div>
