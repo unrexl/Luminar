@@ -24,8 +24,8 @@ function ProfileModal({ isOpen, onClose }) {
       {/* Modal Container */}
       <div className={`fixed inset-0 z-[101] flex items-center justify-center p-4 transition-all duration-700 ease-out ${
         isOpen 
-          ? 'opacity-100 visible' 
-          : 'opacity-0 invisible'
+            ? 'opacity-100 visible' 
+            : 'opacity-0 invisible'
       }`}>
         <div className={`relative w-full max-w-sm transform transition-all duration-700 ease-out ${
           isOpen 
@@ -66,11 +66,11 @@ function ProfileModal({ isOpen, onClose }) {
                     <img 
                       src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&" 
                       alt="unrexl avatar" 
-                      className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover"
+                      className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
                     />
                   </StarBorder>
                   {/* Online indicator */}
-                  <div className="absolute bottom-2 right-2 w-5 h-5 sm:w-7 sm:h-7 bg-green-500 rounded-full border-2 border-black/40 animate-pulse" />
+                  <div className="absolute bottom-2 right-2 w-4 h-4 sm:w-6 sm:h-6 bg-green-500 rounded-full border-2 border-black/40 animate-pulse" />
                 </div>
               </div>
 
@@ -78,9 +78,9 @@ function ProfileModal({ isOpen, onClose }) {
               <div className={`mb-6 sm:mb-8 transform transition-all duration-700 delay-200 ease-out ${
                 isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">rex</h2>
-                <p className="text-red-400/90 font-medium mb-3 sm:mb-4 text-base sm:text-lg">@unreal030</p>
-                <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-xs mx-auto">
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">rex</h2>
+                <p className="text-red-400/90 font-medium mb-2 sm:mb-4 text-sm sm:text-base">@unreal030</p>
+                <p className="text-white/70 text-xs sm:text-sm leading-relaxed max-w-xs mx-auto">
                   &gt;_&lt;
                 </p>
               </div>
@@ -89,19 +89,19 @@ function ProfileModal({ isOpen, onClose }) {
               <div className={`mb-6 sm:mb-8 space-y-3 w-full transform transition-all duration-700 delay-300 ease-out ${
                 isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
-                <div className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-indigo-500 rounded-lg flex items-center justify-center">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <div className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-indigo-500 rounded-lg flex items-center justify-center">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.120.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                     </svg>
                   </div>
                   <div className="flex-1 text-left">
-                    <p className="text-white font-medium text-base sm:text-lg">Discord</p>
-                    <p className="text-white/60 text-sm sm:text-base">unreal030</p>
+                    <p className="text-white font-medium text-sm">Discord</p>
+                    <p className="text-white/60 text-xs">unreal030</p>
                   </div>
                   <button 
                     onClick={() => navigator.clipboard.writeText('1027964226544869507')}
-                    className="text-white/40 hover:text-white/80 transition-colors text-sm sm:text-base px-2 py-1 rounded hover:bg-white/10"
+                    className="text-white/40 hover:text-white/80 transition-colors text-xs px-1.5 py-0.5 rounded hover:bg-white/10"
                   >
                     Copy ID
                   </button>
@@ -114,11 +114,11 @@ function ProfileModal({ isOpen, onClose }) {
               }`}>
                 <Button 
                   asChild 
-                  className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 text-white font-medium py-3 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/20 transform hover:scale-105 active:scale-95 transition-all duration-300 border-0 text-base sm:text-lg"
+                  className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-400 hover:to-red-500 text-white font-medium py-2.5 sm:py-3 rounded-xl shadow-lg hover:shadow-xl hover:shadow-red-500/20 transform hover:scale-105 active:scale-95 transition-all duration-300 border-0 text-sm sm:text-base"
                 >
                   <Link href="https://guns.lol/unrexl" target="_blank" rel="noopener noreferrer">
                     Visit Profile
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 ml-1.5 sm:ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </Link>
@@ -190,21 +190,21 @@ export default function HomePage() {
                 Professional SMM services for Instagram, TikTok, YouTube, Telegram, Twitter (X), Facebook, Reddit and
                 more.
               </p>
-              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
                 {/* Rex Profile - Now Clickable */}
                 <StarBorder
                   as="button"
                   color="red"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full sm:w-auto max-w-[240px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full sm:w-auto max-w-[200px] sm:max-w-none"
                   onClick={() => setIsProfileModalOpen(true)}
                 >
-                  <div className="flex items-center gap-3 sm:gap-5">
-                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" />
+                  <div className="flex items-center gap-2 sm:gap-4">
+                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-14 h-14 sm:w-14 sm:h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-lg sm:text-xl">rex</span>
-                      <span className="text-red-400 font-semibold text-sm sm:text-base mb-1">Owner</span>
-                      <span className="text-gray-400 text-sm sm:text-base">@unreal030</span>
+                      <span className="text-white font-bold text-base sm:text-lg">rex</span>
+                      <span className="text-red-400 font-semibold text-xs sm:text-sm mb-1">Owner</span>
+                      <span className="text-gray-400 text-xs sm:text-sm">@unreal030</span>
                     </div>
                   </div>
                 </StarBorder>
@@ -214,14 +214,14 @@ export default function HomePage() {
                   as="div"
                   color="orange"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 w-full sm:w-auto max-w-[240px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 w-full sm:w-auto max-w-[200px] sm:max-w-none"
                 >
-                  <div className="flex items-center gap-3 sm:gap-5">
-                    <img src="/fox-avatar.png" alt="Fox avatar" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" />
+                  <div className="flex items-center gap-2 sm:gap-4">
+                    <img src="/fox-avatar.png" alt="Fox avatar" className="w-14 h-14 sm:w-14 sm:h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-lg sm:text-xl">Fox</span>
-                      <span className="text-orange-400 font-semibold text-sm sm:text-base mb-1">Co-Owner</span>
-                      <span className="text-gray-400 text-sm sm:text-base">@encryptedfox</span>
+                      <span className="text-white font-bold text-base sm:text-lg">Fox</span>
+                      <span className="text-orange-400 font-semibold text-xs sm:text-sm mb-1">Co-Owner</span>
+                      <span className="text-gray-400 text-xs sm:text-sm">@encryptedfox</span>
                     </div>
                   </div>
                 </StarBorder>
@@ -251,7 +251,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             <div className="rounded-xl border border-border bg-card p-4 sm:p-6 shadow-sm hover:bg-accent hover:border-accent-foreground/20 hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-violet-500/10 animate-fadeIn">
               <h3 className="text-base sm:text-lg font-semibold">Instant start</h3>
               <p className="mt-2 text-muted-foreground text-sm">
