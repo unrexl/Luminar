@@ -39,7 +39,9 @@ function CompactSearchBar({
       </div>
     </div>
   )
-}"use client"
+}
+
+"use client"
 import { useMemo, useState, useEffect } from "react"
 import { ServiceCard } from "@/components/service-card"
 import { OrderDialog } from "@/components/order-dialog"
