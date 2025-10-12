@@ -1,4 +1,45 @@
-"use client"
+// Compact Search Bar Component
+function CompactSearchBar({
+  searchQuery,
+  setSearchQuery,
+}: {
+  searchQuery: string
+  setSearchQuery: (query: string) => void
+}) {
+  const [isSearchFocused, setIsSearchFocused] = useState(false)
+
+  return (
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-5">
+      <div className="flex justify-end">
+        <div className="relative w-56">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <svg 
+              className={`h-4 w-4 transition-all duration-300 ${isSearchFocused ? 'text-indigo-400' : 'text-gray-500'}`} 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onFocus={() => setIsSearchFocused(true)}
+            onBlur={() => setIsSearchFocused(false)}
+            placeholder="Search services..."
+            className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
+              isSearchFocused 
+                ? 'border-indigo-500/50 ring-2 ring-indigo-500/30' 
+                : 'border-gray-700/50'
+            }`}
+          />
+        </div>
+      </div>
+    </div>
+  )
+}"use client"
 import { useMemo, useState, useEffect } from "react"
 import { ServiceCard } from "@/components/service-card"
 import { OrderDialog } from "@/components/order-dialog"
@@ -58,16 +99,8 @@ function Loading() {
   )
 }
 
-// Header Component with Integrated Search
-function Header({
-  searchQuery,
-  setSearchQuery,
-}: {
-  searchQuery: string
-  setSearchQuery: (query: string) => void
-}) {
-  const [isSearchFocused, setIsSearchFocused] = useState(false)
-
+// Header Component
+function Header() {
   return (
     <header className="w-full backdrop-blur-md bg-black/70 border-b border-gray-800/50 sticky top-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
@@ -82,36 +115,8 @@ function Header({
             <span className="text-xl font-bold text-white">Luminar Services</span>
           </div>
 
-          {/* Right: Search Bar and Navigation Buttons */}
+          {/* Right: Navigation Buttons */}
           <div className="flex items-center gap-3">
-            {/* Search Bar */}
-            <div className="relative">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <svg 
-                  className={`h-4 w-4 transition-all duration-300 ${isSearchFocused ? 'text-indigo-400' : 'text-gray-500'}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </div>
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                onFocus={() => setIsSearchFocused(true)}
-                onBlur={() => setIsSearchFocused(false)}
-                placeholder="Search services..."
-                className={`w-64 pl-10 pr-4 py-2 text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
-                  isSearchFocused 
-                    ? 'border-indigo-500/50 ring-2 ring-indigo-500/30 w-80' 
-                    : 'border-gray-700/50'
-                }`}
-              />
-            </div>
-
-            {/* Navigation Buttons */}
             <a
               href="https://030.vercel.app/"
               className="px-5 py-2 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
@@ -139,33 +144,7 @@ function Header({
   )
 }
 
-// Compact Search Bar Component
-function CompactSearchBar({
-  searchQuery,
-  setSearchQuery,
-}: {
-  searchQuery: string
-  setSearchQuery: (query: string) => void
-}) {
-  return (
-    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
-      <div className="max-w-md relative">
-        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-          <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
-        </div>
-        <input
-          type="text"
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search services..."
-          className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500"
-        />
-      </div>
-    </div>
-  )
-}
+
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -240,7 +219,7 @@ export default function ProductsPage() {
       {/* Header with Brand and Navigation */}
       <Header />
 
-      {/* Compact Search Bar */}
+      {/* Compact Search Bar - Right Aligned */}
       <CompactSearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
