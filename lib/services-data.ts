@@ -1305,7 +1305,7 @@ export const services: Service[] = [
   {
     id: "2585",
     network: "snapchat",
-    category: "Snapchat Other Services",
+    category: "Snapchat Friend Requests",
     title: "Snapchat Friend Requests | Max 5K | No refill | Low Drop | UHQ | 1K-2K Day | Slow",
     price: 65.3286,
     oldPrice: 78.3943,
@@ -1483,7 +1483,7 @@ export const services: Service[] = [
   {
     id: "2921",
     network: "discord",
-    category: "Discord Services",
+    category: "Discord Boosts",
     title: "Discord 14x Server Boost | 1 Month | Fast | UHQ",
     price: 17.46,
     oldPrice: 20.952,
