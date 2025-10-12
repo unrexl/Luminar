@@ -50,8 +50,22 @@ interface RateLimitData {
 const RATE_LIMIT_MAX = 3
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000 // 1 hour in milliseconds
 
+const CURRENCY_OPTIONS = [
+  { code: "USD", symbol: "$", name: "US Dollar" },
+  { code: "EUR", symbol: "€", name: "Euro" },
+  { code: "GBP", symbol: "£", name: "British Pound" },
+  { code: "JPY", symbol: "¥", name: "Japanese Yen" },
+  { code: "CAD", symbol: "C$", name: "Canadian Dollar" },
+  { code: "AUD", symbol: "A$", name: "Australian Dollar" },
+  { code: "CHF", symbol: "Fr", name: "Swiss Franc" },
+  { code: "CNY", symbol: "¥", name: "Chinese Yuan" },
+  { code: "INR", symbol: "₹", name: "Indian Rupee" },
+  { code: "BRL", symbol: "R$", name: "Brazilian Real" },
+]
+
 export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, currency }: OrderDialogProps) {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(null)
+  const [selectedCurrency, setSelectedCurrency] = useState(currency)
   const [formData, setFormData] = useState({
     paypalUsername: "",
     link: "",
@@ -202,7 +216,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
             },
             {
               name: "💰 Total Amount to Pay",
-              value: `€${totalAmount.toFixed(2)}`,
+              value: `${formatPrice(totalAmount, selectedCurrency)} (${selectedCurrency})`,
               inline: true,
             },
             {
@@ -316,7 +330,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
             <h3 className="text-2xl font-bold text-green-500 mb-4">Order Placed!</h3>
             <div className="bg-gray-900/50 p-6 rounded-lg w-full max-w-xs">
               <p className="text-lg text-gray-300 mb-2">
-                Pay <span className="font-bold text-green-500">€{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</span>
+                Pay <span className="font-bold text-green-500">{formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</span>
               </p>
               <p className="text-gray-400">to PayPal: unreal030</p>
               <p className="text-red-500 text-sm mt-2">Friends & Family only</p>
@@ -354,6 +368,23 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
               <div className="text-gray-400 text-sm">{selectedService?.title}</div>
               <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService?.id}</Badge>
 
+              <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800/50">
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-400 text-sm">Currency:</span>
+                  <select
+                    value={selectedCurrency}
+                    onChange={(e) => setSelectedCurrency(e.target.value)}
+                    className="bg-gray-800/50 border border-gray-700/50 text-white px-3 py-1 rounded"
+                  >
+                    {CURRENCY_OPTIONS.map((option) => (
+                      <option key={option.code} value={option.code}>
+                        {option.code} - {option.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
               {!paymentMethod && (
                 <div className="space-y-6">
                   <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
@@ -389,8 +420,8 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                   </div>
 
                   <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                    <div className="text-gray-400 text-sm mb-1">Price per 1000: €{selectedService?.price.toFixed(2)}</div>
-                    <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
+                    <div className="text-gray-400 text-sm mb-1">Price per 1000: {formatPrice(selectedService?.price || 0, selectedCurrency)}</div>
+                    <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
                   </div>
 
                   <div className="grid grid-cols-1 gap-4">
@@ -433,7 +464,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
               {paymentMethod && (
                 <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                   <div className="text-gray-400 text-sm mb-1">{Number.parseInt(formData.quantity) || 0} units</div>
-                  <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
+                  <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
                 </div>
               )}
             </div>
