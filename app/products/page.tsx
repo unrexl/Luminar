@@ -30,7 +30,7 @@ function Loading() {
     <div className="flex items-center justify-center min-h-screen bg-black">
       <div className="flex flex-col items-center space-y-6">
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-semibold text-white mb-2">
+          <h3 className="text-xl sm:text-2xl font-semibold text-white mb-2">
             Loading
             <span className="inline-block animate-bounce ml-1">.</span>
             <span className="inline-block animate-bounce ml-0.5" style={{ animationDelay: "0.1s" }}>
@@ -40,10 +40,10 @@ function Loading() {
               .
             </span>
           </h3>
-          <p className="text-gray-400 text-sm">{Math.round(progress)}%</p>
+          <p className="text-gray-400 text-xs sm:text-sm">{Math.round(progress)}%</p>
         </div>
 
-        <div className="w-80 h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner">
+        <div className="w-64 sm:w-80 h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner">
           <div
             className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full shadow-lg transition-all duration-200 ease-out"
             style={{ width: `${progress}%` }}
@@ -63,23 +63,23 @@ function Loading() {
 function Header() {
   return (
     <header className="w-full backdrop-blur-md bg-black/70 border-b border-gray-800/50 sticky top-0 z-50 shadow-2xl">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
-        <div className="flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-3 sm:gap-6">
           {/* Left: Brand Logo and Name */}
           <div className="flex items-center space-x-3">
             <img 
               src="https://media.discordapp.net/attachments/1091030774012186685/1417600581354389645/IQvHiQnv4ahXoYqFq8gS84ivFINDZB3qlceFTDSZBjLsfcgLHC.png?ex=68ecb12c&is=68eb5fac&hm=9478fdf6299c72670ff465269fa2c94d21d700685bafe4f52ed2055ed03f1059&=&format=png&quality=lossless"
               alt="Luminar Services"
-              className="h-10 w-10 object-contain rounded-lg"
+              className="h-8 sm:h-10 w-8 sm:w-10 object-contain rounded-lg"
             />
-            <span className="text-xl font-bold text-white">Luminar Services</span>
+            <span className="text-lg sm:text-xl font-bold text-white">Luminar Services</span>
           </div>
 
           {/* Right: Navigation Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
               href="https://030.vercel.app/"
-              className="px-5 py-2 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
+              className="px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
             >
               Home
             </a>
@@ -87,15 +87,16 @@ function Header() {
               href="https://discord.gg/dtTCCxu3TA"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2 text-sm font-medium text-white bg-indigo-600/80 rounded-xl hover:bg-indigo-500 transition-all duration-300 backdrop-blur-sm border border-indigo-500/50 hover:border-indigo-400 hover:scale-105"
+              className="px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white bg-indigo-600/80 rounded-xl hover:bg-indigo-500 transition-all duration-300 backdrop-blur-sm border border-indigo-500/50 hover:border-indigo-400 hover:scale-105"
             >
               Discord
             </a>
             <a
               href="https://030.vercel.app/refund-policy"
-              className="px-5 py-2 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
+              className="px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
             >
-              Refund Policy
+              <span className="hidden sm:inline">Refund Policy</span>
+              <span className="sm:hidden">Refund</span>
             </a>
           </div>
         </div>
@@ -115,9 +116,9 @@ function CompactSearchBar({
   const [isSearchFocused, setIsSearchFocused] = useState(false)
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-5">
+    <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-5">
       <div className="flex justify-end">
-        <div className="relative w-56">
+        <div className="relative w-full sm:w-56">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg 
               className={`h-4 w-4 transition-all duration-300 ${isSearchFocused ? 'text-indigo-400' : 'text-gray-500'}`} 
@@ -135,7 +136,7 @@ function CompactSearchBar({
             onFocus={() => setIsSearchFocused(true)}
             onBlur={() => setIsSearchFocused(false)}
             placeholder="Search services..."
-            className={`w-full pl-9 pr-3 py-2 text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
+            className={`w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
               isSearchFocused 
                 ? 'border-indigo-500/50 ring-2 ring-indigo-500/30' 
                 : 'border-gray-700/50'
@@ -227,8 +228,8 @@ export default function ProductsPage() {
       />
 
       {/* Content */}
-      <main className="mx-auto w-full max-w-7xl px-4 md:px-6 py-8">
-        <div className="space-y-8">
+      <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 py-4 sm:py-8">
+        <div className="space-y-6 sm:space-y-8">
           {Object.entries(groupedServices).map(([category, categoryServices]) => (
             <ServiceCard
               key={category}
