@@ -1376,7 +1376,7 @@ export const services: Service[] = [
   title: "Snapchat Snapscore Accounts | 1.5M | No refill | UHQ | Slow",
   price: 30.00,
   icon: "/icons/snapchat.svg"
-}
+},
 
 
   // WhatsApp Members
