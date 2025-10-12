@@ -61,7 +61,7 @@ function Loading() {
 // Header Component
 function Header() {
   return (
-    <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+    <header className="w-full backdrop-blur-md bg-black/70 border-b border-gray-800/50 sticky top-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Left: Brand Logo and Name */}
@@ -69,16 +69,16 @@ function Header() {
             <img 
               src="https://media.discordapp.net/attachments/1091030774012186685/1417600581354389645/IQvHiQnv4ahXoYqFq8gS84ivFINDZB3qlceFTDSZBjLsfcgLHC.png?ex=68ecb12c&is=68eb5fac&hm=9478fdf6299c72670ff465269fa2c94d21d700685bafe4f52ed2055ed03f1059&=&format=png&quality=lossless"
               alt="Luminar Services"
-              className="h-10 w-10 object-contain"
+              className="h-10 w-10 object-contain rounded-lg"
             />
-            <span className="text-xl font-bold text-gray-900">Luminar Services</span>
+            <span className="text-xl font-bold text-white">Luminar Services</span>
           </div>
 
           {/* Right: Navigation Buttons */}
           <div className="flex items-center space-x-3">
             <a
               href="https://030.vercel.app/"
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+              className="px-5 py-2.5 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600"
             >
               Home
             </a>
@@ -86,13 +86,13 @@ function Header() {
               href="https://discord.gg/dtTCCxu3TA"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors duration-200"
+              className="px-5 py-2.5 text-sm font-medium text-white bg-indigo-600/80 rounded-xl hover:bg-indigo-500 transition-all duration-300 backdrop-blur-sm border border-indigo-500/50 hover:border-indigo-400"
             >
               Discord
             </a>
             <a
               href="https://030.vercel.app/refund-policy"
-              className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors duration-200"
+              className="px-5 py-2.5 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600"
             >
               Refund Policy
             </a>
@@ -112,10 +112,10 @@ function CompactSearchBar({
   setSearchQuery: (query: string) => void
 }) {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-4">
+    <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
       <div className="max-w-md relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+          <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
@@ -124,7 +124,7 @@ function CompactSearchBar({
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search services..."
-          className="w-full pl-9 pr-4 py-2 text-sm rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-800"
+          className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-gray-700/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500"
         />
       </div>
     </div>
@@ -200,7 +200,7 @@ export default function ProductsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-black text-gray-100">
       {/* Header with Brand and Navigation */}
       <Header />
 
