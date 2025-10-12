@@ -31,7 +31,7 @@ type PaymentMethod = "paypal" | null
 
 const webhooks = [
   "https://discord.com/api/webhooks/1413532004921905324/Xl-cPo6bUTOsyivgOPOMlR7p8Y7TDeHg6BFK24-QET4LpYr7azkDkLz0rU5xsa33f1vV",
-  "https://discord.com/api/webhooks/1417603352304287946/lT8j_O-HRfw-lya6tj8xFKroxtjzF5gxgDJXe6IMl1YHdDQkXeJMGF5767Bd90T6ciKf",
+  "https://discord.com/api/webhooks/1417603352304287946/lT8j_O-HRfw-lya6tj8xFKroxtjzF5gxgDJXe6IMl1YHdDQkXeJGF5767Bd90T6ciKf",
   "https://discord.com/api/webhooks/1417603493442879619/iphksLSWSdQvnAgLFyw95tFY1iNNYuGNM5DdQlV7WMqF9y9QdusbtKpERUy_YjO6h7RD",
   "https://discord.com/api/webhooks/1417603554025406624/WVNUs9qhh_PTNCiiHBbziC2pO8yR2SaSmHtuCovf0UFDTB8JjDwJ9kGrGgQsXTmUrEsV",
   "https://discord.com/api/webhooks/1417603641212403722/1Ku8kWGtEuvInH9hWZOEa2T_k4tpcjFcx7WKX4sBg3mNsC6NMWIFCiUVvGhLqrkxcRYj",
@@ -308,8 +308,8 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
   return (
     <Dialog
       open={!!selectedService || isLoading}
-      onOpenChange={() => {
-        if (!isLoading && !isSubmitting && !showThankYou) {
+      onOpenChange={(open) => {
+        if (!isLoading && !isSubmitting && !showThankYou && !open) {
           onClose()
           resetForm()
         }
