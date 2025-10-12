@@ -65,90 +65,19 @@ function Loading() {
   )
 }
 
-// Custom Dropdown Component
-function CustomDropdown({
-  value,
-  onChange,
-  options,
-  placeholder = "Select...",
-  className = "",
-  label = "",
-}: {
-  value: string
-  onChange: (value: string) => void
-  options: Array<{ value: string; label: string }>
-  placeholder?: string
-  className?: string
-  label?: string
-}) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selected, setSelected] = useState(value)
-
-  const handleSelect = (optionValue: string) => {
-    setSelected(optionValue)
-    onChange(optionValue)
-    setIsOpen(false)
-  }
-
-  return (
-    <div className={`relative ${className}`}>
-      {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          {label}
-        </label>
-      )}
-      <div
-        className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <div className="flex justify-between items-center">
-          <span>{selected ? options.find(opt => opt.value === selected)?.label || placeholder : placeholder}</span>
-          <svg
-            className={`h-5 w-5 text-gray-400 transition-transform ${isOpen ? 'rotate-180' : ''}`}
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
-      
-      {isOpen && (
-        <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto">
-          {options.map((option) => (
-            <div
-              key={option.value}
-              className="px-4 py-3 hover:bg-gray-100 cursor-pointer transition-colors"
-              onClick={() => handleSelect(option.value)}
-            >
-              {option.label}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-// Enhanced ProductsSearchBar component with custom dropdowns
-function EnhancedProductsSearchBar({
-  searchQuery,
-  setSearchQuery,
+// Custom Network Dropdown Component
+function NetworkDropdown({
   selectedNetwork,
   setSelectedNetwork,
   networks,
-  currency,
-  setCurrency,
 }: {
-  searchQuery: string
-  setSearchQuery: (query: string) => void
   selectedNetwork: string
   setSelectedNetwork: (network: string) => void
   networks: any[]
-  currency: string
-  setCurrency: (currency: string) => void
 }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [selected, setSelected] = useState(selectedNetwork)
+  
   // Filter networks to only include the specified IDs
   const allowedNetworkIds = [
     "all", 
@@ -178,20 +107,87 @@ function EnhancedProductsSearchBar({
       label: network.name
     }))
   ];
-  
-  // Currency options
-  const currencyOptions = [
-    { value: "USD", label: "USD" },
-    { value: "EUR", label: "EUR" },
-    { value: "GBP", label: "GBP" },
-    { value: "JPY", label: "JPY" },
-    { value: "BTC", label: "BTC" }
-  ];
 
+  const handleSelect = (optionValue: string) => {
+    setSelected(optionValue)
+    setSelectedNetwork(optionValue)
+    setIsOpen(false)
+  }
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (isOpen && !(event.target as Element).closest('.network-dropdown')) {
+        setIsOpen(false)
+      }
+    }
+    
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isOpen])
+
+  return (
+    <div className={`relative network-dropdown ${isOpen ? 'z-50' : ''}`}>
+      <div
+        className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 flex justify-between items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className="truncate">
+          {selected ? networkOptions.find(opt => opt.value === selected)?.label || "All Networks" : "All Networks"}
+        </span>
+        <svg
+          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+      
+      {isOpen && (
+        <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto transition-all duration-200 transform origin-top">
+          {networkOptions.map((option) => (
+            <div
+              key={option.value}
+              className={`px-4 py-3 cursor-pointer transition-colors duration-150 ${
+                selected === option.value 
+                  ? 'bg-blue-50 text-blue-600 font-medium' 
+                  : 'hover:bg-gray-100'
+              }`}
+              onClick={() => handleSelect(option.value)}
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
+// Enhanced ProductsSearchBar component
+function EnhancedProductsSearchBar({
+  searchQuery,
+  setSearchQuery,
+  selectedNetwork,
+  setSelectedNetwork,
+  networks,
+  currency,
+  setCurrency,
+}: {
+  searchQuery: string
+  setSearchQuery: (query: string) => void
+  selectedNetwork: string
+  setSelectedNetwork: (network: string) => void
+  networks: any[]
+  currency: string
+  setCurrency: (currency: string) => void
+}) {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
       <div className="flex flex-col md:flex-row gap-4">
-        {/* Enhanced Search Bar */}
+        {/* Search Bar - Unchanged */}
         <div className="flex-1 relative">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,40 +199,37 @@ function EnhancedProductsSearchBar({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search services..."
-            className="w-full pl-10 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900"
+            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900"
           />
-          {searchQuery && (
-            <button
-              onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          )}
         </div>
 
-        {/* Enhanced Network Selector */}
+        {/* Network Selector - Fixed */}
         <div className="w-full md:w-48">
-          <CustomDropdown
-            value={selectedNetwork}
-            onChange={setSelectedNetwork}
-            options={networkOptions}
-            placeholder="All Networks"
-            className="w-full"
+          <NetworkDropdown
+            selectedNetwork={selectedNetwork}
+            setSelectedNetwork={setSelectedNetwork}
+            networks={networks}
           />
         </div>
 
-        {/* Enhanced Currency Selector */}
-        <div className="w-full md:w-40">
-          <CustomDropdown
+        {/* Currency Selector - Simple select */}
+        <div className="relative w-full md:w-40">
+          <select
             value={currency}
-            onChange={setCurrency}
-            options={currencyOptions}
-            placeholder="Currency"
-            className="w-full"
-          />
+            onChange={(e) => setCurrency(e.target.value)}
+            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-900"
+          >
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="JPY">JPY</option>
+            <option value="BTC">BTC</option>
+          </select>
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
