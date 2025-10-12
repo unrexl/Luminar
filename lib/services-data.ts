@@ -31,6 +31,7 @@ export const networks: Network[] = [
   { id: "kick", name: "Kick", icon: "/icons/kick.png",},
   { id: "discord", name: "Discord", icon: "/icons/discord.jpeg" },
   { id: "google", name: "Google", icon: "/icons/google.png" },
+  { id: "snapchat", name: "Snapchat Snapscore Accounts !OPEN TICKET TO BUY!", icon: "/icons/snapchat.svg" },
 ]
 
 export const services: Service[] = [
