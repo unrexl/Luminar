@@ -27,14 +27,7 @@ interface OrderDialogProps {
   currency: string
 }
 
-type PaymentMethod = "paypal" | "crypto" | null
-type CryptoType = "BTC" | "LTC" | "ETH" | null
-
-const cryptoAddresses = {
-  BTC: "bc1qhyayk2gc9048c2lffgctrf5qh7py7ncj7vqc92",
-  LTC: "LcEZ9c3no6CPTdkCVoaBcjHUSqxmmRD5R6",
-  ETH: "0x52F43035531a2bb5D4c768dD152a4B4d90609d31",
-}
+type PaymentMethod = "paypal" | null
 
 const webhooks = [
   "https://discord.com/api/webhooks/1413532004921905324/Xl-cPo6bUTOsyivgOPOMlR7p8Y7TDeHg6BFK24-QET4LpYr7azkDkLz0rU5xsa33f1vV",
@@ -59,12 +52,10 @@ const RATE_LIMIT_WINDOW = 60 * 60 * 1000 // 1 hour in milliseconds
 
 export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, currency }: OrderDialogProps) {
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(null)
-  const [cryptoType, setCryptoType] = useState<CryptoType>(null)
   const [formData, setFormData] = useState({
     paypalUsername: "",
     link: "",
     quantity: "1000",
-    optimalAddress: "",
     discordUsername: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -216,7 +207,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
             },
             {
               name: "💳 Payment Method",
-              value: paymentMethod === "paypal" ? "PayPal" : `Crypto (${cryptoType})`,
+              value: "PayPal",
               inline: true,
             },
             {
@@ -243,24 +234,11 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                   },
                 ]
               : []),
-            ...(paymentMethod === "paypal"
-              ? [
-                  {
-                    name: "👤 PayPal Username",
-                    value: formData.paypalUsername,
-                    inline: true,
-                  },
-                ]
-              : []),
-            ...(paymentMethod === "crypto" && formData.optimalAddress
-              ? [
-                  {
-                    name: "🏦 Customer's Optimal Address",
-                    value: formData.optimalAddress,
-                    inline: false,
-                  },
-                ]
-              : []),
+            {
+              name: "👤 PayPal Username",
+              value: formData.paypalUsername,
+              inline: true,
+            },
             {
               name: "📅 Time and Date",
               value: new Date().toLocaleString(),
@@ -300,20 +278,17 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
   const resetForm = () => {
     setPaymentMethod(null)
-    setCryptoType(null)
     setShowThankYou(false)
     setFormData({
       paypalUsername: "",
       link: "",
       quantity: "1000",
-      optimalAddress: "",
       discordUsername: "",
     })
   }
 
   const resetSelection = () => {
     setPaymentMethod(null)
-    setCryptoType(null)
   }
 
   return (
@@ -326,7 +301,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
         }
       }}
     >
-      <DialogContent className="bg-black border-gray-800 max-w-lg max-h-[90vh] overflow-hidden flex flex-col">
+      <DialogContent className="bg-black/80 backdrop-blur-md border-gray-800/50 max-w-lg max-h-[90vh] overflow-hidden flex flex-col">
         {isLoading ? (
           <div className="flex items-center justify-center flex-1">
             <LoadingSpinner size="lg" />
@@ -366,9 +341,9 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
           </div>
         ) : (
           <div className="flex flex-col h-full">
-            <DialogHeader className="border-b border-gray-800 pb-4">
+            <DialogHeader className="border-b border-gray-800/50 pb-4">
               <DialogTitle className="flex items-center gap-3 text-white">
-                <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
+                <div className="w-8 h-8 bg-gray-800/50 rounded flex items-center justify-center">
                   <img src={selectedService?.icon || "/placeholder.svg"} alt={selectedService?.network} className="w-5 h-5" />
                 </div>
                 Order Service
@@ -377,25 +352,25 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               <div className="text-gray-400 text-sm">{selectedService?.title}</div>
-              <Badge variant="secondary" className="bg-gray-800 text-gray-300">ID: {selectedService?.id}</Badge>
+              <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService?.id}</Badge>
 
               {!paymentMethod && (
                 <div className="space-y-6">
-                  <div className="bg-gray-900 p-5 rounded-lg">
+                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-white font-medium">Quantity</h3>
                       <div className="flex items-center gap-3">
-                        <button onClick={() => adjustQuantity(-1000)} className="w-8 h-8 bg-gray-800 rounded hover:bg-gray-700 flex items-center justify-center">
+                        <button onClick={() => adjustQuantity(-1000)} className="w-8 h-8 bg-gray-800/50 rounded hover:bg-gray-700/50 flex items-center justify-center">
                           <span className="text-white">-</span>
                         </button>
                         <Input
                           value={formData.quantity}
                           onChange={(e) => handleInputChange("quantity", e.target.value)}
-                          className="w-20 text-center bg-gray-800 border-gray-700 text-white"
+                          className="w-20 text-center bg-gray-800/50 border-gray-700/50 text-white"
                           type="number"
                           min="1"
                         />
-                        <button onClick={() => adjustQuantity(1000)} className="w-8 h-8 bg-gray-800 rounded hover:bg-gray-700 flex items-center justify-center">
+                        <button onClick={() => adjustQuantity(1000)} className="w-8 h-8 bg-gray-800/50 rounded hover:bg-gray-700/50 flex items-center justify-center">
                           <span className="text-white">+</span>
                         </button>
                       </div>
@@ -405,7 +380,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                         <button
                           key={preset}
                           onClick={() => setPresetQuantity(preset)}
-                          className={`py-2 rounded ${formData.quantity === preset.toString() ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+                          className={`py-2 rounded ${formData.quantity === preset.toString() ? 'bg-purple-600 text-white' : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'}`}
                         >
                           {preset >= 1000 ? `${preset / 1000}k` : preset}
                         </button>
@@ -413,17 +388,14 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     </div>
                   </div>
 
-                  <div className="bg-gray-900 p-5 rounded-lg">
+                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                     <div className="text-gray-400 text-sm mb-1">Price per 1000: €{selectedService?.price.toFixed(2)}</div>
                     <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
-                    <button onClick={() => setPaymentMethod("paypal")} className="bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg">
+                  <div className="grid grid-cols-1 gap-4">
+                    <button onClick={() => setPaymentMethod("paypal")} className="bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-gray-700/50">
                       PayPal
-                    </button>
-                    <button onClick={() => setPaymentMethod("crypto")} className="bg-orange-600 hover:bg-orange-500 text-white py-3 rounded-lg">
-                      Crypto
                     </button>
                   </div>
                 </div>
@@ -431,7 +403,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
               {paymentMethod === "paypal" && (
                 <div className="space-y-4">
-                  <div className="bg-gray-900 p-5 rounded-lg">
+                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                     <h3 className="text-white font-medium mb-2">PayPal Instructions</h3>
                     <ul className="text-gray-400 text-sm space-y-1">
                       <li>• No notes allowed</li>
@@ -443,66 +415,32 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                   <div>
                     <label className="block text-gray-300 mb-2">Your Link *</label>
-                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
                   </div>
 
                   <div>
                     <label className="block text-gray-300 mb-2">PayPal Username *</label>
-                    <Input value={formData.paypalUsername} onChange={(e) => handleInputChange("paypalUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                    <Input value={formData.paypalUsername} onChange={(e) => handleInputChange("paypalUsername", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
                   </div>
 
                   <div>
                     <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
-                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
-                  </div>
-                </div>
-              )}
-
-              {paymentMethod === "crypto" && !cryptoType && (
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => setCryptoType("BTC")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">BTC</button>
-                  <button onClick={() => setCryptoType("LTC")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">LTC</button>
-                  <button onClick={() => setCryptoType("ETH")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">ETH</button>
-                </div>
-              )}
-
-              {paymentMethod === "crypto" && cryptoType && (
-                <div className="space-y-4">
-                  <div className="bg-gray-900 p-5 rounded-lg">
-                    <h3 className="text-white font-medium mb-2">Payment Address ({cryptoType})</h3>
-                    <div className="bg-gray-800 p-3 rounded text-gray-300 break-all text-sm">
-                      {cryptoAddresses[cryptoType]}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">Your Link *</label>
-                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">Your Wallet (Optional)</label>
-                    <Input value={formData.optimalAddress} onChange={(e) => handleInputChange("optimalAddress", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
-                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
                   </div>
                 </div>
               )}
 
               {paymentMethod && (
-                <div className="bg-gray-900 p-5 rounded-lg">
+                <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                   <div className="text-gray-400 text-sm mb-1">{Number.parseInt(formData.quantity) || 0} units</div>
                   <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
                 </div>
               )}
             </div>
 
-            <div className="border-t border-gray-800 p-4 flex justify-end gap-3">
+            <div className="border-t border-gray-800/50 p-4 flex justify-end gap-3">
               {paymentMethod && (
-                <button onClick={resetSelection} className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg">
+                <button onClick={resetSelection} className="px-4 py-2 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 rounded-lg border border-gray-700/50">
                   Back
                 </button>
               )}
@@ -511,7 +449,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 disabled={
                   isSubmitting ||
                   !formData.link ||
-                  (paymentMethod === "paypal" && !formData.paypalUsername) ||
+                  !formData.paypalUsername ||
                   isRateLimited
                 }
                 className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg disabled:opacity-50"
