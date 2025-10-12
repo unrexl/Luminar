@@ -65,7 +65,7 @@ function Loading() {
   )
 }
 
-// Enhanced ProductsSearchBar component with fixed styling
+// Enhanced ProductsSearchBar component with fixed dropdowns
 function EnhancedProductsSearchBar({
   searchQuery,
   setSearchQuery,
@@ -129,7 +129,7 @@ function EnhancedProductsSearchBar({
           <select
             value={selectedNetwork}
             onChange={(e) => setSelectedNetwork(e.target.value)}
-            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all duration-200 bg-white text-gray-900"
+            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 appearance-none"
           >
             <option value="all">All Networks</option>
             {filteredNetworks.map((network) => (
@@ -150,7 +150,7 @@ function EnhancedProductsSearchBar({
           <select
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
-            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none transition-all duration-200 bg-white text-gray-900"
+            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-900 appearance-none"
           >
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
