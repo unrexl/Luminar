@@ -326,375 +326,200 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
         }
       }}
     >
-      <DialogContent className="bg-gray-900 border-gray-800 rounded-xl shadow-2xl max-w-md max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-black border-gray-800 max-w-lg max-h-[90vh] overflow-hidden flex flex-col">
         {isLoading ? (
-          <div className="flex items-center justify-center py-12">
+          <div className="flex items-center justify-center flex-1">
             <LoadingSpinner size="lg" />
           </div>
         ) : showThankYou ? (
-          <div className="flex flex-col items-center justify-center py-8 px-6 space-y-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center justify-center flex-1 p-6">
+            <div className="w-20 h-20 bg-green-900/20 rounded-full flex items-center justify-center mb-6">
+              <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <div className="text-center space-y-4 w-full">
-              <h3 className="text-2xl font-bold text-green-400">Order Successfully Placed!</h3>
-              <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-xl p-6 space-y-3">
-                <p className="text-lg font-medium text-orange-300">
-                  Please Pay the amount{" "}
-                  <span className="font-bold text-2xl text-orange-400">
-                    €
-                    {selectedService
-                      ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2)
-                      : "0.00"}
-                  </span>
-                </p>
-                <p className="text-orange-200">
-                  towards this PayPal: <span className="font-bold text-orange-400 text-xl">unreal030</span>
-                </p>
-                <p className="text-sm text-orange-500 font-semibold">
-                  with NO NOTES and FAMILY AND FRIENDS only
-                </p>
-              </div>
+            <h3 className="text-2xl font-bold text-green-500 mb-4">Order Placed!</h3>
+            <div className="bg-gray-900/50 p-6 rounded-lg w-full max-w-xs">
+              <p className="text-lg text-gray-300 mb-2">
+                Pay <span className="font-bold text-green-500">€{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</span>
+              </p>
+              <p className="text-gray-400">to PayPal: unreal030</p>
+              <p className="text-red-500 text-sm mt-2">Friends & Family only</p>
             </div>
-            <Button
-              onClick={() => {
-                onClose()
-                resetForm()
-              }}
-              className="mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white px-10 py-3 rounded-lg shadow-lg hover:shadow-green-500/30 transition-all duration-300"
-            >
+            <Button onClick={() => { onClose(); resetForm(); }} className="mt-6 bg-green-600 hover:bg-green-500">
               Done
             </Button>
           </div>
         ) : isRateLimited ? (
-          <div className="flex flex-col items-center justify-center py-8 px-6 space-y-6">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center shadow-lg">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
-                />
+          <div className="flex flex-col items-center justify-center flex-1 p-6">
+            <div className="w-20 h-20 bg-red-900/20 rounded-full flex items-center justify-center mb-6">
+              <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
               </svg>
             </div>
-            <div className="text-center space-y-4 w-full">
-              <h3 className="text-2xl font-bold text-red-400">Rate Limit Reached</h3>
-              <p className="text-red-300">
-                Please open a ticket in the Discord server to purchase more.
-              </p>
-              <p className="text-lg text-red-300">
-                Your rate limit resets in: <span className="font-bold text-red-400">{countdown}</span>
-              </p>
-            </div>
-            <Button
-              onClick={() => {
-                onClose()
-                resetForm()
-              }}
-              variant="outline"
-              className="mt-4 border-red-500/30 text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-lg px-8 py-3 transition-all duration-300"
-            >
+            <h3 className="text-2xl font-bold text-red-500 mb-2">Rate Limited</h3>
+            <p className="text-gray-400 mb-1">Contact Discord for help</p>
+            <p className="text-red-500">Reset in: {countdown}</p>
+            <Button onClick={() => { onClose(); resetForm(); }} variant="outline" className="mt-6 border-gray-700 text-gray-300 hover:bg-gray-800">
               Close
             </Button>
           </div>
         ) : (
-          <>
+          <div className="flex flex-col h-full">
             <DialogHeader className="border-b border-gray-800 pb-4">
-              <DialogTitle className="flex items-center gap-3 text-xl text-white">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
-                  <img
-                    src={selectedService?.icon || "/placeholder.svg"}
-                    alt={selectedService?.network}
-                    className="w-5 h-5 rounded"
-                  />
+              <DialogTitle className="flex items-center gap-3 text-white">
+                <div className="w-8 h-8 bg-gray-800 rounded flex items-center justify-center">
+                  <img src={selectedService?.icon || "/placeholder.svg"} alt={selectedService?.network} className="w-5 h-5" />
                 </div>
                 Order Service
               </DialogTitle>
             </DialogHeader>
 
-            {selectedService && (
-              <div className="space-y-6 p-6">
-                <div className="text-gray-400 line-clamp-2">{selectedService.title}</div>
+            <div className="flex-1 overflow-y-auto p-6 space-y-6">
+              <div className="text-gray-400 text-sm">{selectedService?.title}</div>
+              <Badge variant="secondary" className="bg-gray-800 text-gray-300">ID: {selectedService?.id}</Badge>
 
-                <Badge className="bg-gradient-to-r from-violet-600 to-purple-600 text-white border-0">
-                  Service ID: {selectedService.id}
-                </Badge>
-
-                {!paymentMethod && (
-                  <div className="space-y-6">
-                    <Card className="bg-gradient-to-br from-violet-900/30 to-purple-900/30 border-violet-800/50 rounded-xl">
-                      <CardContent className="p-6">
-                        <div className="space-y-6">
-                          <div className="text-center">
-                            <label className="text-xl font-bold text-violet-300">
-                              Select Quantity
-                            </label>
-                            <p className="text-sm text-violet-400 mt-1">
-                              Choose how many units you want to order
-                            </p>
-                          </div>
-
-                          <div className="flex items-center justify-center space-x-4">
-                            <Button
-                              onClick={() => adjustQuantity(-1000)}
-                              variant="outline"
-                              size="sm"
-                              className="w-12 h-12 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
-                              disabled={Number.parseInt(formData.quantity) <= 1000}
-                            >
-                              -
-                            </Button>
-
-                            <div className="flex-1 max-w-32">
-                              <Input
-                                value={formData.quantity}
-                                onChange={(e) => handleInputChange("quantity", e.target.value)}
-                                className="text-center text-2xl font-bold bg-violet-950/50 border-violet-800/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
-                                type="number"
-                                min="1"
-                              />
-                            </div>
-
-                            <Button
-                              onClick={() => adjustQuantity(1000)}
-                              variant="outline"
-                              size="sm"
-                              className="w-12 h-12 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
-                            >
-                              +
-                            </Button>
-                          </div>
-
-                          <div className="grid grid-cols-4 gap-3">
-                            {[1000, 5000, 10000, 25000].map((preset) => (
-                              <Button
-                                key={preset}
-                                onClick={() => setPresetQuantity(preset)}
-                                variant={formData.quantity === preset.toString() ? "default" : "outline"}
-                                size="sm"
-                                className={`text-lg transition-all duration-300 ${
-                                  formData.quantity === preset.toString()
-                                    ? "bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/20"
-                                    : "bg-violet-900/50 hover:bg-violet-800/50 border-violet-700/50 text-violet-300 hover:text-white"
-                                }`}
-                              >
-                                {preset >= 1000 ? `${preset / 1000}k` : preset}
-                              </Button>
-                            ))}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <Card className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border-blue-800/50 rounded-xl">
-                      <CardContent className="p-6">
-                        <div className="space-y-4">
-                          <div className="text-lg font-bold text-blue-300">
-                            💰 Price Calculator:
-                          </div>
-                          <div className="text-sm text-blue-400">
-                            Quantity: {Number.parseInt(formData.quantity) || 0} units
-                          </div>
-                          <div className="text-sm text-blue-400">
-                            Price per 1000: €{selectedService.price.toFixed(2)}
-                          </div>
-                          <div className="text-2xl font-bold text-blue-300">
-                            Total Price: €
-                            {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-bold text-white">Select Payment Method:</h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        <Button
-                          onClick={() => setPaymentMethod("paypal")}
-                          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300"
-                        >
-                          PayPal
-                        </Button>
-                        <Button
-                          onClick={() => setPaymentMethod("crypto")}
-                          className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-lg py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all duration-300"
-                        >
-                          Crypto
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {paymentMethod === "paypal" && (
-                  <Card className="bg-gradient-to-br from-yellow-900/30 to-amber-900/30 border-yellow-800/50 rounded-xl">
-                    <CardContent className="p-6">
-                      <div className="space-y-4">
-                        <div className="text-lg font-bold text-yellow-300">Important PayPal Instructions:</div>
-                        <ul className="text-sm text-yellow-400 space-y-2">
-                          <li>• Do not include any notes in your payment</li>
-                          <li>• Minimum payment amount: €3</li>
-                          <li>• All payments must be in € Euros</li>
-                          <li>• Send ONLY via Friends & Family</li>
-                        </ul>
-                        <div className="mt-4 p-4 bg-gradient-to-br from-yellow-900/40 to-amber-900/40 rounded-xl border border-yellow-700/50">
-                          <div className="text-center text-lg font-bold text-yellow-300">
-                            𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗻𝗱 𝘆𝗼𝘂𝗿 𝗽𝗮𝘆𝗺𝗲𝗻𝘁 𝘁𝗼: 𝘂𝗻𝗿𝗲𝗮𝗹030
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {paymentMethod === "crypto" && !cryptoType && (
-                  <div className="space-y-4">
-                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 rounded-xl">
-                      <CardContent className="p-6">
-                        <div className="text-lg font-bold text-green-300">
-                          Minimum payment: €1
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <h3 className="text-lg font-bold text-white">Select Cryptocurrency:</h3>
-                    <div className="grid grid-cols-3 gap-3">
-                      <Button onClick={() => setCryptoType("BTC")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
-                        BTC
-                      </Button>
-                      <Button onClick={() => setCryptoType("LTC")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
-                        LTC
-                      </Button>
-                      <Button onClick={() => setCryptoType("ETH")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
-                        ETH
-                      </Button>
-                    </div>
-                  </div>
-                )}
-
-                {paymentMethod === "crypto" && cryptoType && (
-                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 rounded-xl">
-                    <CardContent className="p-6">
-                      <div className="space-y-3">
-                        <div className="text-lg font-bold text-gray-300">Payment Address {cryptoType}:</div>
-                        <div className="text-sm font-mono bg-gray-950/50 p-4 rounded border border-gray-700/50 text-gray-300 break-all">
-                          {cryptoAddresses[cryptoType]}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {paymentMethod && (paymentMethod === "paypal" || cryptoType) && (
-                  <div className="space-y-6">
-                    <div className="space-y-4">
-                      <label className="text-lg font-bold text-white">
-                        Your Link: <span className="text-red-400">*</span>
-                      </label>
-                      <Input
-                        value={formData.link}
-                        onChange={(e) => handleInputChange("link", e.target.value)}
-                        placeholder="Enter your link here"
-                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-4">
-                      <label className="text-lg font-bold text-white">Discord Username (Optional)</label>
-                      <Input
-                        value={formData.discordUsername}
-                        onChange={(e) => handleInputChange("discordUsername", e.target.value)}
-                        placeholder="Enter your Discord username"
-                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
-                      />
-                      <p className="text-sm text-gray-400">
-                        Helps us provide faster support when issues occur
-                      </p>
-                    </div>
-
-                    {paymentMethod === "paypal" && (
-                      <div className="space-y-4">
-                        <label className="text-lg font-bold text-white">
-                          PayPal Username: <span className="text-red-400">*</span>
-                        </label>
+              {!paymentMethod && (
+                <div className="space-y-6">
+                  <div className="bg-gray-900 p-5 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-white font-medium">Quantity</h3>
+                      <div className="flex items-center gap-3">
+                        <button onClick={() => adjustQuantity(-1000)} className="w-8 h-8 bg-gray-800 rounded hover:bg-gray-700 flex items-center justify-center">
+                          <span className="text-white">-</span>
+                        </button>
                         <Input
-                          value={formData.paypalUsername}
-                          onChange={(e) => handleInputChange("paypalUsername", e.target.value)}
-                          placeholder="Enter your PayPal username"
-                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
-                          required
+                          value={formData.quantity}
+                          onChange={(e) => handleInputChange("quantity", e.target.value)}
+                          className="w-20 text-center bg-gray-800 border-gray-700 text-white"
+                          type="number"
+                          min="1"
                         />
+                        <button onClick={() => adjustQuantity(1000)} className="w-8 h-8 bg-gray-800 rounded hover:bg-gray-700 flex items-center justify-center">
+                          <span className="text-white">+</span>
+                        </button>
                       </div>
-                    )}
-
-                    {paymentMethod === "crypto" && (
-                      <div className="space-y-4">
-                        <label className="text-lg font-bold text-white">Your Wallet Address (Optional)</label>
-                        <Input
-                          value={formData.optimalAddress}
-                          onChange={(e) => handleInputChange("optimalAddress", e.target.value)}
-                          placeholder="Enter your preferred crypto address"
-                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
-                        />
-                        <p className="text-sm text-gray-400">
-                          Optional but recommended for faster support
-                        </p>
-                      </div>
-                    )}
-
-                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 rounded-xl">
-                      <CardContent className="p-6">
-                        <div className="space-y-4">
-                          <div className="text-lg font-bold text-green-300">Order Summary:</div>
-                          <div className="text-sm text-green-400">
-                            {Number.parseInt(formData.quantity) || 0} units of {selectedService.title}
-                          </div>
-                          <div className="text-2xl font-bold text-green-300">
-                            Total Amount to Pay: €
-                            {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-
-                    <div className="flex gap-4 pt-2">
-                      <Button
-                        onClick={resetSelection}
-                        variant="outline"
-                        className="flex-1 bg-gray-900/50 hover:bg-gray-800/50 border-gray-700/50 text-gray-300 hover:text-white transition-all duration-300 rounded-lg"
-                        disabled={isSubmitting}
-                      >
-                        Back
-                      </Button>
-                      <Button
-                        onClick={sendToDiscord}
-                        className="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/20 transition-all duration-300 rounded-lg"
-                        disabled={
-                          isSubmitting ||
-                          !formData.link ||
-                          (paymentMethod === "paypal" && !formData.paypalUsername) ||
-                          isRateLimited
-                        }
-                      >
-                        {isSubmitting ? (
-                          <>
-                            <LoadingSpinner size="sm" className="mr-2" />
-                            Submitting...
-                          </>
-                        ) : (
-                          "Submit Order"
-                        )}
-                      </Button>
+                    </div>
+                    <div className="grid grid-cols-4 gap-2">
+                      {[1000, 5000, 10000, 25000].map((preset) => (
+                        <button
+                          key={preset}
+                          onClick={() => setPresetQuantity(preset)}
+                          className={`py-2 rounded ${formData.quantity === preset.toString() ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'}`}
+                        >
+                          {preset >= 1000 ? `${preset / 1000}k` : preset}
+                        </button>
+                      ))}
                     </div>
                   </div>
-                )}
-              </div>
-            )}
-          </>
+
+                  <div className="bg-gray-900 p-5 rounded-lg">
+                    <div className="text-gray-400 text-sm mb-1">Price per 1000: €{selectedService?.price.toFixed(2)}</div>
+                    <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <button onClick={() => setPaymentMethod("paypal")} className="bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg">
+                      PayPal
+                    </button>
+                    <button onClick={() => setPaymentMethod("crypto")} className="bg-orange-600 hover:bg-orange-500 text-white py-3 rounded-lg">
+                      Crypto
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {paymentMethod === "paypal" && (
+                <div className="space-y-4">
+                  <div className="bg-gray-900 p-5 rounded-lg">
+                    <h3 className="text-white font-medium mb-2">PayPal Instructions</h3>
+                    <ul className="text-gray-400 text-sm space-y-1">
+                      <li>• No notes allowed</li>
+                      <li>• Minimum: €3</li>
+                      <li>• Send to unreal030</li>
+                      <li>• Friends & Family only</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Your Link *</label>
+                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">PayPal Username *</label>
+                    <Input value={formData.paypalUsername} onChange={(e) => handleInputChange("paypalUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
+                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+                </div>
+              )}
+
+              {paymentMethod === "crypto" && !cryptoType && (
+                <div className="grid grid-cols-3 gap-3">
+                  <button onClick={() => setCryptoType("BTC")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">BTC</button>
+                  <button onClick={() => setCryptoType("LTC")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">LTC</button>
+                  <button onClick={() => setCryptoType("ETH")} className="bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-lg">ETH</button>
+                </div>
+              )}
+
+              {paymentMethod === "crypto" && cryptoType && (
+                <div className="space-y-4">
+                  <div className="bg-gray-900 p-5 rounded-lg">
+                    <h3 className="text-white font-medium mb-2">Payment Address ({cryptoType})</h3>
+                    <div className="bg-gray-800 p-3 rounded text-gray-300 break-all text-sm">
+                      {cryptoAddresses[cryptoType]}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Your Link *</label>
+                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Your Wallet (Optional)</label>
+                    <Input value={formData.optimalAddress} onChange={(e) => handleInputChange("optimalAddress", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
+                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800 border-gray-700 text-white" />
+                  </div>
+                </div>
+              )}
+
+              {paymentMethod && (
+                <div className="bg-gray-900 p-5 rounded-lg">
+                  <div className="text-gray-400 text-sm mb-1">{Number.parseInt(formData.quantity) || 0} units</div>
+                  <div className="text-white text-xl font-bold">Total: €{selectedService ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2) : "0.00"}</div>
+                </div>
+              )}
+            </div>
+
+            <div className="border-t border-gray-800 p-4 flex justify-end gap-3">
+              {paymentMethod && (
+                <button onClick={resetSelection} className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg">
+                  Back
+                </button>
+              )}
+              <button
+                onClick={sendToDiscord}
+                disabled={
+                  isSubmitting ||
+                  !formData.link ||
+                  (paymentMethod === "paypal" && !formData.paypalUsername) ||
+                  isRateLimited
+                }
+                className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg disabled:opacity-50"
+              >
+                {isSubmitting ? "Submitting..." : "Submit Order"}
+              </button>
+            </div>
+          </div>
         )}
       </DialogContent>
     </Dialog>
