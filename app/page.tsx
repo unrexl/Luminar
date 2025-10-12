@@ -196,11 +196,11 @@ export default function HomePage() {
                   as="button"
                   color="red"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full sm:w-auto max-w-[220px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full sm:w-auto max-w-[240px] sm:max-w-none"
                   onClick={() => setIsProfileModalOpen(true)}
                 >
                   <div className="flex items-center gap-3 sm:gap-5">
-                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover" />
+                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg sm:text-xl">rex</span>
                       <span className="text-red-400 font-semibold text-sm sm:text-base mb-1">Owner</span>
@@ -214,10 +214,10 @@ export default function HomePage() {
                   as="div"
                   color="orange"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 w-full sm:w-auto max-w-[220px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 w-full sm:w-auto max-w-[240px] sm:max-w-none"
                 >
                   <div className="flex items-center gap-3 sm:gap-5">
-                    <img src="/fox-avatar.png" alt="Fox avatar" className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover" />
+                    <img src="/fox-avatar.png" alt="Fox avatar" className="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-lg sm:text-xl">Fox</span>
                       <span className="text-orange-400 font-semibold text-sm sm:text-base mb-1">Co-Owner</span>
