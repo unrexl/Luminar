@@ -1,4 +1,23 @@
-@@ -1,47 +1,5 @@
+"use client"
+
+import { useMemo, useState, useEffect } from "react"
+import { ServiceCard } from "@/components/service-card"
+import { OrderDialog } from "@/components/order-dialog"
+import { Header } from "@/components/header"
+import { ChangelogDialog } from "@/components/changelog-dialog"
+import { Loading } from "@/components/loading"
+
+// Types
+interface Service {
+  id: string
+  title: string
+  category: string
+  description?: string
+  price: number
+  minQuantity?: number
+  maxQuantity?: number
+}
+
 // Compact Search Bar Component
 function CompactSearchBar({
   searchQuery,
@@ -42,57 +61,47 @@ function CompactSearchBar({
   )
 }
 
-"use client"
-
-import { useMemo, useState, useEffect } from "react"
-import { ServiceCard } from "@/components/service-card"
-import { OrderDialog } from "@/components/order-dialog"
-@@ -146,112 +104,153 @@
-  )
+// Currency conversion utility
+async function fetchRealTimeCurrencyRates(): Promise<Record<string, number>> {
+  try {
+    const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD')
+    const data = await response.json()
+    return data.rates
+  } catch (error) {
+    console.error('Failed to fetch currency rates:', error)
+    return { EUR: 0.92, USD: 1, GBP: 0.79 }
+  }
 }
 
+function formatPrice(price: number, currency: string, rates: Record<string, number>): string {
+  const rate = rates[currency] || 1
+  const converted = price * rate
+  const symbol = currency === 'EUR' ? '€' : currency === 'GBP' ? '£' : '$'
+  return `${symbol}${converted.toFixed(2)}`
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Sample services data - replace with your actual data
+const services: Service[] = [
+  {
+    id: "1",
+    title: "Instagram Followers",
+    category: "Instagram",
+    description: "High quality Instagram followers",
+    price: 10.00,
+    minQuantity: 100,
+    maxQuantity: 10000
+  },
+  {
+    id: "2",
+    title: "TikTok Views",
+    category: "TikTok",
+    description: "Boost your TikTok video views",
+    price: 5.00,
+    minQuantity: 1000,
+    maxQuantity: 100000
+  },
+  // Add more services here
+]
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("")
