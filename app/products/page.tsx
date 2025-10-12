@@ -75,10 +75,25 @@ export default function ProductsPage() {
   const [pageLoaded, setPageLoaded] = useState(false)
   const [currencyRates, setCurrencyRates] = useState<Record<string, number>>({})
 
+  // Remove duplicate network entries
+  const uniqueNetworks = useMemo(() => {
+    const networkMap = new Map()
+    networks.forEach(network => {
+      if (!networkMap.has(network.id)) {
+        networkMap.set(network.id, network)
+      }
+    })
+    return Array.from(networkMap.values())
+  }, [networks])
+
   useEffect(() => {
     const loadCurrencyRates = async () => {
-      const rates = await fetchRealTimeCurrencyRates()
-      setCurrencyRates(rates)
+      try {
+        const rates = await fetchRealTimeCurrencyRates()
+        setCurrencyRates(rates)
+      } catch (error) {
+        console.error("Failed to fetch currency rates:", error)
+      }
     }
 
     loadCurrencyRates()
@@ -143,7 +158,7 @@ export default function ProductsPage() {
         setSearchQuery={setSearchQuery}
         selectedNetwork={selectedNetwork}
         setSelectedNetwork={setSelectedNetwork}
-        networks={networks}
+        networks={uniqueNetworks}
         currency={currency}
         setCurrency={setCurrency}
       />
