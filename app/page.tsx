@@ -1,12 +1,5 @@
 "use client"
 
-
-
-
-
-
-
-
 import Link from "next/link"
 import { useState } from "react"
 import DarkVeil from "@/components/dark-veil"
@@ -134,12 +127,6 @@ function ProfileModal({ isOpen, onClose }) {
             </div>
           </div>
         </div>
-
-
-
-
-
-
       </div>
     </>
   )
@@ -147,14 +134,6 @@ function ProfileModal({ isOpen, onClose }) {
 
 export default function HomePage() {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false)
-
-
-
-
-
-
-
-
 
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -249,41 +228,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       {/* Highlights */}
       <section id="highlights" className="py-4 md:py-6">
         <div className="mx-auto max-w-7xl px-4">
@@ -291,43 +235,16 @@ export default function HomePage() {
             <Button
               asChild
               className="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl hover:shadow-violet-500/25 transform hover:scale-105 transition-all duration-300 ease-out border border-violet-500/20"
-
-
-
-
-
-
-
-
-
-
-
             >
               <Link href="/products" className="flex items-center gap-2">
                 See products
-
-
-
-
-
-
-
-
-
-
                 <svg
                   className="w-4 h-4 transition-transform group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-
-
-
-
-
                 </svg>
               </Link>
             </Button>
@@ -352,66 +269,14 @@ export default function HomePage() {
                 From followers and likes to views and members across top platforms.
               </p>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       {/* Profile Modal */}
       <ProfileModal 
         isOpen={isProfileModalOpen} 
         onClose={() => setIsProfileModalOpen(false)} 
-
-
       />
 
       {/* Footer */}
