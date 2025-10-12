@@ -1484,6 +1484,18 @@ export const services: Service[] = [
     discount: 17,
     icon: "/icons/default.png",
   },
+
+  // Other Other Services
+  {
+    id: "2921",
+    network: "discord",
+    category: "Discord Services",
+    title: "Discord 14x Server Boost | 1 Month | Fast | UHQ",
+    price: 17.46,
+    oldPrice: 20.952,
+    discount: 17,
+    icon: "/icons/discord.png",
+  },
 ]
 
 export const currencyRates: Record<string, number> = {
