@@ -326,20 +326,20 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
         }
       }}
     >
-      <DialogContent className="bg-popover border-border max-w-md max-w-[90vw] max-h-[90vh] overflow-y-auto sm:max-w-md">
+      <DialogContent className="bg-popover border-border max-w-md max-h-[90vh] overflow-y-auto">
         {isLoading ? (
           <div className="flex items-center justify-center py-8">
             <LoadingSpinner size="lg" />
           </div>
         ) : showThankYou ? (
-          <div className="flex flex-col items-center justify-center py-8 space-y-4 px-4">
+          <div className="flex flex-col items-center justify-center py-8 space-y-4">
             <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
               <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <div className="text-center space-y-3 w-full max-w-xs">
-              <h3 className="text-lg sm:text-xl font-semibold text-green-800 dark:text-green-200">Order Successfully Placed!</h3>
+            <div className="text-center space-y-3">
+              <h3 className="text-lg font-semibold text-green-800 dark:text-green-200">Order Successfully Placed!</h3>
               <div className="bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg p-4 space-y-2">
                 <p className="text-sm font-medium text-orange-800 dark:text-orange-200">
                   Please Pay the amount{" "}
@@ -363,13 +363,13 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 onClose()
                 resetForm()
               }}
-              className="mt-4 bg-green-600 hover:bg-green-500 text-white px-6 sm:px-8"
+              className="mt-4 bg-green-600 hover:bg-green-500 text-white px-8"
             >
               Done
             </Button>
           </div>
         ) : isRateLimited ? (
-          <div className="flex flex-col items-center justify-center py-8 space-y-4 px-4">
+          <div className="flex flex-col items-center justify-center py-8 space-y-4">
             <div className="w-16 h-16 bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center">
               <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -380,8 +380,8 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 />
               </svg>
             </div>
-            <div className="text-center space-y-2 w-full max-w-xs">
-              <h3 className="text-lg sm:text-xl font-semibold text-red-800 dark:text-red-200">You've been rate limited!</h3>
+            <div className="text-center space-y-2">
+              <h3 className="text-lg font-semibold text-red-800 dark:text-red-200">You've been rate limited!</h3>
               <p className="text-sm text-red-600 dark:text-red-400">
                 Please open a ticket in the Discord server to purchase more.
               </p>
@@ -403,11 +403,11 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
         ) : (
           <>
             <DialogHeader>
-              <DialogTitle className="flex items-center gap-2 text-base sm:text-lg">
+              <DialogTitle className="flex items-center gap-2 text-lg">
                 <img
                   src={selectedService?.icon || "/placeholder.svg"}
                   alt={selectedService?.network}
-                  className="w-5 h-5 sm:w-6 sm:h-6 rounded"
+                  className="w-5 h-5 rounded"
                 />
                 Order Service
               </DialogTitle>
@@ -417,40 +417,40 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground line-clamp-2">{selectedService.title}</div>
 
-                <Badge variant="secondary" className="bg-violet-600/90 text-white text-xs">
+                <Badge variant="secondary" className="bg-violet-600/90 text-white">
                   Service ID: {selectedService.id}
                 </Badge>
 
                 {!paymentMethod && (
                   <div className="space-y-4">
                     <Card className="bg-gradient-to-r from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 border-violet-200 dark:border-violet-800">
-                      <CardContent className="p-3 sm:p-4">
-                        <div className="space-y-3 sm:space-y-4">
+                      <CardContent className="p-4">
+                        <div className="space-y-4">
                           <div className="text-center">
-                            <label className="text-base sm:text-lg font-bold text-violet-800 dark:text-violet-200">
+                            <label className="text-lg font-bold text-violet-800 dark:text-violet-200">
                               Select Quantity
                             </label>
-                            <p className="text-xs sm:text-sm text-violet-600 dark:text-violet-400 mt-1">
+                            <p className="text-xs text-violet-600 dark:text-violet-400 mt-1">
                               Choose how many units you want to order
                             </p>
                           </div>
 
-                          <div className="flex items-center justify-center space-x-2 sm:space-x-3">
+                          <div className="flex items-center justify-center space-x-3">
                             <Button
                               onClick={() => adjustQuantity(-1000)}
                               variant="outline"
                               size="sm"
-                              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-violet-100 hover:bg-violet-200 dark:bg-violet-800 dark:hover:bg-violet-700 border-violet-300 dark:border-violet-600"
+                              className="w-10 h-10 rounded-full bg-violet-100 hover:bg-violet-200 dark:bg-violet-800 dark:hover:bg-violet-700 border-violet-300 dark:border-violet-600"
                               disabled={Number.parseInt(formData.quantity) <= 1000}
                             >
                               -
                             </Button>
 
-                            <div className="flex-1 max-w-24 sm:max-w-32">
+                            <div className="flex-1 max-w-32">
                               <Input
                                 value={formData.quantity}
                                 onChange={(e) => handleInputChange("quantity", e.target.value)}
-                                className="text-center text-lg sm:text-xl font-bold bg-white dark:bg-gray-800 border-2 border-violet-300 dark:border-violet-600 focus:border-violet-500 dark:focus:border-violet-400"
+                                className="text-center text-xl font-bold bg-white dark:bg-gray-800 border-2 border-violet-300 dark:border-violet-600 focus:border-violet-500 dark:focus:border-violet-400"
                                 type="number"
                                 min="1"
                               />
@@ -460,20 +460,20 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                               onClick={() => adjustQuantity(1000)}
                               variant="outline"
                               size="sm"
-                              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-violet-100 hover:bg-violet-200 dark:bg-violet-800 dark:hover:bg-violet-700 border-violet-300 dark:border-violet-600"
+                              className="w-10 h-10 rounded-full bg-violet-100 hover:bg-violet-200 dark:bg-violet-800 dark:hover:bg-violet-700 border-violet-300 dark:border-violet-600"
                             >
                               +
                             </Button>
                           </div>
 
-                          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+                          <div className="grid grid-cols-4 gap-2">
                             {[1000, 5000, 10000, 25000].map((preset) => (
                               <Button
                                 key={preset}
                                 onClick={() => setPresetQuantity(preset)}
                                 variant={formData.quantity === preset.toString() ? "default" : "outline"}
                                 size="sm"
-                                className={`text-xs sm:text-sm ${
+                                className={`text-xs ${
                                   formData.quantity === preset.toString()
                                     ? "bg-violet-600 hover:bg-violet-500 text-white"
                                     : "bg-violet-50 hover:bg-violet-100 dark:bg-violet-900/30 dark:hover:bg-violet-800/50 border-violet-200 dark:border-violet-700"
@@ -488,18 +488,18 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     </Card>
 
                     <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
-                      <CardContent className="p-3 sm:p-4">
-                        <div className="space-y-2 sm:space-y-3">
-                          <div className="text-sm sm:text-base font-medium text-blue-800 dark:text-blue-200">
+                      <CardContent className="p-4">
+                        <div className="space-y-2">
+                          <div className="text-sm font-medium text-blue-800 dark:text-blue-200">
                             💰 Price Calculator:
                           </div>
-                          <div className="text-xs sm:text-sm text-blue-700 dark:text-blue-300">
+                          <div className="text-xs text-blue-700 dark:text-blue-300">
                             Quantity: {Number.parseInt(formData.quantity) || 0} units
                           </div>
-                          <div className="text-xs sm:text-sm text-blue-700 dark:text-blue-300">
+                          <div className="text-xs text-blue-700 dark:text-blue-300">
                             Price per 1000: €{selectedService.price.toFixed(2)}
                           </div>
-                          <div className="text-base sm:text-lg font-bold text-blue-800 dark:text-blue-200">
+                          <div className="text-lg font-bold text-blue-800 dark:text-blue-200">
                             Total Price: €
                             {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
                           </div>
@@ -508,17 +508,17 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     </Card>
 
                     <div className="space-y-3">
-                      <h3 className="text-sm sm:text-base font-medium">Select Payment Method:</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <h3 className="text-sm font-medium">Select Payment Method:</h3>
+                      <div className="grid grid-cols-2 gap-3">
                         <Button
                           onClick={() => setPaymentMethod("paypal")}
-                          className="bg-blue-600 hover:bg-blue-500 text-white py-2 sm:py-3"
+                          className="bg-blue-600 hover:bg-blue-500 text-white"
                         >
                           PayPal
                         </Button>
                         <Button
                           onClick={() => setPaymentMethod("crypto")}
-                          className="bg-orange-600 hover:bg-orange-500 text-white py-2 sm:py-3"
+                          className="bg-orange-600 hover:bg-orange-500 text-white"
                         >
                           Crypto
                         </Button>
@@ -529,10 +529,10 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                 {paymentMethod === "paypal" && (
                   <Card className="bg-yellow-50 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-800">
-                    <CardContent className="p-3 sm:p-4">
+                    <CardContent className="p-4">
                       <div className="space-y-3">
-                        <div className="text-sm sm:text-base font-medium text-yellow-800 dark:text-yellow-200">Important:</div>
-                        <ul className="text-xs sm:text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
+                        <div className="text-sm font-medium text-yellow-800 dark:text-yellow-200">Important:</div>
+                        <ul className="text-xs text-yellow-700 dark:text-yellow-300 space-y-1">
                           <li>
                             • Do not include any notes in your payment. Payments with notes will be rejected and marked
                             as invalid.
@@ -544,8 +544,8 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                             will be invalid.
                           </li>
                         </ul>
-                        <div className="text-center mt-3 sm:mt-4 p-2 sm:p-3 bg-yellow-100 dark:bg-yellow-800/30 rounded-lg border-2 border-yellow-300 dark:border-yellow-600">
-                          <div className="text-base sm:text-lg font-bold text-yellow-900 dark:text-yellow-100">
+                        <div className="text-center mt-4 p-3 bg-yellow-100 dark:bg-yellow-800/30 rounded-lg border-2 border-yellow-300 dark:border-yellow-600">
+                          <div className="text-base font-bold text-yellow-900 dark:text-yellow-100">
                             𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗻𝗱 𝘆𝗼𝘂𝗿 𝗽𝗮𝘆𝗺𝗲𝗻𝘁 𝘃𝗶𝗮 𝗣𝗮𝘆𝗣𝗮𝗹 𝘁𝗼: 𝘂𝗻𝗿𝗲𝗮𝗹030
                           </div>
                         </div>
@@ -557,22 +557,22 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 {paymentMethod === "crypto" && !cryptoType && (
                   <div className="space-y-3">
                     <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
-                      <CardContent className="p-3 sm:p-4">
-                        <div className="text-sm sm:text-base font-medium text-green-800 dark:text-green-200">
+                      <CardContent className="p-4">
+                        <div className="text-sm font-medium text-green-800 dark:text-green-200">
                           Minimum payment: €1
                         </div>
                       </CardContent>
                     </Card>
 
-                    <h3 className="text-sm sm:text-base font-medium">Select Cryptocurrency:</h3>
-                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
-                      <Button onClick={() => setCryptoType("BTC")} variant="outline" className="text-xs sm:text-sm py-2">
+                    <h3 className="text-sm font-medium">Select Cryptocurrency:</h3>
+                    <div className="grid grid-cols-3 gap-2">
+                      <Button onClick={() => setCryptoType("BTC")} variant="outline" className="text-xs">
                         BTC
                       </Button>
-                      <Button onClick={() => setCryptoType("LTC")} variant="outline" className="text-xs sm:text-sm py-2">
+                      <Button onClick={() => setCryptoType("LTC")} variant="outline" className="text-xs">
                         LTC
                       </Button>
-                      <Button onClick={() => setCryptoType("ETH")} variant="outline" className="text-xs sm:text-sm py-2">
+                      <Button onClick={() => setCryptoType("ETH")} variant="outline" className="text-xs">
                         ETH
                       </Button>
                     </div>
@@ -581,10 +581,10 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                 {paymentMethod === "crypto" && cryptoType && (
                   <Card className="bg-gray-50 dark:bg-gray-900/50 border-gray-200 dark:border-gray-700">
-                    <CardContent className="p-3 sm:p-4">
+                    <CardContent className="p-4">
                       <div className="space-y-2">
-                        <div className="text-sm sm:text-base font-medium">Payment Address {cryptoType}:</div>
-                        <div className="text-xs sm:text-sm font-mono bg-gray-100 dark:bg-gray-800 p-2 sm:p-3 rounded break-all">
+                        <div className="text-sm font-medium">Payment Address {cryptoType}:</div>
+                        <div className="text-xs font-mono bg-gray-100 dark:bg-gray-800 p-2 rounded break-all">
                           {cryptoAddresses[cryptoType]}
                         </div>
                       </div>
@@ -595,25 +595,25 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 {paymentMethod && (paymentMethod === "paypal" || cryptoType) && (
                   <div className="space-y-3">
                     <div className="space-y-2">
-                      <label className="text-sm sm:text-base font-medium">
+                      <label className="text-sm font-medium">
                         Your Link: <span className="text-red-500">*</span>
                       </label>
                       <Input
                         value={formData.link}
                         onChange={(e) => handleInputChange("link", e.target.value)}
                         placeholder="Enter your link here"
-                        className="bg-secondary border-border focus:border-violet-500 text-sm sm:text-base"
+                        className="bg-secondary border-border focus:border-violet-500"
                         required
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm sm:text-base font-medium">Discord Username</label>
+                      <label className="text-sm font-medium">Discord Username</label>
                       <Input
                         value={formData.discordUsername}
                         onChange={(e) => handleInputChange("discordUsername", e.target.value)}
                         placeholder="Enter your Discord username"
-                        className="bg-secondary border-border focus:border-violet-500 text-sm sm:text-base"
+                        className="bg-secondary border-border focus:border-violet-500"
                       />
                       <p className="text-xs text-muted-foreground">
                         You can fill this out so we can help you quicker and easier
@@ -622,14 +622,14 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                     {paymentMethod === "paypal" && (
                       <div className="space-y-2">
-                        <label className="text-sm sm:text-base font-medium">
+                        <label className="text-sm font-medium">
                           PayPal Username: <span className="text-red-500">*</span>
                         </label>
                         <Input
                           value={formData.paypalUsername}
                           onChange={(e) => handleInputChange("paypalUsername", e.target.value)}
                           placeholder="Enter your PayPal username"
-                          className="bg-secondary border-border focus:border-violet-500 text-sm sm:text-base"
+                          className="bg-secondary border-border focus:border-violet-500"
                           required
                         />
                       </div>
@@ -637,12 +637,12 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                     {paymentMethod === "crypto" && (
                       <div className="space-y-2">
-                        <label className="text-sm sm:text-base font-medium">Your Payment Wallet Address (Optional):</label>
+                        <label className="text-sm font-medium">Your Payment Wallet Address (Optional):</label>
                         <Input
                           value={formData.optimalAddress}
                           onChange={(e) => handleInputChange("optimalAddress", e.target.value)}
                           placeholder="Enter your preferred crypto address (optional)"
-                          className="bg-secondary border-border focus:border-violet-500 text-sm sm:text-base"
+                          className="bg-secondary border-border focus:border-violet-500"
                         />
                         <p className="text-xs text-muted-foreground">
                           This is optimal, as it helps you receive faster and more efficient support when problems
@@ -652,13 +652,13 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     )}
 
                     <Card className="bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800">
-                      <CardContent className="p-3 sm:p-4">
+                      <CardContent className="p-4">
                         <div className="space-y-2">
-                          <div className="text-sm sm:text-base font-medium text-green-800 dark:text-green-200">Order Summary:</div>
-                          <div className="text-xs sm:text-sm text-green-700 dark:text-green-300">
+                          <div className="text-sm font-medium text-green-800 dark:text-green-200">Order Summary:</div>
+                          <div className="text-xs text-green-700 dark:text-green-300">
                             {Number.parseInt(formData.quantity) || 0} units of {selectedService.title}
                           </div>
-                          <div className="text-base sm:text-lg font-bold text-green-800 dark:text-green-200">
+                          <div className="text-lg font-bold text-green-800 dark:text-green-200">
                             Total Amount to Pay: €
                             {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
                           </div>
@@ -666,18 +666,18 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                       </CardContent>
                     </Card>
 
-                    <div className="flex gap-2 pt-2 sm:pt-4">
+                    <div className="flex gap-2 pt-4">
                       <Button
                         onClick={resetSelection}
                         variant="outline"
-                        className="flex-1 bg-transparent text-sm sm:text-base"
+                        className="flex-1 bg-transparent"
                         disabled={isSubmitting}
                       >
                         Back
                       </Button>
                       <Button
                         onClick={sendToDiscord}
-                        className="flex-1 bg-violet-600 hover:bg-violet-500 text-sm sm:text-base"
+                        className="flex-1 bg-violet-600 hover:bg-violet-500"
                         disabled={
                           isSubmitting ||
                           !formData.link ||
