@@ -326,34 +326,34 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
         }
       }}
     >
-      <DialogContent className="bg-black/90 backdrop-blur-xl border-violet-900/50 shadow-2xl max-w-md max-h-[90vh] overflow-y-auto">
+      <DialogContent className="bg-gray-900 border-gray-800 rounded-xl shadow-2xl max-w-md max-h-[90vh] overflow-y-auto">
         {isLoading ? (
-          <div className="flex items-center justify-center py-8">
+          <div className="flex items-center justify-center py-12">
             <LoadingSpinner size="lg" />
           </div>
         ) : showThankYou ? (
-          <div className="flex flex-col items-center justify-center py-8 space-y-4 px-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-green-500/30">
-              <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center justify-center py-8 px-6 space-y-6">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <div className="text-center space-y-3 w-full max-w-xs">
-              <h3 className="text-xl font-bold text-green-400">Order Successfully Placed!</h3>
-              <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-xl p-4 backdrop-blur-sm space-y-2">
-                <p className="text-sm font-medium text-orange-300">
+            <div className="text-center space-y-4 w-full">
+              <h3 className="text-2xl font-bold text-green-400">Order Successfully Placed!</h3>
+              <div className="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-xl p-6 space-y-3">
+                <p className="text-lg font-medium text-orange-300">
                   Please Pay the amount{" "}
-                  <span className="font-bold text-orange-400">
+                  <span className="font-bold text-2xl text-orange-400">
                     €
                     {selectedService
                       ? calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000).toFixed(2)
                       : "0.00"}
                   </span>
                 </p>
-                <p className="text-sm text-orange-200">
-                  towards this PayPal: <span className="font-bold text-orange-400">unreal030</span>
+                <p className="text-orange-200">
+                  towards this PayPal: <span className="font-bold text-orange-400 text-xl">unreal030</span>
                 </p>
-                <p className="text-xs text-orange-500 font-semibold">
+                <p className="text-sm text-orange-500 font-semibold">
                   with NO NOTES and FAMILY AND FRIENDS only
                 </p>
               </div>
@@ -363,15 +363,15 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 onClose()
                 resetForm()
               }}
-              className="mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white px-8 shadow-lg hover:shadow-green-500/30 transition-all duration-300"
+              className="mt-4 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white px-10 py-3 rounded-lg shadow-lg hover:shadow-green-500/30 transition-all duration-300"
             >
               Done
             </Button>
           </div>
         ) : isRateLimited ? (
-          <div className="flex flex-col items-center justify-center py-8 space-y-4 px-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-red-500/20 to-rose-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-red-500/30">
-              <svg className="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex flex-col items-center justify-center py-8 px-6 space-y-6">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center shadow-lg">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -380,12 +380,12 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 />
               </svg>
             </div>
-            <div className="text-center space-y-2 w-full max-w-xs">
-              <h3 className="text-xl font-bold text-red-400">You've been rate limited!</h3>
-              <p className="text-sm text-red-300">
+            <div className="text-center space-y-4 w-full">
+              <h3 className="text-2xl font-bold text-red-400">Rate Limit Reached</h3>
+              <p className="text-red-300">
                 Please open a ticket in the Discord server to purchase more.
               </p>
-              <p className="text-sm text-red-300">
+              <p className="text-lg text-red-300">
                 Your rate limit resets in: <span className="font-bold text-red-400">{countdown}</span>
               </p>
             </div>
@@ -395,20 +395,20 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 resetForm()
               }}
               variant="outline"
-              className="mt-4 border-red-500/30 text-red-400 hover:bg-red-500/10 hover:text-red-300 transition-all duration-300"
+              className="mt-4 border-red-500/30 text-red-400 hover:bg-red-500/10 hover:text-red-300 rounded-lg px-8 py-3 transition-all duration-300"
             >
               Close
             </Button>
           </div>
         ) : (
           <>
-            <DialogHeader className="border-b border-violet-900/50 pb-4">
-              <DialogTitle className="flex items-center gap-3 text-xl text-violet-300">
-                <div className="w-8 h-8 bg-gradient-to-br from-violet-600 to-purple-600 rounded-full flex items-center justify-center">
+            <DialogHeader className="border-b border-gray-800 pb-4">
+              <DialogTitle className="flex items-center gap-3 text-xl text-white">
+                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-violet-600 to-purple-600 flex items-center justify-center">
                   <img
                     src={selectedService?.icon || "/placeholder.svg"}
                     alt={selectedService?.network}
-                    className="w-4 h-4 rounded"
+                    className="w-5 h-5 rounded"
                   />
                 </div>
                 Order Service
@@ -416,8 +416,8 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
             </DialogHeader>
 
             {selectedService && (
-              <div className="space-y-6">
-                <div className="text-sm text-gray-400 line-clamp-2">{selectedService.title}</div>
+              <div className="space-y-6 p-6">
+                <div className="text-gray-400 line-clamp-2">{selectedService.title}</div>
 
                 <Badge className="bg-gradient-to-r from-violet-600 to-purple-600 text-white border-0">
                   Service ID: {selectedService.id}
@@ -425,14 +425,14 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                 {!paymentMethod && (
                   <div className="space-y-6">
-                    <Card className="bg-gradient-to-br from-violet-900/30 to-purple-900/30 border-violet-800/50 backdrop-blur-sm">
-                      <CardContent className="p-5">
-                        <div className="space-y-5">
+                    <Card className="bg-gradient-to-br from-violet-900/30 to-purple-900/30 border-violet-800/50 rounded-xl">
+                      <CardContent className="p-6">
+                        <div className="space-y-6">
                           <div className="text-center">
-                            <label className="text-lg font-bold text-violet-300">
+                            <label className="text-xl font-bold text-violet-300">
                               Select Quantity
                             </label>
-                            <p className="text-xs text-violet-400/70 mt-1">
+                            <p className="text-sm text-violet-400 mt-1">
                               Choose how many units you want to order
                             </p>
                           </div>
@@ -442,7 +442,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                               onClick={() => adjustQuantity(-1000)}
                               variant="outline"
                               size="sm"
-                              className="w-10 h-10 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
+                              className="w-12 h-12 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
                               disabled={Number.parseInt(formData.quantity) <= 1000}
                             >
                               -
@@ -452,7 +452,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                               <Input
                                 value={formData.quantity}
                                 onChange={(e) => handleInputChange("quantity", e.target.value)}
-                                className="text-center text-xl font-bold bg-violet-950/50 border-violet-800/50 text-white focus:border-violet-500 transition-all duration-300"
+                                className="text-center text-2xl font-bold bg-violet-950/50 border-violet-800/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
                                 type="number"
                                 min="1"
                               />
@@ -462,20 +462,20 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                               onClick={() => adjustQuantity(1000)}
                               variant="outline"
                               size="sm"
-                              className="w-10 h-10 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
+                              className="w-12 h-12 rounded-full bg-violet-900/50 hover:bg-violet-800 border-violet-700/50 text-violet-300 hover:text-white transition-all duration-300"
                             >
                               +
                             </Button>
                           </div>
 
-                          <div className="grid grid-cols-4 gap-2">
+                          <div className="grid grid-cols-4 gap-3">
                             {[1000, 5000, 10000, 25000].map((preset) => (
                               <Button
                                 key={preset}
                                 onClick={() => setPresetQuantity(preset)}
                                 variant={formData.quantity === preset.toString() ? "default" : "outline"}
                                 size="sm"
-                                className={`text-xs transition-all duration-300 ${
+                                className={`text-lg transition-all duration-300 ${
                                   formData.quantity === preset.toString()
                                     ? "bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/20"
                                     : "bg-violet-900/50 hover:bg-violet-800/50 border-violet-700/50 text-violet-300 hover:text-white"
@@ -489,19 +489,19 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                       </CardContent>
                     </Card>
 
-                    <Card className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border-blue-800/50 backdrop-blur-sm">
-                      <CardContent className="p-5">
-                        <div className="space-y-3">
-                          <div className="text-sm font-bold text-blue-300">
+                    <Card className="bg-gradient-to-br from-blue-900/30 to-indigo-900/30 border-blue-800/50 rounded-xl">
+                      <CardContent className="p-6">
+                        <div className="space-y-4">
+                          <div className="text-lg font-bold text-blue-300">
                             💰 Price Calculator:
                           </div>
-                          <div className="text-xs text-blue-400/80">
+                          <div className="text-sm text-blue-400">
                             Quantity: {Number.parseInt(formData.quantity) || 0} units
                           </div>
-                          <div className="text-xs text-blue-400/80">
+                          <div className="text-sm text-blue-400">
                             Price per 1000: €{selectedService.price.toFixed(2)}
                           </div>
-                          <div className="text-lg font-bold text-blue-300">
+                          <div className="text-2xl font-bold text-blue-300">
                             Total Price: €
                             {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
                           </div>
@@ -510,17 +510,17 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     </Card>
 
                     <div className="space-y-4">
-                      <h3 className="text-sm font-bold text-gray-300">Select Payment Method:</h3>
+                      <h3 className="text-lg font-bold text-white">Select Payment Method:</h3>
                       <div className="grid grid-cols-2 gap-4">
                         <Button
                           onClick={() => setPaymentMethod("paypal")}
-                          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-500/20 transition-all duration-300"
+                          className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-lg py-4 rounded-xl shadow-lg shadow-blue-500/20 transition-all duration-300"
                         >
                           PayPal
                         </Button>
                         <Button
                           onClick={() => setPaymentMethod("crypto")}
-                          className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white shadow-lg shadow-orange-500/20 transition-all duration-300"
+                          className="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white text-lg py-4 rounded-xl shadow-lg shadow-orange-500/20 transition-all duration-300"
                         >
                           Crypto
                         </Button>
@@ -530,25 +530,19 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 )}
 
                 {paymentMethod === "paypal" && (
-                  <Card className="bg-gradient-to-br from-yellow-900/30 to-amber-900/30 border-yellow-800/50 backdrop-blur-sm">
-                    <CardContent className="p-5">
+                  <Card className="bg-gradient-to-br from-yellow-900/30 to-amber-900/30 border-yellow-800/50 rounded-xl">
+                    <CardContent className="p-6">
                       <div className="space-y-4">
-                        <div className="text-sm font-bold text-yellow-300">Important:</div>
-                        <ul className="text-xs text-yellow-400/80 space-y-2">
-                          <li>
-                            • Do not include any notes in your payment. Payments with notes will be rejected and marked
-                            as invalid.
-                          </li>
-                          <li>• Minimum payment amount: €3.</li>
-                          <li>• All payments must be done in € Euros</li>
-                          <li>
-                            • Order ONLY through Friends & Family! If your payment is not sent via Friends & Family, it
-                            will be invalid.
-                          </li>
+                        <div className="text-lg font-bold text-yellow-300">Important PayPal Instructions:</div>
+                        <ul className="text-sm text-yellow-400 space-y-2">
+                          <li>• Do not include any notes in your payment</li>
+                          <li>• Minimum payment amount: €3</li>
+                          <li>• All payments must be in € Euros</li>
+                          <li>• Send ONLY via Friends & Family</li>
                         </ul>
-                        <div className="text-center mt-5 p-4 bg-gradient-to-br from-yellow-900/40 to-amber-900/40 rounded-xl border border-yellow-700/50 backdrop-blur-sm">
-                          <div className="text-lg font-bold text-yellow-300">
-                            𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗻𝗱 𝘆𝗼𝘂𝗿 𝗽𝗮𝘆𝗺𝗲𝗻𝘁 𝘃𝗶𝗮 𝗣𝗮𝘆𝗣𝗮𝗹 𝘁𝗼: 𝘂𝗻𝗿𝗲𝗮𝗹030
+                        <div className="mt-4 p-4 bg-gradient-to-br from-yellow-900/40 to-amber-900/40 rounded-xl border border-yellow-700/50">
+                          <div className="text-center text-lg font-bold text-yellow-300">
+                            𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝗲𝗻𝗱 𝘆𝗼𝘂𝗿 𝗽𝗮𝘆𝗺𝗲𝗻𝘁 𝘁𝗼: 𝘂𝗻𝗿𝗲𝗮𝗹030
                           </div>
                         </div>
                       </div>
@@ -558,23 +552,23 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
 
                 {paymentMethod === "crypto" && !cryptoType && (
                   <div className="space-y-4">
-                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 backdrop-blur-sm">
-                      <CardContent className="p-5">
-                        <div className="text-sm font-bold text-green-300">
+                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 rounded-xl">
+                      <CardContent className="p-6">
+                        <div className="text-lg font-bold text-green-300">
                           Minimum payment: €1
                         </div>
                       </CardContent>
                     </Card>
 
-                    <h3 className="text-sm font-bold text-gray-300">Select Cryptocurrency:</h3>
+                    <h3 className="text-lg font-bold text-white">Select Cryptocurrency:</h3>
                     <div className="grid grid-cols-3 gap-3">
-                      <Button onClick={() => setCryptoType("BTC")} variant="outline" className="text-xs border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
+                      <Button onClick={() => setCryptoType("BTC")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
                         BTC
                       </Button>
-                      <Button onClick={() => setCryptoType("LTC")} variant="outline" className="text-xs border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
+                      <Button onClick={() => setCryptoType("LTC")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
                         LTC
                       </Button>
-                      <Button onClick={() => setCryptoType("ETH")} variant="outline" className="text-xs border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
+                      <Button onClick={() => setCryptoType("ETH")} variant="outline" className="text-lg border-violet-700/50 text-violet-300 hover:bg-violet-900/50 hover:text-white transition-all duration-300">
                         ETH
                       </Button>
                     </div>
@@ -582,11 +576,11 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 )}
 
                 {paymentMethod === "crypto" && cryptoType && (
-                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 backdrop-blur-sm">
-                    <CardContent className="p-5">
+                  <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 rounded-xl">
+                    <CardContent className="p-6">
                       <div className="space-y-3">
-                        <div className="text-sm font-bold text-gray-300">Payment Address {cryptoType}:</div>
-                        <div className="text-xs font-mono bg-gray-950/50 p-3 rounded border border-gray-700/50 text-gray-300 break-all">
+                        <div className="text-lg font-bold text-gray-300">Payment Address {cryptoType}:</div>
+                        <div className="text-sm font-mono bg-gray-950/50 p-4 rounded border border-gray-700/50 text-gray-300 break-all">
                           {cryptoAddresses[cryptoType]}
                         </div>
                       </div>
@@ -595,72 +589,71 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 )}
 
                 {paymentMethod && (paymentMethod === "paypal" || cryptoType) && (
-                  <div className="space-y-5">
-                    <div className="space-y-3">
-                      <label className="text-sm font-bold text-gray-300">
+                  <div className="space-y-6">
+                    <div className="space-y-4">
+                      <label className="text-lg font-bold text-white">
                         Your Link: <span className="text-red-400">*</span>
                       </label>
                       <Input
                         value={formData.link}
                         onChange={(e) => handleInputChange("link", e.target.value)}
                         placeholder="Enter your link here"
-                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300"
+                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
                         required
                       />
                     </div>
 
-                    <div className="space-y-3">
-                      <label className="text-sm font-bold text-gray-300">Discord Username</label>
+                    <div className="space-y-4">
+                      <label className="text-lg font-bold text-white">Discord Username (Optional)</label>
                       <Input
                         value={formData.discordUsername}
                         onChange={(e) => handleInputChange("discordUsername", e.target.value)}
                         placeholder="Enter your Discord username"
-                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300"
+                        className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
                       />
-                      <p className="text-xs text-gray-400/60">
-                        You can fill this out so we can help you quicker and easier
+                      <p className="text-sm text-gray-400">
+                        Helps us provide faster support when issues occur
                       </p>
                     </div>
 
                     {paymentMethod === "paypal" && (
-                      <div className="space-y-3">
-                        <label className="text-sm font-bold text-gray-300">
+                      <div className="space-y-4">
+                        <label className="text-lg font-bold text-white">
                           PayPal Username: <span className="text-red-400">*</span>
                         </label>
                         <Input
                           value={formData.paypalUsername}
                           onChange={(e) => handleInputChange("paypalUsername", e.target.value)}
                           placeholder="Enter your PayPal username"
-                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300"
+                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
                           required
                         />
                       </div>
                     )}
 
                     {paymentMethod === "crypto" && (
-                      <div className="space-y-3">
-                        <label className="text-sm font-bold text-gray-300">Your Payment Wallet Address (Optional):</label>
+                      <div className="space-y-4">
+                        <label className="text-lg font-bold text-white">Your Wallet Address (Optional)</label>
                         <Input
                           value={formData.optimalAddress}
                           onChange={(e) => handleInputChange("optimalAddress", e.target.value)}
-                          placeholder="Enter your preferred crypto address (optional)"
-                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300"
+                          placeholder="Enter your preferred crypto address"
+                          className="bg-gray-900/50 border-gray-700/50 text-white focus:border-violet-500 transition-all duration-300 rounded-lg"
                         />
-                        <p className="text-xs text-gray-400/60">
-                          This is optimal, as it helps you receive faster and more efficient support when problems
-                          occur.
+                        <p className="text-sm text-gray-400">
+                          Optional but recommended for faster support
                         </p>
                       </div>
                     )}
 
-                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 backdrop-blur-sm">
-                      <CardContent className="p-5">
-                        <div className="space-y-3">
-                          <div className="text-sm font-bold text-green-300">Order Summary:</div>
-                          <div className="text-xs text-green-400/80">
+                    <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border-green-800/50 rounded-xl">
+                      <CardContent className="p-6">
+                        <div className="space-y-4">
+                          <div className="text-lg font-bold text-green-300">Order Summary:</div>
+                          <div className="text-sm text-green-400">
                             {Number.parseInt(formData.quantity) || 0} units of {selectedService.title}
                           </div>
-                          <div className="text-lg font-bold text-green-300">
+                          <div className="text-2xl font-bold text-green-300">
                             Total Amount to Pay: €
                             {calculatePrice(selectedService, Number.parseInt(formData.quantity) || 0).toFixed(2)}
                           </div>
@@ -668,18 +661,18 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                       </CardContent>
                     </Card>
 
-                    <div className="flex gap-3 pt-4">
+                    <div className="flex gap-4 pt-2">
                       <Button
                         onClick={resetSelection}
                         variant="outline"
-                        className="flex-1 bg-gray-900/50 hover:bg-gray-800/50 border-gray-700/50 text-gray-300 hover:text-white transition-all duration-300"
+                        className="flex-1 bg-gray-900/50 hover:bg-gray-800/50 border-gray-700/50 text-gray-300 hover:text-white transition-all duration-300 rounded-lg"
                         disabled={isSubmitting}
                       >
                         Back
                       </Button>
                       <Button
                         onClick={sendToDiscord}
-                        className="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/20 transition-all duration-300"
+                        className="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/20 transition-all duration-300 rounded-lg"
                         disabled={
                           isSubmitting ||
                           !formData.link ||
