@@ -65,172 +65,29 @@ function Loading() {
   )
 }
 
-// Custom Network Dropdown Component with site styling
-function NetworkDropdown({
-  selectedNetwork,
-  setSelectedNetwork,
-  networks,
-}: {
-  selectedNetwork: string
-  setSelectedNetwork: (network: string) => void
-  networks: any[]
-}) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selected, setSelected] = useState(selectedNetwork)
-  
-  // Filter networks to only include the specified IDs
-  const allowedNetworkIds = [
-    "all", 
-    "instagram", 
-    "tiktok", 
-    "twitter", 
-    "youtube", 
-    "telegram", 
-    "facebook", 
-    "twitch", 
-    "spotify", 
-    "reddit", 
-    "whatsapp", 
-    "snapchat", 
-    "kick", 
-    "discord", 
-    "google"
-  ];
-  
-  const filteredNetworks = networks.filter(network => allowedNetworkIds.includes(network.id));
-  
-  // Network options
-  const networkOptions = [
-    { value: "all", label: "All Networks" },
-    ...filteredNetworks.map(network => ({
-      value: network.id,
-      label: network.name
-    }))
-  ];
-
-  const handleSelect = (optionValue: string) => {
-    setSelected(optionValue)
-    setSelectedNetwork(optionValue)
-    setIsOpen(false)
-  }
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && !(event.target as Element).closest('.network-dropdown')) {
-        setIsOpen(false)
-      }
-    }
-    
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [isOpen])
-
-  return (
-    <div className={`relative network-dropdown ${isOpen ? 'z-50' : ''}`}>
-      <div
-        className="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white text-gray-900 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 flex justify-between items-center hover:border-blue-400"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="truncate text-gray-800">
-          {selected ? networkOptions.find(opt => opt.value === selected)?.label || "All Networks" : "All Networks"}
-        </span>
-        <svg
-          className={`h-5 w-5 text-gray-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
-      </div>
-      
-      {isOpen && (
-        <div className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-lg shadow-lg max-h-60 overflow-y-auto transition-all duration-200 transform origin-top">
-          {networkOptions.map((option) => (
-            <div
-              key={option.value}
-              className={`px-4 py-3 cursor-pointer transition-colors duration-150 ${
-                selected === option.value 
-                  ? 'bg-blue-100 text-blue-700 font-medium' 
-                  : 'text-gray-800 hover:bg-gray-100'
-              }`}
-              onClick={() => handleSelect(option.value)}
-            >
-              {option.label}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-// Enhanced ProductsSearchBar component with consistent styling
-function EnhancedProductsSearchBar({
+// Simple Search Bar Component
+function SimpleSearchBar({
   searchQuery,
   setSearchQuery,
-  selectedNetwork,
-  setSelectedNetwork,
-  networks,
-  currency,
-  setCurrency,
 }: {
   searchQuery: string
   setSearchQuery: (query: string) => void
-  selectedNetwork: string
-  setSelectedNetwork: (network: string) => void
-  networks: any[]
-  currency: string
-  setCurrency: (currency: string) => void
 }) {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 md:px-6 py-6">
-      <div className="flex flex-col md:flex-row gap-4">
-        {/* Search Bar - Enhanced styling */}
-        <div className="flex-1 relative">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search services..."
-            className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-800 placeholder-gray-500"
-          />
+      <div className="flex-1 relative">
+        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+          <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
         </div>
-
-        {/* Network Selector - Enhanced styling */}
-        <div className="w-full md:w-48">
-          <NetworkDropdown
-            selectedNetwork={selectedNetwork}
-            setSelectedNetwork={setSelectedNetwork}
-            networks={networks}
-          />
-        </div>
-
-        {/* Currency Selector - Enhanced styling */}
-        <div className="relative w-full md:w-40">
-          <select
-            value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
-            className="w-full pl-4 pr-10 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none bg-white text-gray-800"
-          >
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-            <option value="JPY">JPY</option>
-            <option value="BTC">BTC</option>
-          </select>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-            <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </div>
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search services..."
+          className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white text-gray-800"
+        />
       </div>
     </div>
   )
@@ -324,14 +181,10 @@ export default function ProductsPage() {
     <div className="min-h-screen bg-background text-foreground">
       <ProductsHeader currency={currency} setCurrency={setCurrency} onChangelogClick={() => setIsChangelogOpen(true)} />
 
-      <EnhancedProductsSearchBar
+      {/* Simple Search Bar Only */}
+      <SimpleSearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
-        selectedNetwork={selectedNetwork}
-        setSelectedNetwork={setSelectedNetwork}
-        networks={uniqueNetworks}
-        currency={currency}
-        setCurrency={setCurrency}
       />
 
       {/* Content */}
