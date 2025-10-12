@@ -165,6 +165,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
   }
 
   const calculatePrice = (service: Service, quantity: number) => {
+    if (!service) return 0
     return (service.price * quantity) / 1000 // Price is per 1000 units
   }
 
@@ -187,7 +188,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
   }
 
   const sendToDiscord = async () => {
-    if (isRateLimited) {
+    if (isRateLimited || !selectedService) {
       return
     }
 
@@ -305,6 +306,11 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
     setPaymentMethod(null)
   }
 
+  // Early return if no service is selected and not loading
+  if (!selectedService && !isLoading) {
+    return null
+  }
+
   return (
     <Dialog
       open={!!selectedService || isLoading}
@@ -365,8 +371,12 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
             </DialogHeader>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
-              <div className="text-gray-400 text-sm">{selectedService?.title}</div>
-              <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService?.id}</Badge>
+              {selectedService && (
+                <>
+                  <div className="text-gray-400 text-sm">{selectedService.title}</div>
+                  <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService.id}</div>
+                </>
+              )}
 
               <div className="bg-gray-900/50 p-4 rounded-lg border border-gray-800/50">
                 <div className="flex items-center justify-between">
@@ -419,10 +429,12 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                     </div>
                   </div>
 
-                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                    <div className="text-gray-400 text-sm mb-1">Price per 1000: {formatPrice(selectedService?.price || 0, selectedCurrency)}</div>
-                    <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
-                  </div>
+                  {selectedService && (
+                    <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
+                      <div className="text-gray-400 text-sm mb-1">Price per 1000: {formatPrice(selectedService.price, selectedCurrency)}</div>
+                      <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 gap-4">
                     <button onClick={() => setPaymentMethod("paypal")} className="bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-gray-700/50">
@@ -461,10 +473,10 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 </div>
               )}
 
-              {paymentMethod && (
+              {paymentMethod && selectedService && (
                 <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
                   <div className="text-gray-400 text-sm mb-1">{Number.parseInt(formData.quantity) || 0} units</div>
-                  <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
+                  <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
                 </div>
               )}
             </div>
@@ -479,6 +491,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
                 onClick={sendToDiscord}
                 disabled={
                   isSubmitting ||
+                  !selectedService ||
                   !formData.link ||
                   !formData.paypalUsername ||
                   isRateLimited
