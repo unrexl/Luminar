@@ -374,7 +374,7 @@ export function OrderDialog({ selectedService, isLoading, onClose, formatPrice, 
               {selectedService && (
                 <>
                   <div className="text-gray-400 text-sm">{selectedService.title}</div>
-                  <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService.id}</div>
+                  <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService.id}</Badge>
                 </>
               )}
 
