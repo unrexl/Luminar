@@ -27,7 +27,7 @@ export const metadata: Metadata = {
       "Luminar is one of the best SMM Service Botting Panel, with services for a lot of Social Media Platforms.",
     type: "website",
   },
-    generator: 'v0.app'
+    generator: 'Luminar SMM Panel v1.0'
 }
 
 export default function RootLayout({
