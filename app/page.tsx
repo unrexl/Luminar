@@ -78,10 +78,10 @@ function ProfileModal({ isOpen, onClose }) {
               <div className={`mb-8 transform transition-all duration-700 delay-200 ease-out ${
                 isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
               }`}>
-                <h2 className="text-3xl font-bold text-white mb-2">unrexl</h2>
+                <h2 className="text-3xl font-bold text-white mb-2">rex</h2>
                 <p className="text-red-400/90 font-medium mb-4">@unreal030</p>
                 <p className="text-white/70 text-sm leading-relaxed max-w-xs mx-auto">
-                  I let designers code and coders design
+                  >_<
                 </p>
               </div>
 
@@ -201,7 +201,7 @@ export default function HomePage() {
                   <div className="flex items-center gap-4">
                     <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-14 h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
-                      <span className="text-white font-bold text-lg">unrexl</span>
+                      <span className="text-white font-bold text-lg">rex</span>
                       <span className="text-red-400 font-semibold text-sm mb-1">Owner</span>
                       <span className="text-gray-400 text-sm">@unreal030</span>
                     </div>
