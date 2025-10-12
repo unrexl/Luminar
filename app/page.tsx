@@ -156,15 +156,9 @@ export default function HomePage() {
             </a>
             <a
               href="/refund-policy"
-              className="hidden md:inline px-5 py-2 text-sm font-medium text-white bg-gray-800/80 rounded-lg hover:bg-gray-700 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105 shadow-sm"
+              className="px-5 py-2 text-sm font-medium text-white bg-gray-800/80 rounded-lg hover:bg-gray-700 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105 shadow-sm"
             >
               Refund Policy
-            </a>
-            <a
-              href="/products"
-              className="px-5 py-2 text-sm font-medium text-white bg-violet-600 hover:bg-violet-500 rounded-lg transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-violet-500/25 hover:scale-105 border border-violet-500/20"
-            >
-              See products
             </a>
           </nav>
         </div>
