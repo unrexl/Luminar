@@ -58,12 +58,20 @@ function Loading() {
   )
 }
 
-// Header Component
-function Header() {
+// Header Component with Integrated Search
+function Header({
+  searchQuery,
+  setSearchQuery,
+}: {
+  searchQuery: string
+  setSearchQuery: (query: string) => void
+}) {
+  const [isSearchFocused, setIsSearchFocused] = useState(false)
+
   return (
     <header className="w-full backdrop-blur-md bg-black/70 border-b border-gray-800/50 sticky top-0 z-50 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-4">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-6">
           {/* Left: Brand Logo and Name */}
           <div className="flex items-center space-x-3">
             <img 
@@ -74,11 +82,39 @@ function Header() {
             <span className="text-xl font-bold text-white">Luminar Services</span>
           </div>
 
-          {/* Right: Navigation Buttons */}
-          <div className="flex items-center space-x-3">
+          {/* Right: Search Bar and Navigation Buttons */}
+          <div className="flex items-center gap-3">
+            {/* Search Bar */}
+            <div className="relative">
+              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg 
+                  className={`h-4 w-4 transition-all duration-300 ${isSearchFocused ? 'text-indigo-400' : 'text-gray-500'}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onFocus={() => setIsSearchFocused(true)}
+                onBlur={() => setIsSearchFocused(false)}
+                placeholder="Search services..."
+                className={`w-64 pl-10 pr-4 py-2 text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
+                  isSearchFocused 
+                    ? 'border-indigo-500/50 ring-2 ring-indigo-500/30 w-80' 
+                    : 'border-gray-700/50'
+                }`}
+              />
+            </div>
+
+            {/* Navigation Buttons */}
             <a
               href="https://030.vercel.app/"
-              className="px-5 py-2.5 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600"
+              className="px-5 py-2 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
             >
               Home
             </a>
@@ -86,13 +122,13 @@ function Header() {
               href="https://discord.gg/dtTCCxu3TA"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 text-sm font-medium text-white bg-indigo-600/80 rounded-xl hover:bg-indigo-500 transition-all duration-300 backdrop-blur-sm border border-indigo-500/50 hover:border-indigo-400"
+              className="px-5 py-2 text-sm font-medium text-white bg-indigo-600/80 rounded-xl hover:bg-indigo-500 transition-all duration-300 backdrop-blur-sm border border-indigo-500/50 hover:border-indigo-400 hover:scale-105"
             >
               Discord
             </a>
             <a
               href="https://030.vercel.app/refund-policy"
-              className="px-5 py-2.5 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600"
+              className="px-5 py-2 text-sm font-medium text-gray-300 bg-gray-800/60 rounded-xl hover:bg-gray-700/80 transition-all duration-300 backdrop-blur-sm border border-gray-700/50 hover:border-gray-600 hover:scale-105"
             >
               Refund Policy
             </a>
