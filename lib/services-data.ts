@@ -4,8 +4,6 @@ export interface Service {
   category: string
   title: string
   price: number
-  oldPrice?: number
-  discount: number
   icon: string
 }
 
@@ -43,8 +41,6 @@ export const services: Service[] = [
     category: "Instagram Followers (Refill Guaranteed)",
     title: "Instagram Followers [ Max 10M ] | HQ Accounts | Drop 0-5% | No Refill ⚠️ | Instant Start | Day 500K 🚀",
     price: 16.4828,
-    oldPrice: 19.7794,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -53,8 +49,6 @@ export const services: Service[] = [
     category: "Instagram Followers (Refill Guaranteed)",
     title: "Instagram Followers [ Max 10M ] | UHQ Accounts | Drop 0-5% | 30 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 18.5934,
-    oldPrice: 22.3121,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -63,8 +57,6 @@ export const services: Service[] = [
     category: "Instagram Followers (Refill Guaranteed)",
     title: "Instagram Followers [ Max 10M ] | UHQ Accounts | Drop 0-5% | 60 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 19.85,
-    oldPrice: 23.82,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -73,8 +65,6 @@ export const services: Service[] = [
     category: "Instagram Followers (Refill Guaranteed)",
     title: "Instagram Followers [ Max 10M ] | UHQ Accounts | Drop 0-5% | 90 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 20.3525,
-    oldPrice: 24.423,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -83,8 +73,6 @@ export const services: Service[] = [
     category: "Instagram Followers (Refill Guaranteed)",
     title: "Instagram Followers [ Max 10M ] | UHQ Accounts | Drop 0-5% | 365 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 22.3625,
-    oldPrice: 26.835,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
 
@@ -95,8 +83,6 @@ export const services: Service[] = [
     category: "Instagram Likes",
     title: "Instagram Likes [ Max 1M ] | UHQ Accounts | Low Drop | No Refill ⚠️ | Fast | Day 100K 🚀",
     price: 1.0552,
-    oldPrice: 1.2662,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -105,8 +91,6 @@ export const services: Service[] = [
     category: "Instagram Likes",
     title: "Instagram Likes [ Max 1M ] | UHQ Accounts | Low Drop | 30 Days ♻️ | Fast | Day 100K 🚀",
     price: 1.1055,
-    oldPrice: 1.3266,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -115,8 +99,6 @@ export const services: Service[] = [
     category: "Instagram Likes",
     title: "Instagram Likes [ Max 1M ] | UHQ Accounts | Low Drop | 60 Days ♻️ | Fast | Day 100K 🚀",
     price: 1.1559,
-    oldPrice: 1.3871,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -125,8 +107,6 @@ export const services: Service[] = [
     category: "Instagram Likes",
     title: "Instagram Likes [ Max 1M ] | UHQ Accounts | Low Drop | 90 Days ♻️ | Fast | Day 100K 🚀",
     price: 1.2062,
-    oldPrice: 1.4474,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -135,8 +115,6 @@ export const services: Service[] = [
     category: "Instagram Likes",
     title: "Instagram Likes [ Max 1M ] | UHQ Accounts | Low Drop | 365 Days ♻️ | Fast | Day 100K 🚀",
     price: 1.2562,
-    oldPrice: 1.5074,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
 
@@ -147,8 +125,6 @@ export const services: Service[] = [
     category: "Instagram Views",
     title: "Instagram Video Views [ Max Unlimited ] | All Link | Instant Start 🚀",
     price: 0.0041,
-    oldPrice: 0.0049,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -157,8 +133,6 @@ export const services: Service[] = [
     category: "Instagram Views",
     title: "Instagram Video Views [ Max Unlimited ] | All Link | Super Fast Speed 🚀",
     price: 0.0049,
-    oldPrice: 0.0059,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
 
@@ -169,8 +143,6 @@ export const services: Service[] = [
     category: "Instagram Other Services",
     title: "Instagram Story Likes | Max 100K | Day 100K",
     price: 1.4323,
-    oldPrice: 1.7188,
-    discount: 17,
     icon: "/icons/instagram.jpeg",
   },
 
@@ -181,8 +153,6 @@ export const services: Service[] = [
     category: "TikTok Followers (Refill Guaranteed)",
     title: "Tiktok Followers [ Max 1M ] | UHQ Accounts | Drop 0-5% | No Refill ⚠️ | Fast | Day 200K 🚀",
     price: 6.7841,
-    oldPrice: 8.1409,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -191,8 +161,6 @@ export const services: Service[] = [
     category: "TikTok Followers (Refill Guaranteed)",
     title: "Tiktok Followers [ Max 1M ] | UHQ Accounts | Drop 0-5% | 30 Days ♻️ | Fast | Day 200K 🚀",
     price: 7.0355,
-    oldPrice: 8.4426,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -201,8 +169,6 @@ export const services: Service[] = [
     category: "TikTok Followers (Refill Guaranteed)",
     title: "Tiktok Followers [ Max 1M ] | UHQ Accounts | Drop 0-5% | 90 Days ♻️ | Fast | Day 200K 🚀",
     price: 7.2866,
-    oldPrice: 8.7439,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -211,8 +177,6 @@ export const services: Service[] = [
     category: "TikTok Followers (Refill Guaranteed)",
     title: "Tiktok Followers [ Max 1M ] | UHQ Accounts | Drop 0-5% | 365 Days ♻️ | Fast | Day 200K 🚀",
     price: 7.7892,
-    oldPrice: 9.347,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
 
@@ -223,8 +187,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "Tiktok Live Stream Likes [ Max 100M ] | HQ Accounts | Start: 0-5 Minutes | Day 500K 🚀",
     price: 0.0227,
-    oldPrice: 0.0272,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -233,8 +195,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "Tiktok Live Stream Likes [ Max Unlimited ] | Instant Start | Day 500K 🚀",
     price: 0.0352,
-    oldPrice: 0.0422,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -243,8 +203,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "TikTok Likes [ Max 100K ] | UHQ Accounts | Low Drop | No Refill ⚠️ | Fast | Day 100K 🚀",
     price: 0.211,
-    oldPrice: 0.2532,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -253,8 +211,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "TikTok Likes [ Max 100K ] | UHQ Accounts | Low Drop | 30 Days ♻️ | Fast | Day 100K 🚀",
     price: 0.2162,
-    oldPrice: 0.2594,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -263,8 +219,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "TikTok Likes [ Max 100K ] | UHQ Accounts | Low Drop | 60 Days ♻️ | Fast | Day 100K 🚀",
     price: 0.2212,
-    oldPrice: 0.2654,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -273,8 +227,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "TikTok Likes [ Max 100K ] | UHQ Accounts | Low Drop | 90 Days ♻️ | Fast | Day 100K 🚀",
     price: 0.2261,
-    oldPrice: 0.2713,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -283,8 +235,6 @@ export const services: Service[] = [
     category: "TikTok Likes",
     title: "TikTok Likes [ Max 100K ] | UHQ Accounts | Low Drop | 365 Days ♻️ | Fast | Day 100K 🚀",
     price: 0.2311,
-    oldPrice: 0.2773,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
 
@@ -295,8 +245,6 @@ export const services: Service[] = [
     category: "TikTok Views",
     title: "TikTok Video Views [ Max Unlimited ] | Instant Start | Day 10M | Fast 🚀",
     price: 0.0387,
-    oldPrice: 0.0464,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -305,8 +253,6 @@ export const services: Service[] = [
     category: "TikTok Views",
     title: "TikTok Video Views [ Max Unlimited ] | Instant Start | Day 10M | Ultra fast🚀",
     price: 0.0402,
-    oldPrice: 0.0482,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -315,8 +261,6 @@ export const services: Service[] = [
     category: "TikTok Views",
     title: "TikTok Video Views [ Max Unlimited ] | HQ | No Refill ⚠️ | Instant Start | Day 100M 🚀",
     price: 0.0402,
-    oldPrice: 0.0482,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
 
@@ -327,8 +271,6 @@ export const services: Service[] = [
     category: "TikTok Shares",
     title: "TikTok Share [ Max Unlimited ] | HQ | Non Drop | No Refill ⚠️ | Instant Start | Day 500K 🚀",
     price: 0.2261,
-    oldPrice: 0.2713,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -337,8 +279,6 @@ export const services: Service[] = [
     category: "TikTok Shares",
     title: "TikTok Share [ Max Unlimited ] | HQ | Non Drop | 365 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 0.2511,
-    oldPrice: 0.3013,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
 
@@ -349,8 +289,6 @@ export const services: Service[] = [
     category: "TikTok Saves",
     title: "TikTok Save [ Max Unlimited ] | HQ | Non Drop | No Refill ⚠️ | Instant Start | Day 500K 🚀",
     price: 0.0451,
-    oldPrice: 0.0541,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
   {
@@ -359,8 +297,6 @@ export const services: Service[] = [
     category: "TikTok Saves",
     title: "TikTok Save [ Max Unlimited ] | HQ | Non Drop | 365 Days ♻️ | Instant Start | Day 500K 🚀",
     price: 0.0503,
-    oldPrice: 0.0604,
-    discount: 17,
     icon: "/icons/tiktok.png",
   },
 
@@ -371,8 +307,6 @@ export const services: Service[] = [
     category: "Twitter Followers",
     title: "Twitter Followers [ Worldwide 🌏 ] [ Max 20K ] | HQ Accounts | No Refill ⚠️ | Instant Start | Day 20K 🚀",
     price: 4.7741,
-    oldPrice: 5.7289,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -381,8 +315,6 @@ export const services: Service[] = [
     category: "Twitter Followers",
     title: "Twitter Followers [ Worldwide 🌏 ] [ Max 40K ] | HQ Accounts | No Refill ⚠️ | Instant Start | Day 40K 🚀",
     price: 5.0253,
-    oldPrice: 6.0304,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -391,8 +323,6 @@ export const services: Service[] = [
     category: "Twitter Followers",
     title: "Twitter Followers [ Worldwide 🌏 ] [ Max 100K ] | UHQ Accounts | Low Drop | No Refill ⚠️ | Instant Start | Day 100K 🚀",
     price: 15.0758,
-    oldPrice: 18.091,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
 
@@ -403,8 +333,6 @@ export const services: Service[] = [
     category: "Twitter Likes",
     title: "Twitter Likes [ Worldwide 🌍 ] [ Max 1K ] | HQ Accounts | No Refill ⚠️ | Ultra Instant Start 🚀",
     price: 2.6132,
-    oldPrice: 3.1358,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -413,8 +341,6 @@ export const services: Service[] = [
     category: "Twitter Likes",
     title: "Twitter Likes [ Worldwide 🌍 ] [ Max 50K ] | HQ Accounts | No Refill ⚠️ | Ultra Instant Start 🚀",
     price: 2.8143,
-    oldPrice: 3.3772,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -423,8 +349,6 @@ export const services: Service[] = [
     category: "Twitter Likes",
     title: "Twitter Likes [ Worldwide 🌍 ] [ Max 100K ] | HQ Accounts | No Refill ⚠️ | Ultra Instant Start 🚀",
     price: 2.8393,
-    oldPrice: 3.4072,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -433,8 +357,6 @@ export const services: Service[] = [
     category: "Twitter Likes",
     title: "Twitter Likes [ Worldwide 🌍 ] [ Max 300K ] | HQ Accounts | No Refill ⚠️ | Ultra Instant Start 🚀",
     price: 2.9397,
-    oldPrice: 3.5276,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
 
@@ -445,8 +367,6 @@ export const services: Service[] = [
     category: "Twitter Views",
     title: "Twitter Tweet - Video Views [ Max Unlimited ] | Instant | Drop 0% | No Refill ⚠️ | Day 2M 🚀🚀",
     price: 0.034,
-    oldPrice: 0.0408,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -455,8 +375,6 @@ export const services: Service[] = [
     category: "Twitter Views",
     title: "Twitter Tweet - Video Views [ Max Unlimited ] | Instant | Drop 0% | 30 Days ♻️ | Day 2M 🚀🚀",
     price: 0.0358,
-    oldPrice: 0.043,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -465,8 +383,6 @@ export const services: Service[] = [
     category: "Twitter Views",
     title: "Twitter Tweet - Video Views [ Max Unlimited ] | Instant | Drop 0% | 60 Days ♻️ | Day 2M 🚀🚀",
     price: 0.0367,
-    oldPrice: 0.044,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -475,8 +391,6 @@ export const services: Service[] = [
     category: "Twitter Views",
     title: "Twitter Tweet - Video Views [ Max Unlimited ] | Instant | Drop 0% | 90 Days ♻️ | Day 2M 🚀🚀",
     price: 0.0378,
-    oldPrice: 0.0454,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -485,8 +399,6 @@ export const services: Service[] = [
     category: "Twitter Views",
     title: "Twitter Tweet - Video Views [ Max Unlimited ] | Instant | Drop 0% | 365 Days ♻️ | Day 2M 🚀🚀",
     price: 0.0387,
-    oldPrice: 0.0464,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
 
@@ -497,8 +409,6 @@ export const services: Service[] = [
     category: "Twitter Reposts",
     title: "Twitter Retweet [ Global 🌍 ] [ Max 100K ] | HQ | No Refill ⚠️ | Instant Start | Day 100K",
     price: 3.7187,
-    oldPrice: 4.4624,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -507,8 +417,6 @@ export const services: Service[] = [
     category: "Twitter Reposts",
     title: "Twitter Retweet [ Global 🌍 ] [ Max 100K ] | HQ | 30 Days ♻️ | Instant Start | Day 100K",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -517,8 +425,6 @@ export const services: Service[] = [
     category: "Twitter Reposts",
     title: "Twitter Retweet [ Global 🌍 ] [ Max 100K ] | HQ | 60 Days ♻️ | Instant Start | Day 100K",
     price: 3.8191,
-    oldPrice: 4.5829,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -527,8 +433,6 @@ export const services: Service[] = [
     category: "Twitter Reposts",
     title: "Twitter Retweet [ Global 🌍 ] [ Max 100K ] | HQ | 90 Days ♻️ | Instant Start | Day 100K",
     price: 3.8694,
-    oldPrice: 4.6433,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
   {
@@ -537,8 +441,6 @@ export const services: Service[] = [
     category: "Twitter Reposts",
     title: "Twitter Retweet [ Global 🌍 ] [ Max 100K ] | HQ | 365 Days ♻️ | Instant Start | Day 100K",
     price: 3.9198,
-    oldPrice: 4.7038,
-    discount: 17,
     icon: "/icons/twitter.png",
   },
 
@@ -549,8 +451,6 @@ export const services: Service[] = [
     category: "YouTube Subscribers",
     title: "YouTube Subscribers [ Max 1M ] | Low Quality | No Refill | Slow",
     price: 0.4522,
-    oldPrice: 0.5426,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -559,8 +459,6 @@ export const services: Service[] = [
     category: "YouTube Subscribers",
     title: "YouTube Subscribers [ Max 100K ] | High Quality | 7 Days ♻️ | Instant Start | Day 2K",
     price: 20.1011,
-    oldPrice: 24.1213,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
 
@@ -571,8 +469,6 @@ export const services: Service[] = [
     category: "YouTube Comment Likes",
     title: "YouTube Comment Likes [ Max 50K ] | Low Quality | No Refill ⚠️ | Instant Start | Day 50K",
     price: 0.6533,
-    oldPrice: 0.784,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -581,8 +477,6 @@ export const services: Service[] = [
     category: "YouTube Comment Likes",
     title: "YouTube Comment Reply Likes [ Max 50K ] | Low Quality | No Refill ⚠️ | Instant Start | Day 50K",
     price: 0.6533,
-    oldPrice: 0.784,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -591,8 +485,6 @@ export const services: Service[] = [
     category: "YouTube Comment Likes",
     title: "YouTube Comment Likes [ Max 50K ] | High Quality | 30 Days ♻️ | Instant Start | Day 50K",
     price: 0.7537,
-    oldPrice: 0.9044,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -601,8 +493,6 @@ export const services: Service[] = [
     category: "YouTube Comment Likes",
     title: "YouTube Comment Reply Likes [ Max 50K ] | High Quality | 30 Days ♻️ | Instant Start | Day 50K",
     price: 0.7537,
-    oldPrice: 0.9044,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -611,8 +501,6 @@ export const services: Service[] = [
     category: "YouTube Comment Likes",
     title: "YouTube Comment Reply Likes [ Max 50K ] | High Quality | 365 Days ♻️ | Instant Start | Day 50K",
     price: 0.8544,
-    oldPrice: 1.0253,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
 
@@ -623,8 +511,6 @@ export const services: Service[] = [
     category: "YouTube Likes",
     title: "Youtube Likes [ Max 10K ] | Start: 0-15 Min | No Warranty ⚠️ | Instant | Day 10K",
     price: 0.2011,
-    oldPrice: 0.2413,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -633,8 +519,6 @@ export const services: Service[] = [
     category: "YouTube Likes",
     title: "Youtube Likes [ Max 1M ] | Start: 0-15 Min | No Warranty ⚠️ | Instant | Day 500K",
     price: 0.2511,
-    oldPrice: 0.3013,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -643,8 +527,6 @@ export const services: Service[] = [
     category: "YouTube Likes",
     title: "Youtube Likes [ Max 1M ] | HQ Profiles | 30 Days ♻️ | SuperInstant | Day 500K ⚡️",
     price: 0.3015,
-    oldPrice: 0.3618,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
   {
@@ -653,8 +535,6 @@ export const services: Service[] = [
     category: "YouTube Likes",
     title: "Youtube Likes [ Max 1M ] | HQ Profiles | 90 Days ♻️ | SuperInstant | Day 500K ⚡️",
     price: 0.4022,
-    oldPrice: 0.4826,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
 
@@ -665,8 +545,6 @@ export const services: Service[] = [
     category: "YouTube Views",
     title: "YouTube Views [ Max 1M ] | Slow | 365 Days ♻️",
     price: 3.7187,
-    oldPrice: 4.4624,
-    discount: 17,
     icon: "/icons/youtube.png",
   },
 
@@ -677,8 +555,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 1 Post  🚀",
     price: 0.0076,
-    oldPrice: 0.0091,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -687,8 +563,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 5 Post  🚀",
     price: 0.0428,
-    oldPrice: 0.0514,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -697,8 +571,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 10 Post  🚀",
     price: 0.0879,
-    oldPrice: 0.1055,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -707,8 +579,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 15 Post  🚀",
     price: 0.1307,
-    oldPrice: 0.1568,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -717,8 +587,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 20 Post  🚀",
     price: 0.1758,
-    oldPrice: 0.211,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -727,8 +595,6 @@ export const services: Service[] = [
     category: "Telegram Views",
     title: "Telegram Post Views [ Max Unlimited ] | Last 50 Post  🚀",
     price: 0.4321,
-    oldPrice: 0.5185,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
 
@@ -739,8 +605,6 @@ export const services: Service[] = [
     category: "Telegram Members",
     title: "Telegram Members [ Max 10M ] | High Quality | No Refill ⚠️ | Instant Start | Day 100K 🚀",
     price: 3.0654,
-    oldPrice: 3.6785,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -749,8 +613,6 @@ export const services: Service[] = [
     category: "Telegram Members",
     title: "Telegram Members [ Max 10M ] | High Quality | Non Drop | 30 Days ♻️ | Instant Start | Day 100K 🚀",
     price: 3.1157,
-    oldPrice: 3.7388,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -759,8 +621,6 @@ export const services: Service[] = [
     category: "Telegram Members",
     title: "Telegram Members [ Max 10M ] | High Quality | Non Drop | 60 Days ♻️ | Instant Start | Day 100K 🚀",
     price: 3.1658,
-    oldPrice: 3.799,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -769,8 +629,6 @@ export const services: Service[] = [
     category: "Telegram Members",
     title: "Telegram Members [ Max 10M ] | High Quality | Non Drop | 90 Days ♻️ | Instant Start | Day 100K 🚀",
     price: 3.2161,
-    oldPrice: 3.8593,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
 
@@ -781,8 +639,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction  [ Red heart ❤️ ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -791,8 +647,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction  [ Fire 🔥 ] [ Max 50K ]  | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -801,8 +655,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction  [ Laugh 🤣 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -811,8 +663,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Handshake 🤝 ] [ Max 50K ]  | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -821,8 +671,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Lightning Bolt ⚡️ ] [ Max 50K ]  | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -831,8 +679,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Woozy Face 🥴 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -841,8 +687,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Neutral Face 😐] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -851,8 +695,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Eyes  👀] [ Max 50K ]  | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -861,8 +703,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Clapping Hands 👏 ] [ Max 50K ]  | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -871,8 +711,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [ Loudly Crying Face 😭 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -881,8 +719,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [Pile of Poo 💩 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -891,8 +727,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [Moai 🗿 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -901,8 +735,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [Clown Face 🤡 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
   {
@@ -911,8 +743,6 @@ export const services: Service[] = [
     category: "Telegram Reactions",
     title: "Telegram Reaction [Nerd Face 🤓 ] [ Max 50K ] | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 0.0954,
-    oldPrice: 0.1145,
-    discount: 17,
     icon: "/icons/telegram.png",
   },
 
@@ -923,8 +753,6 @@ export const services: Service[] = [
     category: "Facebook Followers",
     title: "Facebook Followers [ All Type ] [ Worldwide🌎 ] [ Max 1M ] | HQ Accounts | Low Drop | No Refill ⚠️ | Fast | Day 25K 🚀",
     price: 2.4875,
-    oldPrice: 2.985,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -933,8 +761,6 @@ export const services: Service[] = [
     category: "Facebook Followers",
     title: "Facebook Followers [ All Type ] [ Worldwide🌎 ] [ Max 1M ] | HQ Accounts | Low Drop | 30 Days ♻️ | Fast | Day 25K 🚀",
     price: 2.6132,
-    oldPrice: 3.1358,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -943,8 +769,6 @@ export const services: Service[] = [
     category: "Facebook Followers",
     title: "Facebook Followers [ All Type ] [ Worldwide🌎 ] [ Max 1M ] | HQ Accounts | Low Drop | 365 Days ♻️ | Fast | Day 25K 🚀",
     price: 2.7136,
-    oldPrice: 3.2563,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
 
@@ -955,8 +779,6 @@ export const services: Service[] = [
     category: "Facebook Likes",
     title: "Facebook Post Likes [ Max 500K ] | HQ Accounts | Low Drop | No Refill ⚠️ | Instant Start | Day 50K 🚀",
     price: 1.2062,
-    oldPrice: 1.4474,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -965,8 +787,6 @@ export const services: Service[] = [
     category: "Facebook Likes",
     title: "Facebook Post Likes [ Max 500K ] | HQ Accounts | Low Drop | 30 Days ♻️ | Instant Start | Day 50K 🚀",
     price: 1.2562,
-    oldPrice: 1.5074,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -975,8 +795,6 @@ export const services: Service[] = [
     category: "Facebook Likes",
     title: "Facebook Post Likes [ Max 500K ] | HQ Accounts | Low Drop | 60 Days ♻️ | Instant Start | Day 50K 🚀",
     price: 1.3066,
-    oldPrice: 1.5679,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -985,8 +803,6 @@ export const services: Service[] = [
     category: "Facebook Likes",
     title: "Facebook Post Likes [ Max 500K ] | HQ Accounts | Low Drop | 90 Days ♻️ | Instant Start | Day 50K 🚀",
     price: 1.3569,
-    oldPrice: 1.6283,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -995,8 +811,6 @@ export const services: Service[] = [
     category: "Facebook Likes",
     title: "Facebook Post Likes [ Max 500K ] | HQ Accounts | Low Drop | 365 Days ♻️ | Instant Start | Day 50K 🚀",
     price: 1.407,
-    oldPrice: 1.6884,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
 
@@ -1007,8 +821,6 @@ export const services: Service[] = [
     category: "Facebook Members",
     title: "Facebook Group Members [ Max 100K ] | HQ Accounts | Low Drop | No Refill ⚠️ | Fast | Day 50K 🚀",
     price: 2.7639,
-    oldPrice: 3.3167,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1017,8 +829,6 @@ export const services: Service[] = [
     category: "Facebook Members",
     title: "Facebook Group Members [ Max 100K ] | HQ Accounts | Low Drop | 30 Days ♻️ | Fast | Day 50K 🚀",
     price: 2.9147,
-    oldPrice: 3.4976,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1027,8 +837,6 @@ export const services: Service[] = [
     category: "Facebook Members",
     title: "Facebook Group Members [ Max 100K ] | HQ Accounts | Low Drop | 365 Days ♻️ | Fast | Day 50K 🚀",
     price: 3.0151,
-    oldPrice: 3.6181,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
 
@@ -1039,8 +847,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Like 👍 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1049,8 +855,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Love ❤️ ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1059,8 +863,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Care 🤗 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1069,8 +871,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Haha 😂 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1079,8 +879,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Wow 😲 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1089,8 +887,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Sad 😥 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
   {
@@ -1099,8 +895,6 @@ export const services: Service[] = [
     category: "Facebook Reactions",
     title: "Facebook Post Reaction [ Angry 🤬 ] [ Max 500K ] | No Refill ⚠️ | Day 10K",
     price: 0.367,
-    oldPrice: 0.4404,
-    discount: 17,
     icon: "/icons/facebook.png",
   },
 
@@ -1111,8 +905,6 @@ export const services: Service[] = [
     category: "Twitch Followers",
     title: "Twitch Followers  [Max: 1M] [Start Time: Instant] [Speed: 300K/Day]",
     price: 1.5077,
-    oldPrice: 1.8092,
-    discount: 17,
     icon: "/icons/twitch.png",
   },
   {
@@ -1121,8 +913,6 @@ export const services: Service[] = [
     category: "Twitch Followers",
     title: "Twitch Followers [ Max 10K ] | 30 Days Guaranteed ♻️ | Day 10K",
     price: 2.1106,
-    oldPrice: 2.5327,
-    discount: 17,
     icon: "/icons/twitch.png",
   },
 
@@ -1133,8 +923,6 @@ export const services: Service[] = [
     category: "Twitch Views",
     title: "Twitch VOD Views [ Max 10M ] | 30 Days ♻️ | Day 2M",
     price: 0.4022,
-    oldPrice: 0.4826,
-    discount: 17,
     icon: "/icons/twitch.png",
   },
 
@@ -1145,8 +933,6 @@ export const services: Service[] = [
     category: "Kick Followers",
     title: "Kick Followers [ Max 50K ] | HQ | Non Drop | No Refill ⚠️ | Day 50K",
     price: 4.1209,
-    oldPrice: 4.9451,
-    discount: 17,
     icon: "/icons/kick.png",
   },
   {
@@ -1155,8 +941,6 @@ export const services: Service[] = [
     category: "Kick Followers",
     title: "Kick Followers [ Max 50K ] | HQ | Non Drop | 30 Days ♻️ | Day 50K",
     price: 4.3216,
-    oldPrice: 5.1859,
-    discount: 17,
     icon: "/icons/kick.png",
   },
 
@@ -1167,8 +951,6 @@ export const services: Service[] = [
     category: "Kick Views",
     title: "Kick.com Live Stream Viewers [ Max 50K ] | 100% Stable | Drop 0% | 30 Minutes",
     price: 0.7036,
-    oldPrice: 0.8443,
-    discount: 17,
     icon: "/icons/kick.png",
   },
   {
@@ -1177,8 +959,6 @@ export const services: Service[] = [
     category: "Kick Views",
     title: "Kick.com Live Stream Viewers [ Max 50K ] | 100% Stable | Drop 0% | 60 Minutes",
     price: 1.407,
-    oldPrice: 1.6884,
-    discount: 17,
     icon: "/icons/kick.png",
   },
   {
@@ -1187,8 +967,6 @@ export const services: Service[] = [
     category: "Kick Views",
     title: "Kick.com Live Stream Viewers [ Max 50K ] | 100% Stable | Drop 0% | 120 Minutes",
     price: 2.8143,
-    oldPrice: 3.3772,
-    discount: 17,
     icon: "/icons/kick.png",
   },
   {
@@ -1197,8 +975,6 @@ export const services: Service[] = [
     category: "Kick Views",
     title: "Kick.com Live Stream Viewers [ Max 50K ] | 100% Stable | Drop 0% | 180 Minutes",
     price: 4.2212,
-    oldPrice: 5.0654,
-    discount: 17,
     icon: "/icons/kick.png",
   },
 
@@ -1209,8 +985,6 @@ export const services: Service[] = [
     category: "Spotify Followers",
     title: "Spotify Followers [Artist - Playlist] [1M/Day] [ Max 100M ]",
     price: 1.3869,
-    oldPrice: 1.6643,
-    discount: 17,
     icon: "/icons/spotify.png",
   },
   {
@@ -1219,8 +993,6 @@ export const services: Service[] = [
     category: "Spotify Followers",
     title: "Spotify Followers [Artist - Playlist] [1M/Day] [ Max 100M ]",
     price: 1.3869,
-    oldPrice: 1.6643,
-    discount: 17,
     icon: "/icons/spotify.png",
   },
   {
@@ -1229,8 +1001,6 @@ export const services: Service[] = [
     category: "Spotify Followers",
     title: "Spotify Followers [Artist - Playlist] [1M/Day] [ Max 100M ]",
     price: 1.3869,
-    oldPrice: 1.6643,
-    discount: 17,
     icon: "/icons/spotify.png",
   },
 
@@ -1241,8 +1011,6 @@ export const services: Service[] = [
     category: "Reddit Views",
     title: "Reddit Views | 500M | Refill: 30 Days | ULTRAFAST | 0-10 Min | 100M/Day 🕵⚡♻️",
     price: 1.0051,
-    oldPrice: 1.2061,
-    discount: 17,
     icon: "/icons/reddit.png",
   },
   {
@@ -1251,8 +1019,6 @@ export const services: Service[] = [
     category: "Reddit Views",
     title: "Reddit Views + Shares | 500M | Refill: 30 Days | ULTRAFAST | 0-10 Min | 100M/Day 🕵⚡♻️",
     price: 2.0102,
-    oldPrice: 2.4122,
-    discount: 17,
     icon: "/icons/reddit.png",
   },
 
@@ -1263,8 +1029,6 @@ export const services: Service[] = [
     category: "Reddit Shares",
     title: "Reddit Link Shares | 500M | Refill: 30 Days | Mid speed | 0-10 Min | 100M/Day 🕵⚡♻️",
     price: 1.0051,
-    oldPrice: 1.2061,
-    discount: 17,
     icon: "/icons/reddit.png",
   },
 
@@ -1275,8 +1039,6 @@ export const services: Service[] = [
     category: "Snapchat Followers",
     title: "Snapchat Followers | Daily 500-1K | 100% Real Global | Max 10K | Slow",
     price: 45.2275,
-    oldPrice: 54.273,
-    discount: 17,
     icon: "/icons/snapchat.svg",
   },
   {
@@ -1285,8 +1047,6 @@ export const services: Service[] = [
     category: "Snapchat Followers",
     title: "Snapchat Followers | Global Real Users | Max 10K | Slow",
     price: 72.4174,
-    oldPrice: 86.9009,
-    discount: 17,
     icon: "/icons/snapchat.svg",
   },
 
@@ -1297,8 +1057,6 @@ export const services: Service[] = [
     category: "Snapchat Likes",
     title: "Snapchat Video Likes | Max 5K | No refill | Low Drop | UHQ | 1K-2K Day | Slow",
     price: 40.2022,
-    oldPrice: 48.2426,
-    discount: 17,
     icon: "/icons/snapchat.svg",
   },
 
@@ -1309,8 +1067,6 @@ export const services: Service[] = [
     category: "Snapchat Friend Requests",
     title: "Snapchat Friend Requests | Max 5K | No refill | Low Drop | UHQ | 1K-2K Day | Slow",
     price: 65.3286,
-    oldPrice: 78.3943,
-    discount: 17,
     icon: "/icons/snapchat.svg",
   },
 {
@@ -1386,8 +1142,6 @@ export const services: Service[] = [
     category: "WhatsApp Members",
     title: "Whatsapp Channel Members [ Global 🌎 ] [ Max 50K ] | HQ Profiles | Day 10K",
     price: 7.5381,
-    oldPrice: 9.0457,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1396,8 +1150,6 @@ export const services: Service[] = [
     category: "WhatsApp Members",
     title: "Whatsapp Channel Members [ Europe ] [ Max 50K ] | HQ Profiles | Day 20K",
     price: 15.0758,
-    oldPrice: 18.091,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
 
@@ -1408,8 +1160,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions | Random Mix [👍❤️😂😲😥🙏] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1418,8 +1168,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 👍 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1428,8 +1176,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ ❤️ ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1438,8 +1184,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 😂 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1448,8 +1192,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 😲 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1458,8 +1200,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 😥 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1468,8 +1208,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 🙏 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1478,8 +1216,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 👏 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1488,8 +1224,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 🔥 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1498,8 +1232,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 🏆 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
   {
@@ -1508,8 +1240,6 @@ export const services: Service[] = [
     category: "WhatsApp Reactions",
     title: "Whatsapp Channel Post Emoji Reactions [ 🎉 ] [ Max 50K ] | Instant Start",
     price: 3.769,
-    oldPrice: 4.5228,
-    discount: 17,
     icon: "/icons/whatsapp.png",
   },
 
@@ -1520,8 +1250,6 @@ export const services: Service[] = [
     category: "Google Reviews",
     title: "Google Map Reviews [ Worldwide 🌏 ] [ Max 10K ] [ 5 Stars + Comments ] [ No Refill ⚠️ ] Slow",
     price: 2512.6424,
-    oldPrice: 3015.1709,
-    discount: 17,
     icon: "/icons/google.png",
   },
   {
@@ -1530,8 +1258,6 @@ export const services: Service[] = [
     category: "Google Reviews",
     title: "Google Map Reviews [ Worldwide 🌏 ] [ Max 10K ] [ 5 Stars + Comments ] [ 30 Days ♻️ ] Slow",
     price: 3015.1709,
-    oldPrice: 3618.2051,
-    discount: 17,
     icon: "/icons/google.png",
   },
   {
@@ -1540,8 +1266,6 @@ export const services: Service[] = [
     category: "Google Reviews",
     title: "Google Map Reviews [ Worldwide 🌏 ] [ Max 10K ] [ 5 Stars + Comments ] [ 365 Days ♻️ ] Slow",
     price: 3517.6994,
-    oldPrice: 4221.2393,
-    discount: 17,
     icon: "/icons/google.png",
   },
 
@@ -1552,8 +1276,6 @@ export const services: Service[] = [
     category: "Discord Boosts",
     title: "Discord 14x Server Boost | 1 Month | Fast | UHQ",
     price: 17.46,
-    oldPrice: 20.952,
-    discount: 17,
     icon: "/icons/discord.jpeg",
   },
 ]
