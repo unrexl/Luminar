@@ -1,11 +1,9 @@
 "use client"
 import { useMemo, useState, useEffect } from "react"
-import { ProductsHeader } from "@/components/products-header"
-import { ProductsSearchBar } from "@/components/products-search-bar"
 import { ServiceCard } from "@/components/service-card"
 import { OrderDialog } from "@/components/order-dialog"
 import { ChangelogDialog } from "@/components/changelog-dialog"
-import { services, networks, type Service } from "@/lib/services-data"
+import { services, type Service } from "@/lib/services-data"
 import { formatPrice, fetchRealTimeCurrencyRates } from "@/lib/currency-utils"
 
 // Loading Component
@@ -19,11 +17,10 @@ function Loading() {
           clearInterval(timer)
           return 100
         }
-        // Faster initial loading, then slower towards the end
         const increment = prev < 70 ? Math.random() * 20 + 10 : Math.random() * 5 + 2
         return Math.min(prev + increment, 100)
       })
-    }, 80) // Faster interval for quicker loading
+    }, 80)
 
     return () => clearInterval(timer)
   }, [])
@@ -31,7 +28,6 @@ function Loading() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
       <div className="flex flex-col items-center space-y-6">
-        {/* Loading text */}
         <div className="text-center mb-8">
           <h3 className="text-2xl font-semibold text-white mb-2">
             Loading
@@ -46,16 +42,13 @@ function Loading() {
           <p className="text-gray-400 text-sm">{Math.round(progress)}%</p>
         </div>
 
-        {/* Progress bar container */}
         <div className="w-80 h-2 bg-gray-800 rounded-full overflow-hidden shadow-inner">
-          {/* Dynamic progress bar */}
           <div
             className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full shadow-lg transition-all duration-200 ease-out"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
 
-        {/* Glow effect under progress bar */}
         <div
           className="h-2 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-cyan-500/20 rounded-full blur-sm transition-all duration-200"
           style={{ width: `${Math.max(progress * 0.8, 20)}%` }}
@@ -94,25 +87,13 @@ function SimpleSearchBar({
 }
 
 export default function ProductsPage() {
-  const [selectedNetwork, setSelectedNetwork] = useState("all")
   const [searchQuery, setSearchQuery] = useState("")
-  const [currency, setCurrency] = useState("EUR")
+  const [currency] = useState("EUR") // Fixed to EUR, no longer changeable
   const [selectedService, setSelectedService] = useState<Service | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [isChangelogOpen, setIsChangelogOpen] = useState(false)
   const [pageLoaded, setPageLoaded] = useState(false)
   const [currencyRates, setCurrencyRates] = useState<Record<string, number>>({})
-
-  // Remove duplicate network entries
-  const uniqueNetworks = useMemo(() => {
-    const networkMap = new Map()
-    networks.forEach(network => {
-      if (!networkMap.has(network.id)) {
-        networkMap.set(network.id, network)
-      }
-    })
-    return Array.from(networkMap.values())
-  }, [networks])
 
   useEffect(() => {
     const loadCurrencyRates = async () => {
@@ -126,28 +107,25 @@ export default function ProductsPage() {
 
     loadCurrencyRates()
 
-    // Update rates every 30 minutes
     const interval = setInterval(loadCurrencyRates, 30 * 60 * 1000)
 
     return () => clearInterval(interval)
   }, [])
 
-  // Simulate page loading process
   useEffect(() => {
     const loadingTimer = setTimeout(() => {
       setPageLoaded(true)
-    }, 1200) // Adjust this timing based on your needs (1.2 seconds)
+    }, 1200)
 
     return () => clearTimeout(loadingTimer)
   }, [])
 
   const filteredServices = useMemo(() => {
     return services.filter((service) => {
-      const matchesNetwork = selectedNetwork === "all" || service.network === selectedNetwork
       const matchesSearch = service.title ? service.title.toLowerCase().includes(searchQuery.toLowerCase()) : true
-      return matchesNetwork && matchesSearch
+      return matchesSearch
     })
-  }, [selectedNetwork, searchQuery])
+  }, [searchQuery])
 
   const groupedServices = useMemo(() => {
     return filteredServices.reduce(
@@ -165,22 +143,19 @@ export default function ProductsPage() {
     setTimeout(() => {
       setSelectedService(service)
       setIsLoading(false)
-    }, 300) // Small delay for loading animation
+    }, 300)
   }
 
   const closeOrder = () => {
     setSelectedService(null)
   }
 
-  // Show loading screen until page is loaded
   if (!pageLoaded) {
     return <Loading />
   }
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <ProductsHeader currency={currency} setCurrency={setCurrency} onChangelogClick={() => setIsChangelogOpen(true)} />
-
       {/* Simple Search Bar Only */}
       <SimpleSearchBar
         searchQuery={searchQuery}
