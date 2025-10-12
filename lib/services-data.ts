@@ -27,7 +27,7 @@ export const networks: Network[] = [
   { id: "spotify", name: "Spotify", icon: "/icons/spotify.png" },
   { id: "reddit", name: "Reddit", icon: "/icons/reddit.png" },
   { id: "whatsapp", name: "WhatsApp", icon: "/icons/whatsapp.png" },
-  { id: "snapchat", name: "Snapchat", icon: "/icons/snapchat.png" },
+  { id: "snapchat", name: "Snapchat", icon: "/icons/snapchat.svg" },
   { id: "kick", name: "Kick", icon: "/icons/kick.png",},
   { id: "discord", name: "Discord", icon: "/icons/discord.jpeg" },
   { id: "google", name: "Google", icon: "/icons/google.png" },
@@ -1276,7 +1276,7 @@ export const services: Service[] = [
     price: 45.2275,
     oldPrice: 54.273,
     discount: 17,
-    icon: "/icons/snapchat.png",
+    icon: "/icons/snapchat.svg",
   },
   {
     id: "2674",
@@ -1286,7 +1286,7 @@ export const services: Service[] = [
     price: 72.4174,
     oldPrice: 86.9009,
     discount: 17,
-    icon: "/icons/snapchat.png",
+    icon: "/icons/snapchat.svg",
   },
 
   // Snapchat Likes
@@ -1298,7 +1298,7 @@ export const services: Service[] = [
     price: 40.2022,
     oldPrice: 48.2426,
     discount: 17,
-    icon: "/icons/snapchat.png",
+    icon: "/icons/snapchat.svg",
   },
 
   // Snapchat Other Services
@@ -1310,7 +1310,7 @@ export const services: Service[] = [
     price: 65.3286,
     oldPrice: 78.3943,
     discount: 17,
-    icon: "/icons/snapchat.png",
+    icon: "/icons/snapchat.svg",
   },
 
   // WhatsApp Members
