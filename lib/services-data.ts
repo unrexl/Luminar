@@ -1275,7 +1275,7 @@ export const services: Service[] = [
     network: "discord",
     category: "Discord Boosts",
     title: "Discord 14x Server Boost | 1 Month | Fast | UHQ",
-    price: 17.46,
+    price: 8.00,
     icon: "/icons/discord.jpeg",
   },
 ]
