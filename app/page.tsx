@@ -196,7 +196,7 @@ export default function HomePage() {
                   as="button"
                   color="red"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full max-w-[200px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background w-full sm:w-auto max-w-[180px] sm:max-w-none"
                   onClick={() => setIsProfileModalOpen(true)}
                 >
                   <div className="flex items-center gap-2 sm:gap-4">
@@ -214,7 +214,7 @@ export default function HomePage() {
                   as="div"
                   color="orange"
                   speed="4s"
-                  className="hover:scale-105 transition-transform duration-300 w-full max-w-[200px] sm:max-w-none"
+                  className="hover:scale-105 transition-transform duration-300 w-full sm:w-auto max-w-[180px] sm:max-w-none"
                 >
                   <div className="flex items-center gap-2 sm:gap-4">
                     <img src="/fox-avatar.png" alt="Fox avatar" className="w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover" />
@@ -251,7 +251,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             <div className="rounded-xl border border-border bg-card p-4 sm:p-6 shadow-sm hover:bg-accent hover:border-accent-foreground/20 hover:scale-105 transition-all duration-300 ease-out hover:shadow-lg hover:shadow-violet-500/10 animate-fadeIn">
               <h3 className="text-base sm:text-lg font-semibold">Instant start</h3>
               <p className="mt-2 text-muted-foreground text-sm">
