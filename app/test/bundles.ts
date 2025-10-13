@@ -82,11 +82,11 @@ export const bundles: Bundle[] = [
     tier: "Bronze",
     services: [
       { name: "likes", quantity: "1,000", price: 0.21 },
-      { name: "views", quantity: "5,000", price: 0.19 },
-      { name: "shares", quantity: "100", price: 0.02 },
-      { name: "saves", quantity: "50", price: 0.002 },
+      { name: "views", quantity: "5,000", price: 0.04 },
+      { name: "shares", quantity: "100", price: 0.23 },
+      { name: "saves", quantity: "50", price: 0.05 },
     ],
-    totalPrice: 0.42,
+    totalPrice: 0.53,
     icon: "/icons/tiktok.png",
   },
   {
@@ -95,12 +95,12 @@ export const bundles: Bundle[] = [
     name: "TikTok Silver Pack",
     tier: "Silver",
     services: [
-      { name: "likes", quantity: "10,000", price: 2.11 },
-      { name: "views", quantity: "50,000", price: 1.94 },
-      { name: "shares", quantity: "1,000", price: 0.23 },
-      { name: "saves", quantity: "500", price: 0.02 },
+      { name: "likes", quantity: "5,000", price: 1.05 },
+      { name: "views", quantity: "25,000", price: 0.20 },
+      { name: "shares", quantity: "500", price: 0.12 },
+      { name: "saves", quantity: "250", price: 0.03 },
     ],
-    totalPrice: 4.30,
+    totalPrice: 1.40,
     icon: "/icons/tiktok.png",
     popular: true,
   },
@@ -110,12 +110,12 @@ export const bundles: Bundle[] = [
     name: "TikTok Gold Pack",
     tier: "Gold",
     services: [
-      { name: "likes", quantity: "40,000", price: 8.44 },
-      { name: "views", quantity: "200,000", price: 7.74 },
-      { name: "shares", quantity: "4,000", price: 0.90 },
-      { name: "saves", quantity: "2,000", price: 0.09 },
+      { name: "likes", quantity: "15,000", price: 3.15 },
+      { name: "views", quantity: "75,000", price: 0.60 },
+      { name: "shares", quantity: "1,500", price: 0.30 },
+      { name: "saves", quantity: "750", price: 0.09 },
     ],
-    totalPrice: 17.17,
+    totalPrice: 4.14,
     icon: "/icons/tiktok.png",
     bestValue: true,
   },
@@ -125,12 +125,12 @@ export const bundles: Bundle[] = [
     name: "TikTok Diamond Pack",
     tier: "Diamond",
     services: [
-      { name: "likes", quantity: "100,000", price: 21.10 },
-      { name: "views", quantity: "500,000", price: 19.35 },
-      { name: "shares", quantity: "8,000", price: 1.81 },
-      { name: "saves", quantity: "4,000", price: 0.18 },
+      { name: "likes", quantity: "50,000", price: 10.50 },
+      { name: "views", quantity: "250,000", price: 2.00 },
+      { name: "shares", quantity: "5,000", price: 1.15 },
+      { name: "saves", quantity: "2,000", price: 0.18 },
     ],
-    totalPrice: 42.44,
+    totalPrice: 13.83,
     icon: "/icons/tiktok.png",
   },
 
@@ -141,11 +141,11 @@ export const bundles: Bundle[] = [
     name: "Twitter Bronze Pack",
     tier: "Bronze",
     services: [
-      { name: "likes", quantity: "500", price: 1.40 },
-      { name: "views", quantity: "5,000", price: 0.17 },
-      { name: "reposts", quantity: "50", price: 0.19 },
+      { name: "likes", quantity: "500", price: 2.61 },
+      { name: "views", quantity: "5,000", price: 0.03 },
+      { name: "retweets", quantity: "50", price: 3.72 },
     ],
-    totalPrice: 1.76,
+    totalPrice: 6.36,
     icon: "/icons/twitter.png",
   },
   {
@@ -154,11 +154,11 @@ export const bundles: Bundle[] = [
     name: "Twitter Silver Pack",
     tier: "Silver",
     services: [
-      { name: "likes", quantity: "2,500", price: 6.98 },
-      { name: "views", quantity: "25,000", price: 0.85 },
-      { name: "reposts", quantity: "300", price: 1.12 },
+      { name: "likes", quantity: "2,500", price: 13.05 },
+      { name: "views", quantity: "25,000", price: 0.15 },
+      { name: "retweets", quantity: "250", price: 6.10 },
     ],
-    totalPrice: 8.95,
+    totalPrice: 19.30,
     icon: "/icons/twitter.png",
     popular: true,
   },
@@ -168,11 +168,11 @@ export const bundles: Bundle[] = [
     name: "Twitter Gold Pack",
     tier: "Gold",
     services: [
-      { name: "likes", quantity: "7,500", price: 20.95 },
-      { name: "views", quantity: "75,000", price: 2.55 },
-      { name: "reposts", quantity: "1,000", price: 3.72 },
+      { name: "likes", quantity: "7,500", price: 19.57 },
+      { name: "views", quantity: "75,000", price: 0.45 },
+      { name: "retweets", quantity: "750", price: 11.16 },
     ],
-    totalPrice: 27.22,
+    totalPrice: 31.18,
     icon: "/icons/twitter.png",
     bestValue: true,
   },
@@ -182,124 +182,64 @@ export const bundles: Bundle[] = [
     name: "Twitter Diamond Pack",
     tier: "Diamond",
     services: [
-      { name: "likes", quantity: "13,000", price: 36.28 },
-      { name: "views", quantity: "100,000", price: 3.40 },
-      { name: "reposts", quantity: "1,500", price: 5.58 },
+      { name: "likes", quantity: "15,000", price: 26.10 },
+      { name: "views", quantity: "150,000", price: 0.90 },
+      { name: "retweets", quantity: "1,500", price: 12.18 },
     ],
-    totalPrice: 45.26,
+    totalPrice: 39.18,
     icon: "/icons/twitter.png",
   },
 
-  // Facebook Bundles
+  // YouTube Bundles
   {
-    id: "facebook-bronze",
-    platform: "Facebook",
-    name: "Facebook Bronze Pack",
+    id: "youtube-bronze",
+    platform: "YouTube",
+    name: "YouTube Bronze Pack",
     tier: "Bronze",
     services: [
-      { name: "likes", quantity: "1,000", price: 1.21 },
-      { name: "views", quantity: "5,000", price: 0.01 },
-      { name: "reactions", quantity: "100", price: 0.04 },
+      { name: "likes", quantity: "500", price: 0.10 },
+      { name: "views", quantity: "2,500", price: 0.20 },
     ],
-    totalPrice: 1.26,
-    icon: "/icons/facebook.png",
+    totalPrice: 0.30,
+    icon: "/icons/youtube.png",
   },
   {
-    id: "facebook-silver",
-    platform: "Facebook",
-    name: "Facebook Silver Pack",
+    id: "youtube-silver",
+    platform: "YouTube",
+    name: "YouTube Silver Pack",
     tier: "Silver",
     services: [
-      { name: "likes", quantity: "5,000", price: 6.03 },
-      { name: "views", quantity: "25,000", price: 0.05 },
-      { name: "reactions", quantity: "500", price: 0.18 },
+      { name: "likes", quantity: "2,500", price: 0.50 },
+      { name: "views", quantity: "12,500", price: 1.00 },
     ],
-    totalPrice: 6.26,
-    icon: "/icons/facebook.png",
+    totalPrice: 1.50,
+    icon: "/icons/youtube.png",
     popular: true,
   },
   {
-    id: "facebook-gold",
-    platform: "Facebook",
-    name: "Facebook Gold Pack",
+    id: "youtube-gold",
+    platform: "YouTube",
+    name: "YouTube Gold Pack",
     tier: "Gold",
     services: [
-      { name: "likes", quantity: "15,000", price: 18.09 },
-      { name: "views", quantity: "75,000", price: 0.15 },
-      { name: "reactions", quantity: "1,500", price: 0.55 },
+      { name: "likes", quantity: "10,000", price: 2.00 },
+      { name: "views", quantity: "50,000", price: 2.00 },
     ],
-    totalPrice: 18.79,
-    icon: "/icons/facebook.png",
+    totalPrice: 4.00,
+    icon: "/icons/youtube.png",
     bestValue: true,
   },
   {
-    id: "facebook-diamond",
-    platform: "Facebook",
-    name: "Facebook Diamond Pack",
+    id: "youtube-diamond",
+    platform: "YouTube",
+    name: "YouTube Diamond Pack",
     tier: "Diamond",
     services: [
-      { name: "likes", quantity: "32,000", price: 38.60 },
-      { name: "views", quantity: "150,000", price: 0.30 },
-      { name: "reactions", quantity: "3,000", price: 1.10 },
+      { name: "likes", quantity: "25,000", price: 5.00 },
+      { name: "views", quantity: "100,000", price: 5.00 },
     ],
-    totalPrice: 40.00,
-    icon: "/icons/facebook.png",
-  },
-
-  // Telegram Bundles
-  {
-    id: "telegram-bronze",
-    platform: "Telegram",
-    name: "Telegram Bronze Pack",
-    tier: "Bronze",
-    services: [
-      { name: "members", quantity: "500", price: 1.53 },
-      { name: "views", quantity: "2,500", price: 0.02 },
-      { name: "reactions", quantity: "50", price: 0.005 },
-    ],
-    totalPrice: 1.56,
-    icon: "/icons/telegram.png",
-  },
-  {
-    id: "telegram-silver",
-    platform: "Telegram",
-    name: "Telegram Silver Pack",
-    tier: "Silver",
-    services: [
-      { name: "members", quantity: "2,500", price: 7.66 },
-      { name: "views", quantity: "12,500", price: 0.10 },
-      { name: "reactions", quantity: "250", price: 0.02 },
-    ],
-    totalPrice: 7.78,
-    icon: "/icons/telegram.png",
-    popular: true,
-  },
-  {
-    id: "telegram-gold",
-    platform: "Telegram",
-    name: "Telegram Gold Pack",
-    tier: "Gold",
-    services: [
-      { name: "members", quantity: "7,500", price: 22.99 },
-      { name: "views", quantity: "37,500", price: 0.29 },
-      { name: "reactions", quantity: "750", price: 0.07 },
-    ],
-    totalPrice: 23.35,
-    icon: "/icons/telegram.png",
-    bestValue: true,
-  },
-  {
-    id: "telegram-diamond",
-    platform: "Telegram",
-    name: "Telegram Diamond Pack",
-    tier: "Diamond",
-    services: [
-      { name: "members", quantity: "12,500", price: 38.32 },
-      { name: "views", quantity: "62,500", price: 0.48 },
-      { name: "reactions", quantity: "1,250", price: 0.12 },
-    ],
-    totalPrice: 38.92,
-    icon: "/icons/telegram.png",
+    totalPrice: 10.00,
+    icon: "/icons/youtube.png",
   },
 
   // Reddit Bundles
@@ -309,10 +249,10 @@ export const bundles: Bundle[] = [
     name: "Reddit Bronze Pack",
     tier: "Bronze",
     services: [
-      { name: "views", quantity: "2,500", price: 2.51 },
-      { name: "shares", quantity: "250", price: 0.25 },
+      { name: "views", quantity: "2,500", price: 1.01 },
+      { name: "shares", quantity: "250", price: 1.01 },
     ],
-    totalPrice: 2.76,
+    totalPrice: 2.02,
     icon: "/icons/reddit.png",
   },
   {
@@ -321,10 +261,10 @@ export const bundles: Bundle[] = [
     name: "Reddit Silver Pack",
     tier: "Silver",
     services: [
-      { name: "views", quantity: "7,500", price: 7.54 },
-      { name: "shares", quantity: "750", price: 0.75 },
+      { name: "views", quantity: "7,500", price: 3.03 },
+      { name: "shares", quantity: "750", price: 2.01 },
     ],
-    totalPrice: 8.29,
+    totalPrice: 5.04,
     icon: "/icons/reddit.png",
     popular: true,
   },
@@ -334,10 +274,10 @@ export const bundles: Bundle[] = [
     name: "Reddit Gold Pack",
     tier: "Gold",
     services: [
-      { name: "views", quantity: "20,000", price: 20.10 },
-      { name: "shares", quantity: "2,000", price: 2.01 },
+      { name: "views", quantity: "20,000", price: 6.72 },
+      { name: "shares", quantity: "2,000", price: 4.02 },
     ],
-    totalPrice: 22.11,
+    totalPrice: 10.74,
     icon: "/icons/reddit.png",
     bestValue: true,
   },
@@ -347,36 +287,32 @@ export const bundles: Bundle[] = [
     name: "Reddit Diamond Pack",
     tier: "Diamond",
     services: [
-      { name: "views", quantity: "37,500", price: 37.69 },
-      { name: "shares", quantity: "3,750", price: 3.77 },
+      { name: "views", quantity: "40,000", price: 13.44 },
+      { name: "shares", quantity: "4,000", price: 8.04 },
     ],
-    totalPrice: 41.46,
+    totalPrice: 21.48,
     icon: "/icons/reddit.png",
   },
 ]
 
 // Filter bundles to only include those under or equal to 40 euros
-export const affordableBundles = bundles.filter(bundle => bundle.totalPrice <= 40);
+export const affordableBundles = bundles.filter(bundle => bundle.totalPrice <= 40)
 
 // Adjust bundles that exceed 40 euros (for display purposes)
 export const adjustedBundles = bundles.map(bundle => {
   if (bundle.totalPrice > 40) {
-    const scaleFactor = 40 / bundle.totalPrice;
+    const scaleFactor = 40 / bundle.totalPrice
     const adjustedServices = bundle.services.map(service => {
-      const quantityNum = parseInt(service.quantity.replace(/,/g, ''));
-      const adjustedQuantity = Math.round(quantityNum * scaleFactor);
+      const quantityNum = parseInt(service.quantity.replace(/,/g, ''))
+      const adjustedQuantity = Math.round(quantityNum * scaleFactor)
       return {
         ...service,
         quantity: adjustedQuantity.toLocaleString(),
         price: service.price * scaleFactor
-      };
-    });
-    const adjustedTotal = adjustedServices.reduce((sum, service) => sum + service.price, 0);
-    return {
-      ...bundle,
-      services: adjustedServices,
-      totalPrice: adjustedTotal
-    };
+      }
+    })
+    const adjustedTotal = adjustedServices.reduce((sum, s) => sum + s.price, 0)
+    return { ...bundle, services: adjustedServices, totalPrice: adjustedTotal }
   }
-  return bundle;
-});
+  return bundle
+})
