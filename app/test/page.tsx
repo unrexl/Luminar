@@ -27,19 +27,496 @@ export interface Bundle {
 export const bundles: Bundle[] = [
   // Instagram Bundles
   {
-    id: "instagram-bundle-1",
+    id: "instagram-starter",
     platform: "Instagram",
-    name: "instagram bundle 1",
+    name: "Instagram Starter Pack",
     services: [
-      { name: "views", quantity: "50k", price: 0.20 },
-      { name: "likes", quantity: "8.9k", price: 9.39 },
-      { name: "saves", quantity: "2k", price: 2.00 },
-      { name: "shares", quantity: "725", price: 0.73 },
+      { name: "likes", quantity: "5,000", price: 4.50 },
+      { name: "views", quantity: "10,000", price: 0.05 },
+      { name: "saves", quantity: "500", price: 1.00 },
+      { name: "shares", quantity: "100", price: 0.50 },
     ],
-    totalPrice: 12.32,
+    totalPrice: 6.05,
   },
-  // Add other bundles here...
+  {
+    id: "instagram-growth",
+    platform: "Instagram",
+    name: "Instagram Growth Pack",
+    services: [
+      { name: "likes", quantity: "30,000", price: 27.00 },
+      { name: "views", quantity: "50,000", price: 0.25 },
+      { name: "saves", quantity: "2,000", price: 4.00 },
+      { name: "shares", quantity: "500", price: 2.50 },
+    ],
+    totalPrice: 33.75,
+  },
+  {
+    id: "instagram-mega",
+    platform: "Instagram",
+    name: "Instagram Mega Pack",
+    services: [
+      { name: "likes", quantity: "100,000", price: 90.00 },
+      { name: "views", quantity: "200,000", price: 1.00 },
+      { name: "saves", quantity: "5,000", price: 5.00 },
+      { name: "shares", quantity: "1,000", price: 5.00 },
+    ],
+    totalPrice: 101.00, // Adjusted to 100.00 in code below
+  },
+  
+  // TikTok Bundles
+  {
+    id: "tiktok-starter",
+    platform: "TikTok",
+    name: "TikTok Starter Pack",
+    services: [
+      { name: "likes", quantity: "5,000", price: 1.05 },
+      { name: "views", quantity: "10,000", price: 0.39 },
+      { name: "shares", quantity: "500", price: 0.11 },
+      { name: "saves", quantity: "200", price: 0.02 },
+    ],
+    totalPrice: 1.57,
+  },
+  {
+    id: "tiktok-growth",
+    platform: "TikTok",
+    name: "TikTok Growth Pack",
+    services: [
+      { name: "likes", quantity: "30,000", price: 6.30 },
+      { name: "views", quantity: "100,000", price: 3.87 },
+      { name: "shares", quantity: "2,500", price: 0.57 },
+      { name: "saves", quantity: "1,000", price: 0.05 },
+    ],
+    totalPrice: 10.79,
+  },
+  {
+    id: "tiktok-mega",
+    platform: "TikTok",
+    name: "TikTok Mega Pack",
+    services: [
+      { name: "likes", quantity: "100,000", price: 21.10 },
+      { name: "views", quantity: "500,000", price: 19.35 },
+      { name: "shares", quantity: "10,000", price: 2.26 },
+      { name: "saves", quantity: "5,000", price: 0.23 },
+    ],
+    totalPrice: 42.94,
+  },
+  
+  // Twitter Bundles
+  {
+    id: "twitter-starter",
+    platform: "Twitter",
+    name: "Twitter Starter Pack",
+    services: [
+      { name: "likes", quantity: "5,000", price: 14.07 },
+      { name: "views", quantity: "10,000", price: 0.34 },
+      { name: "reposts", quantity: "500", price: 3.72 },
+    ],
+    totalPrice: 18.13,
+  },
+  {
+    id: "twitter-growth",
+    platform: "Twitter",
+    name: "Twitter Growth Pack",
+    services: [
+      { name: "likes", quantity: "30,000", price: 84.42 },
+      { name: "views", quantity: "100,000", price: 3.40 },
+      { name: "reposts", quantity: "2,500", price: 18.59 },
+    ],
+    totalPrice: 106.41, // Adjusted to 100.00 in code below
+  },
+  {
+    id: "twitter-mega",
+    platform: "Twitter",
+    name: "Twitter Mega Pack",
+    services: [
+      { name: "likes", quantity: "100,000", price: 281.40 },
+      { name: "views", quantity: "500,000", price: 17.00 },
+      { name: "reposts", quantity: "10,000", price: 74.38 },
+    ],
+    totalPrice: 372.78, // Adjusted to 100.00 in code below
+  },
+  
+  // YouTube Bundles
+  {
+    id: "youtube-starter",
+    platform: "YouTube",
+    name: "YouTube Starter Pack",
+    services: [
+      { name: "views", quantity: "5,000", price: 18.59 },
+      { name: "likes", quantity: "500", price: 0.10 },
+      { name: "comment likes", quantity: "50", price: 0.03},
+    ],
+    totalPrice: 18.72,
+  },
+  {
+    id: "youtube-growth",
+    platform: "YouTube",
+    name: "YouTube Growth Pack",
+    services: [
+      { name: "views", quantity: "30,000", price: 111.56 },
+      { name: "likes", quantity: "3,000", price: 0.60 },
+      { name: "comment likes", quantity: "300", price: 0.23 },
+    ],
+    totalPrice: 112.39, // Adjusted to 100.00 in code below
+  },
+  {
+    id: "youtube-mega",
+    platform: "YouTube",
+    name: "YouTube Mega Pack",
+    services: [
+      { name: "views", quantity: "100,000", price: 371.87 },
+      { name: "likes", quantity: "10,000", price: 2.01 },
+      { name: "comment likes", quantity: "1,000", price: 0.85 },
+    ],
+    totalPrice: 374.73, // Adjusted to 100.00 in code below
+  },
+  
+  // Facebook Bundles
+  {
+    id: "facebook-starter",
+    platform: "Facebook",
+    name: "Facebook Starter Pack",
+    services: [
+      { name: "likes", quantity: "5,000", price: 4.83 },
+      { name: "views", quantity: "10,000", price: 0.02 },
+      { name: "reactions", quantity: "500", price: 0.37 },
+    ],
+    totalPrice: 5.22,
+  },
+  {
+    id: "facebook-growth",
+    platform: "Facebook",
+    name: "Facebook Growth Pack",
+    services: [
+      { name: "likes", quantity: "30,000", price: 28.98 },
+      { name: "views", quantity: "100,000", price: 0.80 },
+      { name: "reactions", quantity: "2,500", price: 1.47 },
+    ],
+    totalPrice: 31.25,
+  },
+  {
+    id: "facebook-mega",
+    platform: "Facebook",
+    name: "Facebook Mega Pack",
+    services: [
+      { name: "likes", quantity: "100,000", price: 96.50 },
+      { name: "views", quantity: "500,000", price: 2.00 },
+      { name: "reactions", quantity: "10,000", price: 5.86 },
+    ],
+    totalPrice: 104.36, // Adjusted to 100.00 in code below
+  },
+  
+  // Telegram Bundles
+  {
+    id: "telegram-starter",
+    platform: "Telegram",
+    name: "Telegram Starter Pack",
+    services: [
+      { name: "members", quantity: "5,000", price: 15.33 },
+      { name: "views", quantity: "10,000", price: 0.38 },
+      { name: "reactions", quantity: "500", price: 0.05 },
+    ],
+    totalPrice: 15.76,
+  },
+  {
+    id: "telegram-growth",
+    platform: "Telegram",
+    name: "Telegram Growth Pack",
+    services: [
+      { name: "members", quantity: "30,000", price: 61.31 },
+      { name: "views", quantity: "100,000", price: 1.52 },
+      { name: "reactions", quantity: "2,000", price: 0.19 },
+    ],
+    totalPrice: 63.02,
+  },
+  {
+    id: "telegram-mega",
+    platform: "Telegram",
+    name: "Telegram Mega Pack",
+    services: [
+      { name: "members", quantity: "100,000", price: 153.27 },
+      { name: "views", quantity: "500,000", price: 3.80 },
+      { name: "reactions", quantity: "10,000", price: 0.95 },
+    ],
+    totalPrice: 158.02, // Adjusted to 100.00 in code below
+  },
+  
+  // Twitch Bundles
+  {
+    id: "twitch-starter",
+    platform: "Twitch",
+    name: "Twitch Starter Pack",
+    services: [
+      { name: "followers", quantity: "5,000", price: 10.55 },
+      { name: "views", quantity: "10,000", price: 2.01 },
+    ],
+    totalPrice: 12.56,
+  },
+  {
+    id: "twitch-growth",
+    platform: "Twitch",
+    name: "Twitch Growth Pack",
+    services: [
+      { name: "followers", quantity: "30,000", price: 42.12 },
+      { name: "views", quantity: "100,000", price: 8.04 },
+    ],
+    totalPrice: 50.16,
+  },
+  {
+    id: "twitch-mega",
+    platform: "Twitch",
+    name: "Twitch Mega Pack",
+    services: [
+      { name: "followers", quantity: "100,000", price: 105.53 },
+      { name: "views", quantity: "500,000", price: 40.22 },
+    ],
+    totalPrice: 145.75, // Adjusted to 100.00 in code below
+  },
+  
+  // Kick Bundles
+  {
+    id: "kick-starter",
+    platform: "Kick",
+    name: "Kick Starter Pack",
+    services: [
+      { name: "followers", quantity: "5,000", price: 12.36 },
+      { name: "views", quantity: "10,000", price: 0.42 },
+    ],
+    totalPrice: 12.78,
+  },
+  {
+    id: "kick-growth",
+    platform: "Kick",
+    name: "Kick Growth Pack",
+    services: [
+      { name: "followers", quantity: "30,000", price: 41.21 },
+      { name: "views", quantity: "100,000", price: 1.41 },
+    ],
+    totalPrice: 42.62,
+  },
+  {
+    id: "kick-mega",
+    platform: "Kick",
+    name: "Kick Mega Pack",
+    services: [
+      { name: "followers", quantity: "100,000", price: 103.02 },
+      { name: "views", quantity: "250,000", price: 3.52 },
+    ],
+    totalPrice: 106.54, // Adjusted to 100.00 in code below
+  },
+  
+  // Spotify Bundles
+  {
+    id: "spotify-starter",
+    platform: "Spotify",
+    name: "Spotify Starter Pack",
+    services: [
+      { name: "followers", quantity: "10,000", price: 0.01 },
+    ],
+    totalPrice: 0.01,
+  },
+  {
+    id: "spotify-growth",
+    platform: "Spotify",
+    name: "Spotify Growth Pack",
+    services: [
+      { name: "followers", quantity: "50,000", price: 0.07 },
+    ],
+    totalPrice: 0.07,
+  },
+  {
+    id: "spotify-mega",
+    platform: "Spotify",
+    name: "Spotify Mega Pack",
+    services: [
+      { name: "followers", quantity: "100,000", price: 0.14 },
+    ],
+    totalPrice: 0.14,
+  },
+  
+  // Reddit Bundles
+  {
+    id: "reddit-starter",
+    platform: "Reddit",
+    name: "Reddit Starter Pack",
+    services: [
+      { name: "views", quantity: "50,000", price: 0.0001 },
+      { name: "shares", quantity: "5,000", price: 0.00001 },
+    ],
+    totalPrice: 0.00011,
+  },
+  {
+    id: "reddit-growth",
+    platform: "Reddit",
+    name: "Reddit Growth Pack",
+    services: [
+      { name: "views", quantity: "200,000", price: 0.0004 },
+      { name: "shares", quantity: "20,000", price: 0.00004 },
+    ],
+    totalPrice: 0.00044,
+  },
+  {
+    id: "reddit-mega",
+    platform: "Reddit",
+    name: "Reddit Mega Pack",
+    services: [
+      { name: "views", quantity: "500,000", price: 0.0010 },
+      { name: "shares", quantity: "50,000", price: 0.0001 },
+    ],
+    totalPrice: 0.0011,
+  },
+  
+  // Snapchat Bundles
+  {
+    id: "snapchat-starter",
+    platform: "Snapchat",
+    name: "Snapchat Starter Pack",
+    services: [
+      { name: "followers", quantity: "5,000", price: 22.61 },
+      { name: "likes", quantity: "500", price: 4.02 },
+    ],
+    totalPrice: 26.63,
+  },
+  {
+    id: "snapchat-growth",
+    platform: "Snapchat",
+    name: "Snapchat Growth Pack",
+    services: [
+      { name: "followers", quantity: "30,000", price: 90.45 },
+      { name: "likes", quantity: "2,000", price: 16.08 },
+    ],
+    totalPrice: 106.53, // Adjusted to 100.00 in code below
+  },
+  {
+    id: "snapchat-mega",
+    platform: "Snapchat",
+    name: "Snapchat Mega Pack",
+    services: [
+      { name: "followers", quantity: "100,000", price: 226.14 },
+      { name: "likes", quantity: "5,000", price: 40.20 },
+    ],
+    totalPrice: 266.34, // Adjusted to 100.00 in code below
+  },
+  
+  // WhatsApp Bundles
+  {
+    id: "whatsapp-starter",
+    platform: "WhatsApp",
+    name: "WhatsApp Starter Pack",
+    services: [
+      { name: "members", quantity: "10,000", price: 7.54 },
+      { name: "reactions", quantity: "1,000", price: 3.77 },
+    ],
+    totalPrice: 11.31,
+  },
+  {
+    id: "whatsapp-growth",
+    platform: "WhatsApp",
+    name: "WhatsApp Growth Pack",
+    services: [
+      { name: "members", quantity: "30,000", price: 22.61 },
+      { name: "reactions", quantity: "3,000", price: 11.31 },
+    ],
+    totalPrice: 33.92,
+  },
+  {
+    id: "whatsapp-mega",
+    platform: "WhatsApp",
+    name: "WhatsApp Mega Pack",
+    services: [
+      { name: "members", quantity: "50,000", price: 37.69 },
+      { name: "reactions", quantity: "5,000", price: 18.85 },
+    ],
+    totalPrice: 56.54,
+  },
+  
+  // Google Bundles
+  {
+    id: "google-starter",
+    platform: "Google",
+    name: "Google Starter Pack",
+    services: [
+      { name: "reviews", quantity: "100", price: 25.13 },
+    ],
+    totalPrice: 25.13,
+  },
+  {
+    id: "google-growth",
+    platform: "Google",
+    name: "Google Growth Pack",
+    services: [
+      { name: "reviews", quantity: "500", price: 125.63 },
+    ],
+    totalPrice: 125.63, // Adjusted to 100.00 in code below
+  },
+  {
+    id: "google-mega",
+    platform: "Google",
+    name: "Google Mega Pack",
+    services: [
+      { name: "reviews", quantity: "1,000", price: 251.26 },
+    ],
+    totalPrice: 251.26, // Adjusted to 100.00 in code below
+  },
+  
+  // Discord Bundles
+  {
+    id: "discord-starter",
+    platform: "Discord",
+    name: "Discord Starter Pack",
+    services: [
+      { name: "server boosts", quantity: "1", price: 0.57 },
+    ],
+    totalPrice: 0.57,
+  },
+  {
+    id: "discord-growth",
+    platform: "Discord",
+    name: "Discord Growth Pack",
+    services: [
+      { name: "server boosts", quantity: "5", price: 2.86 },
+    ],
+    totalPrice: 2.86,
+  },
+  {
+    id: "discord-mega",
+    platform: "Discord",
+    name: "Discord Mega Pack",
+    services: [
+      { name: "server boosts", quantity: "14", price: 8.00 },
+    ],
+    totalPrice: 8.00,
+  },
 ]
+
+// Adjust bundles that exceed 100 euros
+const adjustedBundles = bundles.map(bundle => {
+  if (bundle.totalPrice > 100) {
+    // Calculate scaling factor to bring total to 100 euros
+    const scaleFactor = 100 / bundle.totalPrice;
+    
+    // Scale down each service quantity proportionally
+    const adjustedServices = bundle.services.map(service => {
+      const quantityNum = parseInt(service.quantity.replace(/,/g, ''));
+      const adjustedQuantity = Math.round(quantityNum * scaleFactor);
+      return {
+        ...service,
+        quantity: adjustedQuantity.toLocaleString(),
+        price: service.price * scaleFactor
+      };
+    });
+    
+    // Recalculate total
+    const adjustedTotal = adjustedServices.reduce((sum, service) => sum + service.price, 0);
+    
+    return {
+      ...bundle,
+      services: adjustedServices,
+      totalPrice: adjustedTotal
+    };
+  }
+  return bundle;
+});
 
 // Loading Component
 function Loading() {
@@ -187,14 +664,12 @@ function BundleCard({
   formatPrice,
   currency,
   onBundleClick,
-  onServiceClick,
 }: {
   platform: string
   bundles: Bundle[]
   formatPrice: (price: number, currency: string) => string
   currency: string
   onBundleClick: (bundle: Bundle) => void
-  onServiceClick: (service: any) => void
 }) {
   return (
     <div className="mb-8">
@@ -212,23 +687,8 @@ function BundleCard({
               <h3 className="text-xl font-semibold text-white mb-2">{bundle.name}</h3>
               <div className="space-y-2">
                 {bundle.services.map((service, index) => (
-                  <div key={index} className="flex justify-between items-center text-sm text-gray-300">
-                    <div className="flex items-center gap-2">
-                      <span>{service.quantity} {service.name}</span>
-                      <button 
-                        onClick={() => onServiceClick({
-                          id: `${bundle.id}-service-${index}`,
-                          network: platform,
-                          category: `${platform} Bundle`,
-                          title: `${service.name} - ${bundle.name}`,
-                          price: service.price,
-                          icon: "/icons/default.png"
-                        })}
-                        className="text-xs text-indigo-400 hover:text-indigo-300"
-                      >
-                        Calculate Price
-                      </button>
-                    </div>
+                  <div key={index} className="flex justify-between text-sm text-gray-300">
+                    <span>{service.quantity} {service.name}</span>
                     <span>{formatPrice(service.price, currency)}</span>
                   </div>
                 ))}
@@ -236,175 +696,18 @@ function BundleCard({
             </div>
             
             <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-800/50">
-              <span className="text-lg font-bold text-white">Bundle Total: {formatPrice(bundle.totalPrice, currency)}</span>
+              <span className="text-lg font-bold text-white">Total: {formatPrice(bundle.totalPrice, currency)}</span>
               <button
                 onClick={() => onBundleClick(bundle)}
                 className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
               >
-                Order Bundle
+                Order Now
               </button>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
-
-// Price Calculator Dialog
-function PriceCalculatorDialog({
-  selectedService,
-  isLoading,
-  onClose,
-  formatPrice,
-  currency,
-}: {
-  selectedService: any
-  isLoading: boolean
-  onClose: () => void
-  formatPrice: (price: number, currency: string) => string
-  currency: string
-}) {
-  const [quantity, setQuantity] = useState(1000)
-  const [animatedPrice, setAnimatedPrice] = useState(0)
-
-  const totalPrice = selectedService ? (selectedService.price * quantity) / 1000 : 0
-
-  useEffect(() => {
-    const startPrice = animatedPrice
-    const endPrice = totalPrice
-    const duration = 1200
-    const startTime = Date.now()
-
-    const animate = () => {
-      const elapsed = Date.now() - startTime
-      const progress = Math.min(elapsed / duration, 1)
-      const easeOut = 1 - Math.pow(1 - progress, 3)
-      const currentPrice = startPrice + (endPrice - startPrice) * easeOut
-      setAnimatedPrice(currentPrice)
-
-      if (progress < 1) {
-        requestAnimationFrame(animate)
-      }
-    }
-
-    requestAnimationFrame(animate)
-  }, [totalPrice])
-
-  const handleQuantityChange = (newQuantity: number) => {
-    const clampedQuantity = Math.max(1, newQuantity)
-    setQuantity(clampedQuantity)
-  }
-
-  const presetQuantities = [1000, 5000, 10000, 25000, 50000]
-
-  return (
-    <Dialog
-      open={!!selectedService || isLoading}
-      onOpenChange={() => {
-        if (!isLoading) {
-          onClose()
-          setQuantity(1000)
-        }
-      }}
-    >
-      <DialogContent className="bg-popover border-border max-w-md">
-        {isLoading ? (
-          <div className="flex items-center justify-center py-8">
-            <LoadingSpinner size="lg" />
-          </div>
-        ) : (
-          <>
-            <DialogHeader>
-              <DialogTitle className="flex items-center gap-2 text-lg">
-                <img
-                  src={selectedService?.icon || "/placeholder.svg"}
-                  alt={selectedService?.network}
-                  className="w-5 h-5 rounded"
-                />
-                Price Calculator
-              </DialogTitle>
-            </DialogHeader>
-
-            {selectedService && (
-              <div className="space-y-4">
-                <div className="text-sm text-muted-foreground line-clamp-2">{selectedService.title}</div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">Quick Select:</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {presetQuantities.map((preset) => (
-                      <Button
-                        key={preset}
-                        variant={quantity === preset ? "default" : "outline"}
-                        size="sm"
-                        onClick={() => handleQuantityChange(preset)}
-                        className={
-                          quantity === preset
-                            ? "bg-violet-600 hover:bg-violet-500"
-                            : "border-border hover:border-violet-500 text-xs"
-                        }
-                      >
-                        {preset >= 1000 ? `${preset / 1000}K` : preset}
-                      </Button>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-muted-foreground">Custom Quantity:</label>
-                  <div className="flex items-center gap-2">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handleQuantityChange(quantity - 1000)}
-                      disabled={quantity <= 1}
-                      className="border-border hover:border-violet-500 px-2"
-                    >
-                      <Minus className="w-3 h-3" />
-                    </Button>
-                    <Input
-                      type="number"
-                      value={quantity}
-                      onChange={(e) => handleQuantityChange(Number(e.target.value) || 0)}
-                      className="text-center bg-secondary border-border focus:border-violet-500 text-sm"
-                      min="1"
-                    />
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => handleQuantityChange(quantity + 1000)}
-                      className="border-border hover:border-violet-500 px-2"
-                    >
-                      <Plus className="w-3 h-3" />
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="space-y-2 pt-2 border-t border-border">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Quantity:</span>
-                    <span>{quantity.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Price per 1000:</span>
-                    <span>{formatPrice(selectedService.price, currency)}</span>
-                  </div>
-                  <div className="flex justify-between text-lg font-bold pt-2 border-t border-border">
-                    <span>Total:</span>
-                    <div className="text-right">
-                      <div className="text-violet-400 tabular-nums transition-all duration-300">
-                        {formatPrice(animatedPrice, currency)}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </>
-        )}
-      </DialogContent>
-    </Dialog>
   )
 }
 
@@ -416,7 +719,7 @@ function OrderDialog({
   formatPrice,
   currency,
 }: {
-  selectedService: any
+  selectedService: Bundle | null
   isLoading: boolean
   onClose: () => void
   formatPrice: (price: number, currency: string) => string
@@ -426,8 +729,6 @@ function OrderDialog({
   const [selectedCurrency, setSelectedCurrency] = useState(currency)
   const [formData, setFormData] = useState({
     paypalUsername: "",
-    link: "",
-    quantity: "1000",
     discordUsername: "",
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -448,23 +749,8 @@ function OrderDialog({
     fetchIP()
   }, [])
 
-  const calculatePrice = (service: any, quantity: number) => {
-    if (!service) return 0
-    return (service.price * quantity) / 1000
-  }
-
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
-  }
-
-  const adjustQuantity = (adjustment: number) => {
-    const currentQuantity = Number.parseInt(formData.quantity) || 1000
-    const newQuantity = Math.max(1, currentQuantity + adjustment)
-    setFormData((prev) => ({ ...prev, quantity: newQuantity.toString() }))
-  }
-
-  const setPresetQuantity = (quantity: number) => {
-    setFormData((prev) => ({ ...prev, quantity: quantity.toString() }))
   }
 
   const sendToDiscord = async () => {
@@ -473,9 +759,6 @@ function OrderDialog({
     setIsSubmitting(true)
 
     const webhookUrl = "https://discord.com/api/webhooks/YOUR_WEBHOOK_HERE"
-
-    const quantity = Number.parseInt(formData.quantity) || 1000
-    const totalAmount = calculatePrice(selectedService, quantity)
 
     const orderData = {
       username: "Luminar Orders",
@@ -486,13 +769,13 @@ function OrderDialog({
           color: 0x7c3aed,
           fields: [
             {
-              name: "🔗 Link",
-              value: formData.link || "Not provided",
-              inline: true,
+              name: "📦 Bundle",
+              value: `${selectedService.name} (ID: ${selectedService.id})`,
+              inline: false,
             },
             {
               name: "💰 Total Amount to Pay",
-              value: `${formatPrice(totalAmount, selectedCurrency)} (${selectedCurrency})`,
+              value: `${formatPrice(selectedService.totalPrice, selectedCurrency)} (${selectedCurrency})`,
               inline: true,
             },
             {
@@ -501,18 +784,8 @@ function OrderDialog({
               inline: true,
             },
             {
-              name: "📦 Service",
-              value: `${selectedService.title} (ID: ${selectedService.id})`,
-              inline: false,
-            },
-            {
-              name: "📊 Quantity",
-              value: quantity.toLocaleString(),
-              inline: true,
-            },
-            {
-              name: "🌐 IP Address",
-              value: userIP || "Unknown",
+              name: "👤 PayPal Username",
+              value: formData.paypalUsername,
               inline: true,
             },
             ...(formData.discordUsername
@@ -525,8 +798,8 @@ function OrderDialog({
                 ]
               : []),
             {
-              name: "👤 PayPal Username",
-              value: formData.paypalUsername,
+              name: "🌐 IP Address",
+              value: userIP || "Unknown",
               inline: true,
             },
             {
@@ -570,14 +843,8 @@ function OrderDialog({
     setShowThankYou(false)
     setFormData({
       paypalUsername: "",
-      link: "",
-      quantity: "1000",
       discordUsername: "",
     })
-  }
-
-  const resetSelection = () => {
-    setPaymentMethod(null)
   }
 
   if (!selectedService && !isLoading) {
@@ -609,9 +876,9 @@ function OrderDialog({
             <h3 className="text-2xl font-bold text-green-500 mb-4">Order Placed!</h3>
             <div className="bg-gray-900/50 p-6 rounded-lg w-full max-w-xs">
               <p className="text-lg text-gray-300 mb-2">
-                Pay <span className="font-bold text-green-500">{formatPrice(calculatePrice(selectedService!, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</span>
+                Pay <span className="font-bold text-green-500">{formatPrice(selectedService!.totalPrice, selectedCurrency)}</span>
               </p>
-              <p className="text-gray-400">to PayPal: unreal030</p>
+              <p className="text-gray-400">to PayPal: <span className="font-bold text-purple-400">unreal030</span></p>
               <p className="text-red-500 text-sm mt-2">Friends & Family only</p>
             </div>
             <Button onClick={() => { onClose(); resetForm(); }} className="mt-6 bg-green-600 hover:bg-green-500">
@@ -623,16 +890,16 @@ function OrderDialog({
             <DialogHeader className="border-b border-gray-800/50 pb-4">
               <DialogTitle className="flex items-center gap-3 text-white">
                 <div className="w-8 h-8 bg-gray-800/50 rounded flex items-center justify-center">
-                  <img src={selectedService?.icon || "/placeholder.svg"} alt={selectedService?.network} className="w-5 h-5" />
+                  <span className="text-lg">🛒</span>
                 </div>
-                Order Service
+                Order {selectedService?.name}
               </DialogTitle>
             </DialogHeader>
 
             <div className="flex-1 overflow-y-auto p-6 space-y-6">
               {selectedService && (
                 <>
-                  <div className="text-gray-400 text-sm">{selectedService.title}</div>
+                  <div className="text-gray-400 text-sm">{selectedService.name}</div>
                   <Badge variant="secondary" className="bg-gray-800/50 text-gray-300">ID: {selectedService.id}</Badge>
                 </>
               )}
@@ -652,104 +919,59 @@ function OrderDialog({
                 </div>
               </div>
 
-              {!paymentMethod && (
-                <div className="space-y-6">
-                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                    <div className="flex items-center justify-between mb-4">
-                      <h3 className="text-white font-medium">Quantity</h3>
-                      <div className="flex items-center gap-3">
-                        <button onClick={() => adjustQuantity(-1000)} className="w-8 h-8 bg-gray-800/50 rounded hover:bg-gray-700/50 flex items-center justify-center">
-                          <span className="text-white">-</span>
-                        </button>
-                        <Input
-                          value={formData.quantity}
-                          onChange={(e) => handleInputChange("quantity", e.target.value)}
-                          className="w-20 text-center bg-gray-800/50 border-gray-700/50 text-white"
-                          type="number"
-                          min="1"
-                        />
-                        <button onClick={() => adjustQuantity(1000)} className="w-8 h-8 bg-gray-800/50 rounded hover:bg-gray-700/50 flex items-center justify-center">
-                          <span className="text-white">+</span>
-                        </button>
-                      </div>
+              <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
+                <h3 className="text-white font-medium mb-2">Bundle Contents</h3>
+                <div className="space-y-2">
+                  {selectedService?.services.map((service, index) => (
+                    <div key={index} className="flex justify-between text-sm text-gray-300">
+                      <span>{service.quantity} {service.name}</span>
+                      <span>{formatPrice(service.price, selectedCurrency)}</span>
                     </div>
-                    <div className="grid grid-cols-4 gap-2">
-                      {[1000, 5000, 10000, 25000].map((preset) => (
-                        <button
-                          key={preset}
-                          onClick={() => setPresetQuantity(preset)}
-                          className={`py-2 rounded ${formData.quantity === preset.toString() ? 'bg-purple-600 text-white' : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'}`}
-                        >
-                          {preset >= 1000 ? `${preset / 1000}k` : preset}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  {selectedService && (
-                    <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                      <div className="text-gray-400 text-sm mb-1">Price per 1000: {formatPrice(selectedService.price, selectedCurrency)}</div>
-                      <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
-                    </div>
-                  )}
-
-                  <div className="grid grid-cols-1 gap-4">
-                    <button onClick={() => setPaymentMethod("paypal")} className="bg-black hover:bg-gray-900 text-white py-3 rounded-lg border border-gray-700/50">
-                      PayPal
-                    </button>
-                  </div>
+                  ))}
                 </div>
-              )}
-
-              {paymentMethod === "paypal" && (
-                <div className="space-y-4">
-                  <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                    <h3 className="text-white font-medium mb-2">PayPal Instructions</h3>
-                    <ul className="text-gray-400 text-sm space-y-1">
-                      <li>• No notes allowed</li>
-                      <li>• Minimum: €3</li>
-                      <li>• Send to unreal030</li>
-                      <li>• Friends & Family only</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">Your Link *</label>
-                    <Input value={formData.link} onChange={(e) => handleInputChange("link", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">PayPal Username *</label>
-                    <Input value={formData.paypalUsername} onChange={(e) => handleInputChange("paypalUsername", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
-                  </div>
-
-                  <div>
-                    <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
-                    <Input value={formData.discordUsername} onChange={(e) => handleInputChange("discordUsername", e.target.value)} className="bg-gray-800/50 border-gray-700/50 text-white" />
-                  </div>
+                <div className="mt-4 pt-2 border-t border-gray-800/50 flex justify-between">
+                  <span className="text-white font-medium">Total:</span>
+                  <span className="text-white font-bold text-lg">{formatPrice(selectedService?.totalPrice || 0, selectedCurrency)}</span>
                 </div>
-              )}
+              </div>
 
-              {paymentMethod && selectedService && (
-                <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
-                  <div className="text-gray-400 text-sm mb-1">{Number.parseInt(formData.quantity) || 0} units</div>
-                  <div className="text-white text-xl font-bold">Total: {formatPrice(calculatePrice(selectedService, Number.parseInt(formData.quantity) || 1000), selectedCurrency)}</div>
-                </div>
-              )}
+              <div className="bg-gray-900/50 p-5 rounded-lg border border-gray-800/50">
+                <h3 className="text-white font-medium mb-2">PayPal Instructions</h3>
+                <ul className="text-gray-400 text-sm space-y-1">
+                  <li>• No notes allowed</li>
+                  <li>• Minimum: €3</li>
+                  <li>• Friends & Family only</li>
+                  <li>• Send to: <span className="font-bold text-purple-400">unreal030</span></li>
+                </ul>
+              </div>
+
+              <div>
+                <label className="block text-gray-300 mb-2">PayPal Username *</label>
+                <Input 
+                  value={formData.paypalUsername} 
+                  onChange={(e) => handleInputChange("paypalUsername", e.target.value)} 
+                  className="bg-gray-800/50 border-gray-700/50 text-white" 
+                  placeholder="Enter your PayPal username"
+                />
+              </div>
+
+              <div>
+                <label className="block text-gray-300 mb-2">Discord Username (Optional)</label>
+                <Input 
+                  value={formData.discordUsername} 
+                  onChange={(e) => handleInputChange("discordUsername", e.target.value)} 
+                  className="bg-gray-800/50 border-gray-700/50 text-white" 
+                  placeholder="Enter your Discord username"
+                />
+              </div>
             </div>
 
-            <div className="border-t border-gray-800/50 p-4 flex justify-end gap-3">
-              {paymentMethod && (
-                <button onClick={resetSelection} className="px-4 py-2 bg-gray-800/50 hover:bg-gray-700/50 text-gray-300 rounded-lg border border-gray-700/50">
-                  Back
-                </button>
-              )}
+            <div className="border-t border-gray-800/50 p-4 flex justify-end">
               <button
                 onClick={sendToDiscord}
                 disabled={
                   isSubmitting ||
                   !selectedService ||
-                  !formData.link ||
                   !formData.paypalUsername
                 }
                 className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg disabled:opacity-50"
@@ -769,7 +991,6 @@ export default function BundlesPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [currency] = useState("EUR")
   const [selectedBundle, setSelectedBundle] = useState<Bundle | null>(null)
-  const [selectedServiceForCalculator, setSelectedServiceForCalculator] = useState<any>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [pageLoaded, setPageLoaded] = useState(false)
   const [currencyRates, setCurrencyRates] = useState<Record<string, number>>({})
@@ -800,7 +1021,7 @@ export default function BundlesPage() {
   }, [])
 
   const filteredBundles = useMemo(() => {
-    return bundles.filter((bundle) => {
+    return adjustedBundles.filter((bundle) => {
       const matchesSearch = bundle.name ? bundle.name.toLowerCase().includes(searchQuery.toLowerCase()) : true
       return matchesSearch
     })
@@ -825,17 +1046,8 @@ export default function BundlesPage() {
     }, 300)
   }
 
-  const openPriceCalculator = (service: any) => {
-    setIsLoading(true)
-    setTimeout(() => {
-      setSelectedServiceForCalculator(service)
-      setIsLoading(false)
-    }, 300)
-  }
-
   const closeOrder = () => {
     setSelectedBundle(null)
-    setSelectedServiceForCalculator(null)
   }
 
   const formatPrice = (price: number, currency: string) => {
@@ -877,7 +1089,6 @@ export default function BundlesPage() {
               formatPrice={formatPrice}
               currency={currency}
               onBundleClick={openOrder}
-              onServiceClick={openPriceCalculator}
             />
           ))}
         </div>
@@ -885,14 +1096,6 @@ export default function BundlesPage() {
 
       <OrderDialog
         selectedService={selectedBundle}
-        isLoading={isLoading}
-        onClose={closeOrder}
-        formatPrice={formatPrice}
-        currency={currency}
-      />
-
-      <PriceCalculatorDialog
-        selectedService={selectedServiceForCalculator}
         isLoading={isLoading}
         onClose={closeOrder}
         formatPrice={formatPrice}
