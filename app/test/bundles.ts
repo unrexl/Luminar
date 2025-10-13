@@ -23,12 +23,11 @@ export const bundles: Bundle[] = [
     platform: "Instagram",
     name: "Instagram Starter Pack",
     services: [
-      { name: "likes", quantity: "5,000", price: 5.28 },
+      { name: "likes", quantity: "5,000", price: 1.06 },
       { name: "views", quantity: "10,000", price: 0.04 },
-      { name: "saves", quantity: "500", price: 0.72 },
-      { name: "shares", quantity: "100", price: 0.05 },
+      { name: "story_likes", quantity: "500", price: 1.43 },
     ],
-    totalPrice: 6.09,
+    totalPrice: 2.53,
     icon: "/icons/instagram.jpeg",
     popular: true,
   },
@@ -37,12 +36,11 @@ export const bundles: Bundle[] = [
     platform: "Instagram",
     name: "Instagram Growth Pack",
     services: [
-      { name: "likes", quantity: "25,000", price: 27.64 },
-      { name: "views", quantity: "50,000", price: 0.25 },
-      { name: "saves", quantity: "2,000", price: 2.86 },
-      { name: "shares", quantity: "500", price: 0.25 },
+      { name: "likes", quantity: "25,000", price: 5.28 },
+      { name: "views", quantity: "50,000", price: 0.20 },
+      { name: "story_likes", quantity: "2,000", price: 5.72 },
     ],
-    totalPrice: 31.00,
+    totalPrice: 11.20,
     icon: "/icons/instagram.jpeg",
     bestValue: true,
   },
@@ -51,12 +49,11 @@ export const bundles: Bundle[] = [
     platform: "Instagram",
     name: "Instagram Premium Pack",
     services: [
-      { name: "likes", quantity: "50,000", price: 55.28 },
-      { name: "views", quantity: "100,000", price: 0.49 },
-      { name: "saves", quantity: "5,000", price: 7.16 },
-      { name: "shares", quantity: "1,000", price: 0.50 },
+      { name: "likes", quantity: "50,000", price: 10.56 },
+      { name: "views", quantity: "100,000", price: 0.41 },
+      { name: "story_likes", quantity: "5,000", price: 14.32 },
     ],
-    totalPrice: 63.43,
+    totalPrice: 25.29,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -64,12 +61,11 @@ export const bundles: Bundle[] = [
     platform: "Instagram",
     name: "Instagram Mega Pack",
     services: [
-      { name: "likes", quantity: "100,000", price: 110.56 },
-      { name: "views", quantity: "250,000", price: 1.23 },
-      { name: "saves", quantity: "10,000", price: 14.32 },
-      { name: "shares", quantity: "2,500", price: 1.25 },
+      { name: "likes", quantity: "100,000", price: 21.10 },
+      { name: "views", quantity: "250,000", price: 1.02 },
+      { name: "story_likes", quantity: "10,000", price: 28.64 },
     ],
-    totalPrice: 127.36,
+    totalPrice: 50.76,
     icon: "/icons/instagram.jpeg",
   },
   
@@ -82,9 +78,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "5,000", price: 1.06 },
       { name: "views", quantity: "10,000", price: 0.39 },
       { name: "shares", quantity: "500", price: 0.11 },
-      { name: "saves", quantity: "200", price: 0.01 },
     ],
-    totalPrice: 1.57,
+    totalPrice: 1.56,
     icon: "/icons/tiktok.png",
     popular: true,
   },
@@ -93,12 +88,11 @@ export const bundles: Bundle[] = [
     platform: "TikTok",
     name: "TikTok Growth Pack",
     services: [
-      { name: "likes", quantity: "25,000", price: 5.30 },
+      { name: "likes", quantity: "25,000", price: 5.28 },
       { name: "views", quantity: "50,000", price: 1.94 },
       { name: "shares", quantity: "2,500", price: 0.57 },
-      { name: "saves", quantity: "1,000", price: 0.05 },
     ],
-    totalPrice: 7.86,
+    totalPrice: 7.79,
     icon: "/icons/tiktok.png",
     bestValue: true,
   },
@@ -107,12 +101,11 @@ export const bundles: Bundle[] = [
     platform: "TikTok",
     name: "TikTok Premium Pack",
     services: [
-      { name: "likes", quantity: "50,000", price: 10.60 },
+      { name: "likes", quantity: "50,000", price: 10.56 },
       { name: "views", quantity: "100,000", price: 3.87 },
       { name: "shares", quantity: "5,000", price: 1.13 },
-      { name: "saves", quantity: "2,000", price: 0.10 },
     ],
-    totalPrice: 15.70,
+    totalPrice: 15.56,
     icon: "/icons/tiktok.png",
   },
   {
@@ -123,9 +116,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "100,000", price: 21.10 },
       { name: "views", quantity: "250,000", price: 9.68 },
       { name: "shares", quantity: "10,000", price: 2.26 },
-      { name: "saves", quantity: "5,000", price: 0.23 },
     ],
-    totalPrice: 33.27,
+    totalPrice: 33.04,
     icon: "/icons/tiktok.png",
   },
   
@@ -135,11 +127,11 @@ export const bundles: Bundle[] = [
     platform: "Twitter",
     name: "Twitter Starter Pack",
     services: [
-      { name: "likes", quantity: "5,000", price: 13.07 },
+      { name: "likes", quantity: "5,000", price: 14.07 },
       { name: "views", quantity: "10,000", price: 0.34 },
       { name: "reposts", quantity: "500", price: 1.86 },
     ],
-    totalPrice: 15.27,
+    totalPrice: 16.27,
     icon: "/icons/twitter.png",
     popular: true,
   },
@@ -148,11 +140,11 @@ export const bundles: Bundle[] = [
     platform: "Twitter",
     name: "Twitter Growth Pack",
     services: [
-      { name: "likes", quantity: "25,000", price: 65.35 },
+      { name: "likes", quantity: "25,000", price: 70.35 },
       { name: "views", quantity: "50,000", price: 1.70 },
       { name: "reposts", quantity: "2,500", price: 9.30 },
     ],
-    totalPrice: 76.35,
+    totalPrice: 81.35,
     icon: "/icons/twitter.png",
     bestValue: true,
   },
@@ -161,11 +153,11 @@ export const bundles: Bundle[] = [
     platform: "Twitter",
     name: "Twitter Premium Pack",
     services: [
-      { name: "likes", quantity: "50,000", price: 130.70 },
+      { name: "likes", quantity: "50,000", price: 140.70 },
       { name: "views", quantity: "100,000", price: 3.40 },
       { name: "reposts", quantity: "5,000", price: 18.60 },
     ],
-    totalPrice: 152.70,
+    totalPrice: 162.70,
     icon: "/icons/twitter.png",
   },
   {
@@ -173,11 +165,11 @@ export const bundles: Bundle[] = [
     platform: "Twitter",
     name: "Twitter Mega Pack",
     services: [
-      { name: "likes", quantity: "100,000", price: 261.40 },
+      { name: "likes", quantity: "100,000", price: 281.40 },
       { name: "views", quantity: "200,000", price: 6.80 },
       { name: "reposts", quantity: "10,000", price: 37.20 },
     ],
-    totalPrice: 305.40,
+    totalPrice: 325.40,
     icon: "/icons/twitter.png",
   },
   
@@ -291,10 +283,10 @@ export const bundles: Bundle[] = [
     platform: "Reddit",
     name: "Reddit Starter Pack",
     services: [
-      { name: "views", quantity: "50,000", price: 0.05 },
-      { name: "shares", quantity: "5,000", price: 0.01 },
+      { name: "views", quantity: "50,000", price: 1.01 },
+      { name: "shares", quantity: "5,000", price: 1.01 },
     ],
-    totalPrice: 0.06,
+    totalPrice: 2.02,
     icon: "/icons/reddit.png",
     popular: true,
   },
@@ -303,10 +295,10 @@ export const bundles: Bundle[] = [
     platform: "Reddit",
     name: "Reddit Growth Pack",
     services: [
-      { name: "views", quantity: "250,000", price: 0.25 },
-      { name: "shares", quantity: "25,000", price: 0.03 },
+      { name: "views", quantity: "250,000", price: 5.03 },
+      { name: "shares", quantity: "25,000", price: 5.03 },
     ],
-    totalPrice: 0.28,
+    totalPrice: 10.06,
     icon: "/icons/reddit.png",
     bestValue: true,
   },
@@ -315,10 +307,10 @@ export const bundles: Bundle[] = [
     platform: "Reddit",
     name: "Reddit Premium Pack",
     services: [
-      { name: "views", quantity: "500,000", price: 0.50 },
-      { name: "shares", quantity: "50,000", price: 0.05 },
+      { name: "views", quantity: "500,000", price: 10.05 },
+      { name: "shares", quantity: "50,000", price: 10.05 },
     ],
-    totalPrice: 0.55,
+    totalPrice: 20.10,
     icon: "/icons/reddit.png",
   },
   {
@@ -326,39 +318,10 @@ export const bundles: Bundle[] = [
     platform: "Reddit",
     name: "Reddit Mega Pack",
     services: [
-      { name: "views", quantity: "1,000,000", price: 1.01 },
-      { name: "shares", quantity: "100,000", price: 0.10 },
+      { name: "views", quantity: "1,000,000", price: 20.10 },
+      { name: "shares", quantity: "100,000", price: 20.10 },
     ],
-    totalPrice: 1.11,
+    totalPrice: 40.20,
     icon: "/icons/reddit.png",
   },
 ]
-
-// Adjust bundles that exceed 40 euros
-export const adjustedBundles = bundles.map(bundle => {
-  if (bundle.totalPrice > 40) {
-    // Calculate scaling factor to bring total to 40 euros
-    const scaleFactor = 40 / bundle.totalPrice;
-    
-    // Scale down each service quantity proportionally
-    const adjustedServices = bundle.services.map(service => {
-      const quantityNum = parseInt(service.quantity.replace(/,/g, ''));
-      const adjustedQuantity = Math.round(quantityNum * scaleFactor);
-      return {
-        ...service,
-        quantity: adjustedQuantity.toLocaleString(),
-        price: service.price * scaleFactor
-      };
-    });
-    
-    // Recalculate total
-    const adjustedTotal = adjustedServices.reduce((sum, service) => sum + service.price, 0);
-    
-    return {
-      ...bundle,
-      services: adjustedServices,
-      totalPrice: adjustedTotal
-    };
-  }
-  return bundle;
-});
