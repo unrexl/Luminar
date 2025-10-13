@@ -242,5 +242,3 @@ export const bundles: Bundle[] = [
     icon: "/icons/reddit.png",
   },
 ]
-
-export const affordableBundles = bundles.filter(bundle => bundle.totalPrice <= 40)
