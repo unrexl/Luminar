@@ -1,12 +1,10 @@
 "use client"
 
 import { useMemo, useState, useEffect } from "react"
-import { Plus, Minus } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { LoadingSpinner } from "@/components/loading-spinner"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 
 // Bundle Data
@@ -22,6 +20,7 @@ export interface Bundle {
   name: string
   services: BundleService[]
   totalPrice: number
+  icon: string
 }
 
 export const bundles: Bundle[] = [
@@ -37,6 +36,7 @@ export const bundles: Bundle[] = [
       { name: "shares", quantity: "100", price: 0.50 },
     ],
     totalPrice: 6.05,
+    icon: "/icons/instagram.jpeg",
   },
   {
     id: "instagram-growth",
@@ -49,6 +49,7 @@ export const bundles: Bundle[] = [
       { name: "shares", quantity: "500", price: 2.50 },
     ],
     totalPrice: 33.75,
+    icon: "/icons/instagram.jpeg",
   },
   {
     id: "instagram-mega",
@@ -60,7 +61,8 @@ export const bundles: Bundle[] = [
       { name: "saves", quantity: "5,000", price: 5.00 },
       { name: "shares", quantity: "1,000", price: 5.00 },
     ],
-    totalPrice: 101.00, // Adjusted to 100.00 in code below
+    totalPrice: 101.00,
+    icon: "/icons/instagram.jpeg",
   },
   
   // TikTok Bundles
@@ -75,6 +77,7 @@ export const bundles: Bundle[] = [
       { name: "saves", quantity: "200", price: 0.02 },
     ],
     totalPrice: 1.57,
+    icon: "/icons/tiktok.png",
   },
   {
     id: "tiktok-growth",
@@ -87,6 +90,7 @@ export const bundles: Bundle[] = [
       { name: "saves", quantity: "1,000", price: 0.05 },
     ],
     totalPrice: 10.79,
+    icon: "/icons/tiktok.png",
   },
   {
     id: "tiktok-mega",
@@ -99,6 +103,7 @@ export const bundles: Bundle[] = [
       { name: "saves", quantity: "5,000", price: 0.23 },
     ],
     totalPrice: 42.94,
+    icon: "/icons/tiktok.png",
   },
   
   // Twitter Bundles
@@ -112,6 +117,7 @@ export const bundles: Bundle[] = [
       { name: "reposts", quantity: "500", price: 3.72 },
     ],
     totalPrice: 18.13,
+    icon: "/icons/twitter.png",
   },
   {
     id: "twitter-growth",
@@ -122,7 +128,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "100,000", price: 3.40 },
       { name: "reposts", quantity: "2,500", price: 18.59 },
     ],
-    totalPrice: 106.41, // Adjusted to 100.00 in code below
+    totalPrice: 106.41,
+    icon: "/icons/twitter.png",
   },
   {
     id: "twitter-mega",
@@ -133,42 +140,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "500,000", price: 17.00 },
       { name: "reposts", quantity: "10,000", price: 74.38 },
     ],
-    totalPrice: 372.78, // Adjusted to 100.00 in code below
-  },
-  
-  // YouTube Bundles
-  {
-    id: "youtube-starter",
-    platform: "YouTube",
-    name: "YouTube Starter Pack",
-    services: [
-      { name: "views", quantity: "5,000", price: 18.59 },
-      { name: "likes", quantity: "500", price: 0.10 },
-      { name: "comment likes", quantity: "50", price: 0.03},
-    ],
-    totalPrice: 18.72,
-  },
-  {
-    id: "youtube-growth",
-    platform: "YouTube",
-    name: "YouTube Growth Pack",
-    services: [
-      { name: "views", quantity: "30,000", price: 111.56 },
-      { name: "likes", quantity: "3,000", price: 0.60 },
-      { name: "comment likes", quantity: "300", price: 0.23 },
-    ],
-    totalPrice: 112.39, // Adjusted to 100.00 in code below
-  },
-  {
-    id: "youtube-mega",
-    platform: "YouTube",
-    name: "YouTube Mega Pack",
-    services: [
-      { name: "views", quantity: "100,000", price: 371.87 },
-      { name: "likes", quantity: "10,000", price: 2.01 },
-      { name: "comment likes", quantity: "1,000", price: 0.85 },
-    ],
-    totalPrice: 374.73, // Adjusted to 100.00 in code below
+    totalPrice: 372.78,
+    icon: "/icons/twitter.png",
   },
   
   // Facebook Bundles
@@ -182,6 +155,7 @@ export const bundles: Bundle[] = [
       { name: "reactions", quantity: "500", price: 0.37 },
     ],
     totalPrice: 5.22,
+    icon: "/icons/facebook.png",
   },
   {
     id: "facebook-growth",
@@ -193,6 +167,7 @@ export const bundles: Bundle[] = [
       { name: "reactions", quantity: "2,500", price: 1.47 },
     ],
     totalPrice: 31.25,
+    icon: "/icons/facebook.png",
   },
   {
     id: "facebook-mega",
@@ -203,7 +178,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "500,000", price: 2.00 },
       { name: "reactions", quantity: "10,000", price: 5.86 },
     ],
-    totalPrice: 104.36, // Adjusted to 100.00 in code below
+    totalPrice: 104.36,
+    icon: "/icons/facebook.png",
   },
   
   // Telegram Bundles
@@ -217,6 +193,7 @@ export const bundles: Bundle[] = [
       { name: "reactions", quantity: "500", price: 0.05 },
     ],
     totalPrice: 15.76,
+    icon: "/icons/telegram.png",
   },
   {
     id: "telegram-growth",
@@ -228,6 +205,7 @@ export const bundles: Bundle[] = [
       { name: "reactions", quantity: "2,000", price: 0.19 },
     ],
     totalPrice: 63.02,
+    icon: "/icons/telegram.png",
   },
   {
     id: "telegram-mega",
@@ -238,100 +216,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "500,000", price: 3.80 },
       { name: "reactions", quantity: "10,000", price: 0.95 },
     ],
-    totalPrice: 158.02, // Adjusted to 100.00 in code below
-  },
-  
-  // Twitch Bundles
-  {
-    id: "twitch-starter",
-    platform: "Twitch",
-    name: "Twitch Starter Pack",
-    services: [
-      { name: "followers", quantity: "5,000", price: 10.55 },
-      { name: "views", quantity: "10,000", price: 2.01 },
-    ],
-    totalPrice: 12.56,
-  },
-  {
-    id: "twitch-growth",
-    platform: "Twitch",
-    name: "Twitch Growth Pack",
-    services: [
-      { name: "followers", quantity: "30,000", price: 42.12 },
-      { name: "views", quantity: "100,000", price: 8.04 },
-    ],
-    totalPrice: 50.16,
-  },
-  {
-    id: "twitch-mega",
-    platform: "Twitch",
-    name: "Twitch Mega Pack",
-    services: [
-      { name: "followers", quantity: "100,000", price: 105.53 },
-      { name: "views", quantity: "500,000", price: 40.22 },
-    ],
-    totalPrice: 145.75, // Adjusted to 100.00 in code below
-  },
-  
-  // Kick Bundles
-  {
-    id: "kick-starter",
-    platform: "Kick",
-    name: "Kick Starter Pack",
-    services: [
-      { name: "followers", quantity: "5,000", price: 12.36 },
-      { name: "views", quantity: "10,000", price: 0.42 },
-    ],
-    totalPrice: 12.78,
-  },
-  {
-    id: "kick-growth",
-    platform: "Kick",
-    name: "Kick Growth Pack",
-    services: [
-      { name: "followers", quantity: "30,000", price: 41.21 },
-      { name: "views", quantity: "100,000", price: 1.41 },
-    ],
-    totalPrice: 42.62,
-  },
-  {
-    id: "kick-mega",
-    platform: "Kick",
-    name: "Kick Mega Pack",
-    services: [
-      { name: "followers", quantity: "100,000", price: 103.02 },
-      { name: "views", quantity: "250,000", price: 3.52 },
-    ],
-    totalPrice: 106.54, // Adjusted to 100.00 in code below
-  },
-  
-  // Spotify Bundles
-  {
-    id: "spotify-starter",
-    platform: "Spotify",
-    name: "Spotify Starter Pack",
-    services: [
-      { name: "followers", quantity: "10,000", price: 0.01 },
-    ],
-    totalPrice: 0.01,
-  },
-  {
-    id: "spotify-growth",
-    platform: "Spotify",
-    name: "Spotify Growth Pack",
-    services: [
-      { name: "followers", quantity: "50,000", price: 0.07 },
-    ],
-    totalPrice: 0.07,
-  },
-  {
-    id: "spotify-mega",
-    platform: "Spotify",
-    name: "Spotify Mega Pack",
-    services: [
-      { name: "followers", quantity: "100,000", price: 0.14 },
-    ],
-    totalPrice: 0.14,
+    totalPrice: 158.02,
+    icon: "/icons/telegram.png",
   },
   
   // Reddit Bundles
@@ -344,6 +230,7 @@ export const bundles: Bundle[] = [
       { name: "shares", quantity: "5,000", price: 0.00001 },
     ],
     totalPrice: 0.00011,
+    icon: "/icons/reddit.png",
   },
   {
     id: "reddit-growth",
@@ -354,6 +241,7 @@ export const bundles: Bundle[] = [
       { name: "shares", quantity: "20,000", price: 0.00004 },
     ],
     totalPrice: 0.00044,
+    icon: "/icons/reddit.png",
   },
   {
     id: "reddit-mega",
@@ -364,6 +252,7 @@ export const bundles: Bundle[] = [
       { name: "shares", quantity: "50,000", price: 0.0001 },
     ],
     totalPrice: 0.0011,
+    icon: "/icons/reddit.png",
   },
   
   // Snapchat Bundles
@@ -376,6 +265,7 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "500", price: 4.02 },
     ],
     totalPrice: 26.63,
+    icon: "/icons/snapchat.svg",
   },
   {
     id: "snapchat-growth",
@@ -385,7 +275,8 @@ export const bundles: Bundle[] = [
       { name: "followers", quantity: "30,000", price: 90.45 },
       { name: "likes", quantity: "2,000", price: 16.08 },
     ],
-    totalPrice: 106.53, // Adjusted to 100.00 in code below
+    totalPrice: 106.53,
+    icon: "/icons/snapchat.svg",
   },
   {
     id: "snapchat-mega",
@@ -395,97 +286,8 @@ export const bundles: Bundle[] = [
       { name: "followers", quantity: "100,000", price: 226.14 },
       { name: "likes", quantity: "5,000", price: 40.20 },
     ],
-    totalPrice: 266.34, // Adjusted to 100.00 in code below
-  },
-  
-  // WhatsApp Bundles
-  {
-    id: "whatsapp-starter",
-    platform: "WhatsApp",
-    name: "WhatsApp Starter Pack",
-    services: [
-      { name: "members", quantity: "10,000", price: 7.54 },
-      { name: "reactions", quantity: "1,000", price: 3.77 },
-    ],
-    totalPrice: 11.31,
-  },
-  {
-    id: "whatsapp-growth",
-    platform: "WhatsApp",
-    name: "WhatsApp Growth Pack",
-    services: [
-      { name: "members", quantity: "30,000", price: 22.61 },
-      { name: "reactions", quantity: "3,000", price: 11.31 },
-    ],
-    totalPrice: 33.92,
-  },
-  {
-    id: "whatsapp-mega",
-    platform: "WhatsApp",
-    name: "WhatsApp Mega Pack",
-    services: [
-      { name: "members", quantity: "50,000", price: 37.69 },
-      { name: "reactions", quantity: "5,000", price: 18.85 },
-    ],
-    totalPrice: 56.54,
-  },
-  
-  // Google Bundles
-  {
-    id: "google-starter",
-    platform: "Google",
-    name: "Google Starter Pack",
-    services: [
-      { name: "reviews", quantity: "100", price: 25.13 },
-    ],
-    totalPrice: 25.13,
-  },
-  {
-    id: "google-growth",
-    platform: "Google",
-    name: "Google Growth Pack",
-    services: [
-      { name: "reviews", quantity: "500", price: 125.63 },
-    ],
-    totalPrice: 125.63, // Adjusted to 100.00 in code below
-  },
-  {
-    id: "google-mega",
-    platform: "Google",
-    name: "Google Mega Pack",
-    services: [
-      { name: "reviews", quantity: "1,000", price: 251.26 },
-    ],
-    totalPrice: 251.26, // Adjusted to 100.00 in code below
-  },
-  
-  // Discord Bundles
-  {
-    id: "discord-starter",
-    platform: "Discord",
-    name: "Discord Starter Pack",
-    services: [
-      { name: "server boosts", quantity: "1", price: 0.57 },
-    ],
-    totalPrice: 0.57,
-  },
-  {
-    id: "discord-growth",
-    platform: "Discord",
-    name: "Discord Growth Pack",
-    services: [
-      { name: "server boosts", quantity: "5", price: 2.86 },
-    ],
-    totalPrice: 2.86,
-  },
-  {
-    id: "discord-mega",
-    platform: "Discord",
-    name: "Discord Mega Pack",
-    services: [
-      { name: "server boosts", quantity: "14", price: 8.00 },
-    ],
-    totalPrice: 8.00,
+    totalPrice: 266.34,
+    icon: "/icons/snapchat.svg",
   },
 ]
 
@@ -614,98 +416,63 @@ function Header() {
   )
 }
 
-// Compact Search Bar Component
-function CompactSearchBar({
-  searchQuery,
-  setSearchQuery,
-}: {
-  searchQuery: string
-  setSearchQuery: (query: string) => void
-}) {
-  const [isSearchFocused, setIsSearchFocused] = useState(false)
-
+// Platform Header Component
+function PlatformHeader({ platform, icon }: { platform: string; icon: string }) {
   return (
-    <div className="w-full max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-5">
-      <div className="flex justify-end">
-        <div className="relative w-full sm:w-56">
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <svg 
-              className={`h-4 w-4 transition-all duration-300 ${isSearchFocused ? 'text-indigo-400' : 'text-gray-500'}`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onFocus={() => setIsSearchFocused(true)}
-            onBlur={() => setIsSearchFocused(false)}
-            placeholder="Search bundles..."
-            className={`w-full pl-9 pr-3 py-2 text-xs sm:text-sm rounded-xl border transition-all duration-300 bg-gray-900/60 backdrop-blur-sm text-gray-200 placeholder-gray-500 ${
-              isSearchFocused 
-                ? 'border-indigo-500/50 ring-2 ring-indigo-500/30' 
-                : 'border-gray-700/50'
-            }`}
-          />
-        </div>
+    <div className="flex flex-col items-center mb-8">
+      <div className="flex items-center justify-center mb-3">
+        <img 
+          src={icon} 
+          alt={platform} 
+          className="w-12 h-12 object-contain rounded-lg"
+        />
       </div>
+      <h2 className="text-3xl font-bold text-white text-center">{platform} Bundles</h2>
+      <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-3"></div>
     </div>
   )
 }
 
 // Bundle Card Component
 function BundleCard({
-  platform,
-  bundles,
+  bundle,
   formatPrice,
   currency,
   onBundleClick,
 }: {
-  platform: string
-  bundles: Bundle[]
+  bundle: Bundle
   formatPrice: (price: number, currency: string) => string
   currency: string
   onBundleClick: (bundle: Bundle) => void
 }) {
   return (
-    <div className="mb-8">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-2xl font-bold text-white">{platform} Bundles</h2>
-      </div>
-      
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {bundles.map((bundle) => (
-          <div
-            key={bundle.id}
-            className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-5 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10"
-          >
-            <div className="mb-4">
-              <h3 className="text-xl font-semibold text-white mb-2">{bundle.name}</h3>
-              <div className="space-y-2">
-                {bundle.services.map((service, index) => (
-                  <div key={index} className="flex justify-between text-sm text-gray-300">
-                    <span>{service.quantity} {service.name}</span>
-                    <span>{formatPrice(service.price, currency)}</span>
-                  </div>
-                ))}
+    <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+      <div className="flex items-start gap-4">
+        <img 
+          src={bundle.icon} 
+          alt={bundle.platform} 
+          className="w-10 h-10 object-contain rounded-lg mt-1"
+        />
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold text-white mb-3">{bundle.name}</h3>
+          <div className="space-y-2 mb-4">
+            {bundle.services.map((service, index) => (
+              <div key={index} className="flex justify-between text-sm text-gray-300">
+                <span>{service.quantity} {service.name}</span>
+                <span>{formatPrice(service.price, currency)}</span>
               </div>
-            </div>
-            
-            <div className="flex justify-between items-center mt-4 pt-4 border-t border-gray-800/50">
-              <span className="text-lg font-bold text-white">Total: {formatPrice(bundle.totalPrice, currency)}</span>
-              <button
-                onClick={() => onBundleClick(bundle)}
-                className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
-              >
-                Order Now
-              </button>
-            </div>
+            ))}
           </div>
-        ))}
+          <div className="flex justify-between items-center pt-4 border-t border-gray-800/50">
+            <span className="text-lg font-bold text-white">Total: {formatPrice(bundle.totalPrice, currency)}</span>
+            <button
+              onClick={() => onBundleClick(bundle)}
+              className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
+            >
+              Order Now
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -890,7 +657,7 @@ function OrderDialog({
             <DialogHeader className="border-b border-gray-800/50 pb-4">
               <DialogTitle className="flex items-center gap-3 text-white">
                 <div className="w-8 h-8 bg-gray-800/50 rounded flex items-center justify-center">
-                  <span className="text-lg">🛒</span>
+                  <img src={selectedService?.icon || "/placeholder.svg"} alt={selectedService?.platform} className="w-5 h-5" />
                 </div>
                 Order {selectedService?.name}
               </DialogTitle>
@@ -1027,6 +794,7 @@ export default function BundlesPage() {
     })
   }, [searchQuery])
 
+  // Group bundles by platform
   const groupedBundles = useMemo(() => {
     return filteredBundles.reduce(
       (acc, bundle) => {
@@ -1077,19 +845,29 @@ export default function BundlesPage() {
   return (
     <div className="min-h-screen bg-black text-gray-100">
       <Header />
-      <CompactSearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       
-      <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 py-4 sm:py-8">
-        <div className="space-y-6 sm:space-y-8">
+      <main className="mx-auto w-full max-w-7xl px-3 sm:px-4 md:px-6 py-8 sm:py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Social Media Growth Bundles</h1>
+          <p className="text-gray-400 max-w-2xl mx-auto">Boost your social media presence with our affordable and effective growth bundles</p>
+        </div>
+        
+        <div className="space-y-16">
           {Object.entries(groupedBundles).map(([platform, platformBundles]) => (
-            <BundleCard
-              key={platform}
-              platform={platform}
-              bundles={platformBundles}
-              formatPrice={formatPrice}
-              currency={currency}
-              onBundleClick={openOrder}
-            />
+            <div key={platform}>
+              <PlatformHeader platform={platform} icon={platformBundles[0].icon} />
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {platformBundles.map((bundle) => (
+                  <BundleCard
+                    key={bundle.id}
+                    bundle={bundle}
+                    formatPrice={formatPrice}
+                    currency={currency}
+                    onBundleClick={openOrder}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </main>
