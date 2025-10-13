@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { Badge } from "@/components/ui/badge"
+import { Star, Zap, Crown } from "lucide-react"
 
 // Bundle Data
 export interface BundleService {
@@ -21,6 +22,8 @@ export interface Bundle {
   services: BundleService[]
   totalPrice: number
   icon: string
+  popular?: boolean
+  bestValue?: boolean
 }
 
 export const bundles: Bundle[] = [
@@ -37,6 +40,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 6.09,
     icon: "/icons/instagram.jpeg",
+    popular: true,
   },
   {
     id: "instagram-growth",
@@ -47,9 +51,11 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "50,000", price: 0.25 },
       { name: "saves", quantity: "2,000", price: 2.86 },
       { name: "shares", quantity: "500", price: 0.25 },
+      { name: "story likes", quantity: "1,000", price: 1.43 },
     ],
-    totalPrice: 31.00,
+    totalPrice: 32.43,
     icon: "/icons/instagram.jpeg",
+    bestValue: true,
   },
   {
     id: "instagram-premium",
@@ -60,8 +66,10 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "100,000", price: 0.49 },
       { name: "saves", quantity: "5,000", price: 7.16 },
       { name: "shares", quantity: "1,000", price: 0.50 },
+      { name: "story likes", quantity: "2,000", price: 2.86 },
+      { name: "comment likes", quantity: "1,000", price: 0.75 },
     ],
-    totalPrice: 63.43, // Scaled down to 40€ below
+    totalPrice: 67.04, // Scaled down to 40€ below
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -70,11 +78,14 @@ export const bundles: Bundle[] = [
     name: "Instagram Mega Pack",
     services: [
       { name: "likes", quantity: "100,000", price: 110.56 },
-      { name: "views", quantity: "200,000", price: 0.98 },
+      { name: "views", quantity: "250,000", price: 1.23 },
       { name: "saves", quantity: "10,000", price: 14.32 },
-      { name: "shares", quantity: "2,000", price: 1.00 },
+      { name: "shares", quantity: "2,500", price: 1.25 },
+      { name: "story likes", quantity: "5,000", price: 7.16 },
+      { name: "comment likes", quantity: "2,500", price: 1.88 },
+      { name: "followers", quantity: "5,000", price: 8.24 },
     ],
-    totalPrice: 126.86, // Scaled down to 40€ below
+    totalPrice: 144.14, // Scaled down to 40€ below
     icon: "/icons/instagram.jpeg",
   },
   
@@ -91,6 +102,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 1.57,
     icon: "/icons/tiktok.png",
+    popular: true,
   },
   {
     id: "tiktok-growth",
@@ -101,9 +113,11 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "50,000", price: 1.94 },
       { name: "shares", quantity: "2,500", price: 0.57 },
       { name: "saves", quantity: "1,000", price: 0.05 },
+      { name: "live stream likes", quantity: "1,000", price: 0.23 },
     ],
-    totalPrice: 7.86,
+    totalPrice: 8.09,
     icon: "/icons/tiktok.png",
+    bestValue: true,
   },
   {
     id: "tiktok-premium",
@@ -114,8 +128,10 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "100,000", price: 3.87 },
       { name: "shares", quantity: "5,000", price: 1.13 },
       { name: "saves", quantity: "2,000", price: 0.10 },
+      { name: "live stream likes", quantity: "2,000", price: 0.46 },
+      { name: "video downloads", quantity: "500", price: 0.20 },
     ],
-    totalPrice: 15.70,
+    totalPrice: 16.36,
     icon: "/icons/tiktok.png",
   },
   {
@@ -127,8 +143,11 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "250,000", price: 9.68 },
       { name: "shares", quantity: "10,000", price: 2.26 },
       { name: "saves", quantity: "5,000", price: 0.23 },
+      { name: "live stream likes", quantity: "5,000", price: 1.15 },
+      { name: "video downloads", quantity: "1,000", price: 0.40 },
+      { name: "followers", quantity: "2,000", price: 13.57 },
     ],
-    totalPrice: 33.27,
+    totalPrice: 48.39, // Scaled down to 40€ below
     icon: "/icons/tiktok.png",
   },
   
@@ -144,6 +163,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 15.27,
     icon: "/icons/twitter.png",
+    popular: true,
   },
   {
     id: "twitter-growth",
@@ -153,9 +173,11 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "25,000", price: 65.35 },
       { name: "views", quantity: "50,000", price: 1.70 },
       { name: "reposts", quantity: "2,500", price: 9.30 },
+      { name: "comment likes", quantity: "1,000", price: 0.65 },
     ],
-    totalPrice: 76.35, // Scaled down to 40€ below
+    totalPrice: 77.00, // Scaled down to 40€ below
     icon: "/icons/twitter.png",
+    bestValue: true,
   },
   {
     id: "twitter-premium",
@@ -165,8 +187,10 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "50,000", price: 130.70 },
       { name: "views", quantity: "100,000", price: 3.40 },
       { name: "reposts", quantity: "5,000", price: 18.60 },
+      { name: "comment likes", quantity: "2,000", price: 1.31 },
+      { name: "followers", quantity: "1,000", price: 4.77 },
     ],
-    totalPrice: 152.70, // Scaled down to 40€ below
+    totalPrice: 158.78, // Scaled down to 40€ below
     icon: "/icons/twitter.png",
   },
   {
@@ -177,8 +201,11 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "100,000", price: 261.40 },
       { name: "views", quantity: "200,000", price: 6.80 },
       { name: "reposts", quantity: "10,000", price: 37.20 },
+      { name: "comment likes", quantity: "5,000", price: 3.27 },
+      { name: "followers", quantity: "2,000", price: 9.55 },
+      { name: "quote tweets", quantity: "500", price: 1.86 },
     ],
-    totalPrice: 305.40, // Scaled down to 40€ below
+    totalPrice: 320.08, // Scaled down to 40€ below
     icon: "/icons/twitter.png",
   },
   
@@ -194,6 +221,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 6.23,
     icon: "/icons/facebook.png",
+    popular: true,
   },
   {
     id: "facebook-growth",
@@ -203,9 +231,11 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "25,000", price: 30.16 },
       { name: "views", quantity: "50,000", price: 0.10 },
       { name: "reactions", quantity: "2,500", price: 0.92 },
+      { name: "shares", quantity: "500", price: 0.60 },
     ],
-    totalPrice: 31.18,
+    totalPrice: 31.78,
     icon: "/icons/facebook.png",
+    bestValue: true,
   },
   {
     id: "facebook-premium",
@@ -215,8 +245,10 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "50,000", price: 60.31 },
       { name: "views", quantity: "100,000", price: 0.20 },
       { name: "reactions", quantity: "5,000", price: 1.84 },
+      { name: "shares", quantity: "1,000", price: 1.20 },
+      { name: "event responses", quantity: "500", price: 0.30 },
     ],
-    totalPrice: 62.35, // Scaled down to 40€ below
+    totalPrice: 63.85, // Scaled down to 40€ below
     icon: "/icons/facebook.png",
   },
   {
@@ -227,8 +259,11 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "100,000", price: 120.62 },
       { name: "views", quantity: "200,000", price: 0.40 },
       { name: "reactions", quantity: "10,000", price: 3.67 },
+      { name: "shares", quantity: "2,000", price: 2.41 },
+      { name: "event responses", quantity: "1,000", price: 0.60 },
+      { name: "followers", quantity: "5,000", price: 2.49 },
     ],
-    totalPrice: 124.69, // Scaled down to 40€ below
+    totalPrice: 129.79, // Scaled down to 40€ below
     icon: "/icons/facebook.png",
   },
   
@@ -244,6 +279,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 15.46,
     icon: "/icons/telegram.png",
+    popular: true,
   },
   {
     id: "telegram-growth",
@@ -253,9 +289,11 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "25,000", price: 76.65 },
       { name: "views", quantity: "50,000", price: 0.38 },
       { name: "reactions", quantity: "2,500", price: 0.24 },
+      { name: "forwards", quantity: "500", price: 0.10 },
     ],
-    totalPrice: 77.27, // Scaled down to 40€ below
+    totalPrice: 77.37, // Scaled down to 40€ below
     icon: "/icons/telegram.png",
+    bestValue: true,
   },
   {
     id: "telegram-premium",
@@ -265,8 +303,10 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "50,000", price: 153.30 },
       { name: "views", quantity: "100,000", price: 0.76 },
       { name: "reactions", quantity: "5,000", price: 0.48 },
+      { name: "forwards", quantity: "1,000", price: 0.19 },
+      { name: "pinned messages", quantity: "10", price: 0.05 },
     ],
-    totalPrice: 154.54, // Scaled down to 40€ below
+    totalPrice: 154.78, // Scaled down to 40€ below
     icon: "/icons/telegram.png",
   },
   {
@@ -277,8 +317,11 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "100,000", price: 306.60 },
       { name: "views", quantity: "200,000", price: 1.52 },
       { name: "reactions", quantity: "10,000", price: 0.95 },
+      { name: "forwards", quantity: "2,000", price: 0.38 },
+      { name: "pinned messages", quantity: "20", price: 0.10 },
+      { name: "channel boosts", quantity: "5", price: 15.33 },
     ],
-    totalPrice: 309.07, // Scaled down to 40€ below
+    totalPrice: 324.88, // Scaled down to 40€ below
     icon: "/icons/telegram.png",
   },
   
@@ -293,6 +336,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 0.06,
     icon: "/icons/reddit.png",
+    popular: true,
   },
   {
     id: "reddit-growth",
@@ -301,9 +345,11 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "250,000", price: 0.25 },
       { name: "shares", quantity: "25,000", price: 0.03 },
+      { name: "upvotes", quantity: "10,000", price: 0.01 },
     ],
-    totalPrice: 0.28,
+    totalPrice: 0.29,
     icon: "/icons/reddit.png",
+    bestValue: true,
   },
   {
     id: "reddit-premium",
@@ -312,8 +358,10 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "500,000", price: 0.50 },
       { name: "shares", quantity: "50,000", price: 0.05 },
+      { name: "upvotes", quantity: "25,000", price: 0.03 },
+      { name: "comments", quantity: "1,000", price: 0.01 },
     ],
-    totalPrice: 0.55,
+    totalPrice: 0.59,
     icon: "/icons/reddit.png",
   },
   {
@@ -323,8 +371,11 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "1,000,000", price: 1.01 },
       { name: "shares", quantity: "100,000", price: 0.10 },
+      { name: "upvotes", quantity: "50,000", price: 0.05 },
+      { name: "comments", quantity: "5,000", price: 0.05 },
+      { name: "gold awards", quantity: "10", price: 0.40 },
     ],
-    totalPrice: 1.11,
+    totalPrice: 1.61,
     icon: "/icons/reddit.png",
   },
   
@@ -339,6 +390,7 @@ export const bundles: Bundle[] = [
     ],
     totalPrice: 34.42,
     icon: "/icons/snapchat.svg",
+    popular: true,
   },
   {
     id: "snapchat-growth",
@@ -347,9 +399,11 @@ export const bundles: Bundle[] = [
     services: [
       { name: "followers", quantity: "10,000", price: 64.80 },
       { name: "likes", quantity: "1,000", price: 4.04 },
+      { name: "story views", quantity: "5,000", price: 0.36 },
     ],
-    totalPrice: 68.84, // Scaled down to 40€ below
+    totalPrice: 69.20, // Scaled down to 40€ below
     icon: "/icons/snapchat.svg",
+    bestValue: true,
   },
   {
     id: "snapchat-premium",
@@ -358,8 +412,10 @@ export const bundles: Bundle[] = [
     services: [
       { name: "followers", quantity: "20,000", price: 129.60 },
       { name: "likes", quantity: "2,000", price: 8.08 },
+      { name: "story views", quantity: "10,000", price: 0.72 },
+      { name: "snapscore", quantity: "10,000", price: 0.30 },
     ],
-    totalPrice: 137.68, // Scaled down to 40€ below
+    totalPrice: 138.70, // Scaled down to 40€ below
     icon: "/icons/snapchat.svg",
   },
   {
@@ -369,8 +425,11 @@ export const bundles: Bundle[] = [
     services: [
       { name: "followers", quantity: "40,000", price: 259.20 },
       { name: "likes", quantity: "4,000", price: 16.16 },
+      { name: "story views", quantity: "20,000", price: 1.44 },
+      { name: "snapscore", quantity: "50,000", price: 1.50 },
+      { name: "friend requests", quantity: "1,000", price: 0.65 },
     ],
-    totalPrice: 275.36, // Scaled down to 40€ below
+    totalPrice: 278.95, // Scaled down to 40€ below
     icon: "/icons/snapchat.svg",
   },
 ]
@@ -530,7 +589,7 @@ function BundleCard({
   onBundleClick: (bundle: Bundle) => void
 }) {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10">
+    <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1">
       <div className="flex items-start gap-4">
         <img 
           src={bundle.icon} 
@@ -538,7 +597,21 @@ function BundleCard({
           className="w-10 h-10 object-contain rounded-lg mt-1"
         />
         <div className="flex-1">
-          <h3 className="text-xl font-semibold text-white mb-3">{bundle.name}</h3>
+          <div className="flex items-start justify-between mb-3">
+            <h3 className="text-xl font-semibold text-white">{bundle.name}</h3>
+            <div className="flex gap-1">
+              {bundle.popular && (
+                <Badge className="bg-purple-600/20 text-purple-400 border-purple-500/50">
+                  <Star className="w-3 h-3 mr-1" /> Popular
+                </Badge>
+              )}
+              {bundle.bestValue && (
+                <Badge className="bg-green-600/20 text-green-400 border-green-500/50">
+                  <Zap className="w-3 h-3 mr-1" /> Best Value
+                </Badge>
+              )}
+            </div>
+          </div>
           <div className="space-y-2 mb-4">
             {bundle.services.map((service, index) => (
               <div key={index} className="flex justify-between text-sm text-gray-300">
@@ -955,6 +1028,46 @@ export default function BundlesPage() {
           ))}
         </div>
       </main>
+
+      {/* Footer with additional information */}
+      <footer className="bg-gray-900/50 border-t border-gray-800/50 py-8 mt-16">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">About Luminar Services</h3>
+              <p className="text-gray-400 text-sm">
+                We provide high-quality social media growth services to help you increase your online presence and engagement.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Why Choose Us?</h3>
+              <ul className="text-gray-400 text-sm space-y-2">
+                <li>• Fast delivery times</li>
+                <li>• High-quality services</li>
+                <li>• Affordable pricing</li>
+                <li>• 24/7 customer support</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Need Help?</h3>
+              <p className="text-gray-400 text-sm mb-2">
+                Contact our support team for any questions or assistance.
+              </p>
+              <a 
+                href="https://discord.gg/dtTCCxu3TA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center"
+              >
+                Join our Discord <span className="ml-1">→</span>
+              </a>
+            </div>
+          </div>
+          <div className="mt-8 pt-6 border-t border-gray-800/50 text-center text-gray-500 text-sm">
+            © 2023 Luminar Services. All rights reserved.
+          </div>
+        </div>
+      </footer>
 
       <OrderDialog
         selectedService={selectedBundle}
