@@ -1457,7 +1457,7 @@ export const services: Service[] = [
     price: 2931.4161,
     oldPrice: 3517.6993,
     discount: 17,
-    icon: "/icons/default.png",
+    icon: "/icons/google.png",
   },
   {
     id: "2767",
@@ -1467,7 +1467,7 @@ export const services: Service[] = [
     price: 3517.6994,
     oldPrice: 4221.2393,
     discount: 17,
-    icon: "/icons/default.png",
+    icon: "/icons/google.png",
   },
   {
     id: "2768",
@@ -1477,7 +1477,7 @@ export const services: Service[] = [
     price: 4103.9826,
     oldPrice: 4924.7791,
     discount: 17,
-    icon: "/icons/default.png",
+    icon: "/icons/google.png",
   },
 
   // Other Other Services
@@ -1489,7 +1489,7 @@ export const services: Service[] = [
     price: 11.8825,
     oldPrice: 14.259,
     discount: 17,
-    icon: "/icons/discord.png",
+    icon: "/icons/discord.jpeg",
   },
 ]
 
