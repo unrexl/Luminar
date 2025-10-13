@@ -294,25 +294,3 @@ export const bundles: Bundle[] = [
     icon: "/icons/reddit.png",
   },
 ]
-
-// Filter bundles to only include those under or equal to 40 euros
-export const affordableBundles = bundles.filter(bundle => bundle.totalPrice <= 40)
-
-// Adjust bundles that exceed 40 euros (for display purposes)
-export const adjustedBundles = bundles.map(bundle => {
-  if (bundle.totalPrice > 40) {
-    const scaleFactor = 40 / bundle.totalPrice
-    const adjustedServices = bundle.services.map(service => {
-      const quantityNum = parseInt(service.quantity.replace(/,/g, ''))
-      const adjustedQuantity = Math.round(quantityNum * scaleFactor)
-      return {
-        ...service,
-        quantity: adjustedQuantity.toLocaleString(),
-        price: service.price * scaleFactor
-      }
-    })
-    const adjustedTotal = adjustedServices.reduce((sum, s) => sum + s.price, 0)
-    return { ...bundle, services: adjustedServices, totalPrice: adjustedTotal }
-  }
-  return bundle
-})
