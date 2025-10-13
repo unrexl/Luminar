@@ -243,5 +243,4 @@ export const bundles: Bundle[] = [
   },
 ]
 
-// Only keep bundles <= €40
 export const affordableBundles = bundles.filter(bundle => bundle.totalPrice <= 40)
