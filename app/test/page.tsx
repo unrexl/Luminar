@@ -559,20 +559,30 @@ function Header() {
   )
 }
 
-// Platform Header Component
-function PlatformHeader({ platform, icon }: { platform: string; icon: string }) {
+// Platform Tab Component
+function PlatformTab({
+  platform,
+  icon,
+  isActive,
+  onClick,
+}: {
+  platform: string
+  icon: string
+  isActive: boolean
+  onClick: () => void
+}) {
   return (
-    <div className="flex flex-col items-center mb-8">
-      <div className="flex items-center justify-center mb-3">
-        <img 
-          src={icon} 
-          alt={platform} 
-          className="w-12 h-12 object-contain rounded-lg"
-        />
-      </div>
-      <h2 className="text-3xl font-bold text-white text-center">{platform} Bundles</h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-3"></div>
-    </div>
+    <button
+      onClick={onClick}
+      className={`flex items-center gap-2 px-4 py-3 rounded-xl transition-all duration-300 ${
+        isActive
+          ? 'bg-indigo-600/20 border-indigo-500/50 text-white'
+          : 'bg-gray-800/60 border-gray-700/50 text-gray-300 hover:bg-gray-700/80 hover:border-gray-600'
+      } border backdrop-blur-sm`}
+    >
+      <img src={icon} alt={platform} className="w-5 h-5 object-contain" />
+      <span className="font-medium">{platform}</span>
+    </button>
   )
 }
 
@@ -615,13 +625,13 @@ function BundleCard({
           <div className="space-y-2 mb-4">
             {bundle.services.map((service, index) => (
               <div key={index} className="flex justify-between text-sm text-gray-300">
-                <span>{service.quantity} {service.name}</span>
-                <span>{formatPrice(service.price, currency)}</span>
+                <span className="text-left">{service.quantity} {service.name}</span>
+                <span className="text-right">{formatPrice(service.price, currency)}</span>
               </div>
             ))}
           </div>
           <div className="flex justify-between items-center pt-4 border-t border-gray-800/50">
-            <span className="text-lg font-bold text-white">Total: {formatPrice(bundle.totalPrice, currency)}</span>
+            <span className="text-lg font-bold text-white text-left">Total: {formatPrice(bundle.totalPrice, currency)}</span>
             <button
               onClick={() => onBundleClick(bundle)}
               className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
@@ -848,14 +858,14 @@ function OrderDialog({
                 <div className="space-y-2">
                   {selectedService?.services.map((service, index) => (
                     <div key={index} className="flex justify-between text-sm text-gray-300">
-                      <span>{service.quantity} {service.name}</span>
-                      <span>{formatPrice(service.price, selectedCurrency)}</span>
+                      <span className="text-left">{service.quantity} {service.name}</span>
+                      <span className="text-right">{formatPrice(service.price, selectedCurrency)}</span>
                     </div>
                   ))}
                 </div>
                 <div className="mt-4 pt-2 border-t border-gray-800/50 flex justify-between">
-                  <span className="text-white font-medium">Total:</span>
-                  <span className="text-white font-bold text-lg">{formatPrice(selectedService?.totalPrice || 0, selectedCurrency)}</span>
+                  <span className="text-white font-medium text-left">Total:</span>
+                  <span className="text-white font-bold text-lg text-right">{formatPrice(selectedService?.totalPrice || 0, selectedCurrency)}</span>
                 </div>
               </div>
 
@@ -918,6 +928,7 @@ export default function BundlesPage() {
   const [isLoading, setIsLoading] = useState(false)
   const [pageLoaded, setPageLoaded] = useState(false)
   const [currencyRates, setCurrencyRates] = useState<Record<string, number>>({})
+  const [activePlatform, setActivePlatform] = useState<string>("Instagram")
 
   useEffect(() => {
     const loadCurrencyRates = async () => {
@@ -947,21 +958,15 @@ export default function BundlesPage() {
   const filteredBundles = useMemo(() => {
     return adjustedBundles.filter((bundle) => {
       const matchesSearch = bundle.name ? bundle.name.toLowerCase().includes(searchQuery.toLowerCase()) : true
-      return matchesSearch
+      const matchesPlatform = bundle.platform === activePlatform
+      return matchesSearch && matchesPlatform
     })
-  }, [searchQuery])
+  }, [searchQuery, activePlatform])
 
-  // Group bundles by platform
-  const groupedBundles = useMemo(() => {
-    return filteredBundles.reduce(
-      (acc, bundle) => {
-        if (!acc[bundle.platform]) acc[bundle.platform] = []
-        acc[bundle.platform].push(bundle)
-        return acc
-      },
-      {} as Record<string, Bundle[]>,
-    )
-  }, [filteredBundles])
+  // Get unique platforms
+  const platforms = useMemo(() => {
+    return Array.from(new Set(adjustedBundles.map(bundle => bundle.platform)))
+  }, [])
 
   const openOrder = (bundle: Bundle) => {
     setIsLoading(true)
@@ -1009,22 +1014,32 @@ export default function BundlesPage() {
           <p className="text-gray-400 max-w-2xl mx-auto">Boost your social media presence with our affordable and effective growth bundles</p>
         </div>
         
-        <div className="space-y-16">
-          {Object.entries(groupedBundles).map(([platform, platformBundles]) => (
-            <div key={platform}>
-              <PlatformHeader platform={platform} icon={platformBundles[0].icon} />
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {platformBundles.map((bundle) => (
-                  <BundleCard
-                    key={bundle.id}
-                    bundle={bundle}
-                    formatPrice={formatPrice}
-                    currency={currency}
-                    onBundleClick={openOrder}
-                  />
-                ))}
-              </div>
-            </div>
+        {/* Platform Tabs */}
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {platforms.map((platform) => {
+            const bundle = adjustedBundles.find(b => b.platform === platform)
+            return (
+              <PlatformTab
+                key={platform}
+                platform={platform}
+                icon={bundle?.icon || "/icons/default.png"}
+                isActive={activePlatform === platform}
+                onClick={() => setActivePlatform(platform)}
+              />
+            )
+          })}
+        </div>
+        
+        {/* Bundles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredBundles.map((bundle) => (
+            <BundleCard
+              key={bundle.id}
+              bundle={bundle}
+              formatPrice={formatPrice}
+              currency={currency}
+              onBundleClick={openOrder}
+            />
           ))}
         </div>
       </main>
