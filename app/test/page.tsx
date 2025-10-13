@@ -51,9 +51,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "50,000", price: 0.25 },
       { name: "saves", quantity: "2,000", price: 2.86 },
       { name: "shares", quantity: "500", price: 0.25 },
-      { name: "story likes", quantity: "1,000", price: 1.43 },
     ],
-    totalPrice: 32.43,
+    totalPrice: 31.00,
     icon: "/icons/instagram.jpeg",
     bestValue: true,
   },
@@ -66,10 +65,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "100,000", price: 0.49 },
       { name: "saves", quantity: "5,000", price: 7.16 },
       { name: "shares", quantity: "1,000", price: 0.50 },
-      { name: "story likes", quantity: "2,000", price: 2.86 },
-      { name: "comment likes", quantity: "1,000", price: 0.75 },
     ],
-    totalPrice: 67.04, // Scaled down to 40€ below
+    totalPrice: 63.43,
     icon: "/icons/instagram.jpeg",
   },
   {
@@ -81,11 +78,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "250,000", price: 1.23 },
       { name: "saves", quantity: "10,000", price: 14.32 },
       { name: "shares", quantity: "2,500", price: 1.25 },
-      { name: "story likes", quantity: "5,000", price: 7.16 },
-      { name: "comment likes", quantity: "2,500", price: 1.88 },
-      { name: "followers", quantity: "5,000", price: 8.24 },
     ],
-    totalPrice: 144.14, // Scaled down to 40€ below
+    totalPrice: 127.36,
     icon: "/icons/instagram.jpeg",
   },
   
@@ -113,9 +107,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "50,000", price: 1.94 },
       { name: "shares", quantity: "2,500", price: 0.57 },
       { name: "saves", quantity: "1,000", price: 0.05 },
-      { name: "live stream likes", quantity: "1,000", price: 0.23 },
     ],
-    totalPrice: 8.09,
+    totalPrice: 7.86,
     icon: "/icons/tiktok.png",
     bestValue: true,
   },
@@ -128,10 +121,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "100,000", price: 3.87 },
       { name: "shares", quantity: "5,000", price: 1.13 },
       { name: "saves", quantity: "2,000", price: 0.10 },
-      { name: "live stream likes", quantity: "2,000", price: 0.46 },
-      { name: "video downloads", quantity: "500", price: 0.20 },
     ],
-    totalPrice: 16.36,
+    totalPrice: 15.70,
     icon: "/icons/tiktok.png",
   },
   {
@@ -143,11 +134,8 @@ export const bundles: Bundle[] = [
       { name: "views", quantity: "250,000", price: 9.68 },
       { name: "shares", quantity: "10,000", price: 2.26 },
       { name: "saves", quantity: "5,000", price: 0.23 },
-      { name: "live stream likes", quantity: "5,000", price: 1.15 },
-      { name: "video downloads", quantity: "1,000", price: 0.40 },
-      { name: "followers", quantity: "2,000", price: 13.57 },
     ],
-    totalPrice: 48.39, // Scaled down to 40€ below
+    totalPrice: 33.27,
     icon: "/icons/tiktok.png",
   },
   
@@ -173,9 +161,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "25,000", price: 65.35 },
       { name: "views", quantity: "50,000", price: 1.70 },
       { name: "reposts", quantity: "2,500", price: 9.30 },
-      { name: "comment likes", quantity: "1,000", price: 0.65 },
     ],
-    totalPrice: 77.00, // Scaled down to 40€ below
+    totalPrice: 76.35,
     icon: "/icons/twitter.png",
     bestValue: true,
   },
@@ -187,10 +174,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "50,000", price: 130.70 },
       { name: "views", quantity: "100,000", price: 3.40 },
       { name: "reposts", quantity: "5,000", price: 18.60 },
-      { name: "comment likes", quantity: "2,000", price: 1.31 },
-      { name: "followers", quantity: "1,000", price: 4.77 },
     ],
-    totalPrice: 158.78, // Scaled down to 40€ below
+    totalPrice: 152.70,
     icon: "/icons/twitter.png",
   },
   {
@@ -201,11 +186,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "100,000", price: 261.40 },
       { name: "views", quantity: "200,000", price: 6.80 },
       { name: "reposts", quantity: "10,000", price: 37.20 },
-      { name: "comment likes", quantity: "5,000", price: 3.27 },
-      { name: "followers", quantity: "2,000", price: 9.55 },
-      { name: "quote tweets", quantity: "500", price: 1.86 },
     ],
-    totalPrice: 320.08, // Scaled down to 40€ below
+    totalPrice: 305.40,
     icon: "/icons/twitter.png",
   },
   
@@ -231,9 +213,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "25,000", price: 30.16 },
       { name: "views", quantity: "50,000", price: 0.10 },
       { name: "reactions", quantity: "2,500", price: 0.92 },
-      { name: "shares", quantity: "500", price: 0.60 },
     ],
-    totalPrice: 31.78,
+    totalPrice: 31.18,
     icon: "/icons/facebook.png",
     bestValue: true,
   },
@@ -245,10 +226,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "50,000", price: 60.31 },
       { name: "views", quantity: "100,000", price: 0.20 },
       { name: "reactions", quantity: "5,000", price: 1.84 },
-      { name: "shares", quantity: "1,000", price: 1.20 },
-      { name: "event responses", quantity: "500", price: 0.30 },
     ],
-    totalPrice: 63.85, // Scaled down to 40€ below
+    totalPrice: 62.35,
     icon: "/icons/facebook.png",
   },
   {
@@ -259,11 +238,8 @@ export const bundles: Bundle[] = [
       { name: "likes", quantity: "100,000", price: 120.62 },
       { name: "views", quantity: "200,000", price: 0.40 },
       { name: "reactions", quantity: "10,000", price: 3.67 },
-      { name: "shares", quantity: "2,000", price: 2.41 },
-      { name: "event responses", quantity: "1,000", price: 0.60 },
-      { name: "followers", quantity: "5,000", price: 2.49 },
     ],
-    totalPrice: 129.79, // Scaled down to 40€ below
+    totalPrice: 124.69,
     icon: "/icons/facebook.png",
   },
   
@@ -289,9 +265,8 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "25,000", price: 76.65 },
       { name: "views", quantity: "50,000", price: 0.38 },
       { name: "reactions", quantity: "2,500", price: 0.24 },
-      { name: "forwards", quantity: "500", price: 0.10 },
     ],
-    totalPrice: 77.37, // Scaled down to 40€ below
+    totalPrice: 77.27,
     icon: "/icons/telegram.png",
     bestValue: true,
   },
@@ -303,10 +278,8 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "50,000", price: 153.30 },
       { name: "views", quantity: "100,000", price: 0.76 },
       { name: "reactions", quantity: "5,000", price: 0.48 },
-      { name: "forwards", quantity: "1,000", price: 0.19 },
-      { name: "pinned messages", quantity: "10", price: 0.05 },
     ],
-    totalPrice: 154.78, // Scaled down to 40€ below
+    totalPrice: 154.54,
     icon: "/icons/telegram.png",
   },
   {
@@ -317,11 +290,8 @@ export const bundles: Bundle[] = [
       { name: "members", quantity: "100,000", price: 306.60 },
       { name: "views", quantity: "200,000", price: 1.52 },
       { name: "reactions", quantity: "10,000", price: 0.95 },
-      { name: "forwards", quantity: "2,000", price: 0.38 },
-      { name: "pinned messages", quantity: "20", price: 0.10 },
-      { name: "channel boosts", quantity: "5", price: 15.33 },
     ],
-    totalPrice: 324.88, // Scaled down to 40€ below
+    totalPrice: 309.07,
     icon: "/icons/telegram.png",
   },
   
@@ -345,9 +315,8 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "250,000", price: 0.25 },
       { name: "shares", quantity: "25,000", price: 0.03 },
-      { name: "upvotes", quantity: "10,000", price: 0.01 },
     ],
-    totalPrice: 0.29,
+    totalPrice: 0.28,
     icon: "/icons/reddit.png",
     bestValue: true,
   },
@@ -358,10 +327,8 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "500,000", price: 0.50 },
       { name: "shares", quantity: "50,000", price: 0.05 },
-      { name: "upvotes", quantity: "25,000", price: 0.03 },
-      { name: "comments", quantity: "1,000", price: 0.01 },
     ],
-    totalPrice: 0.59,
+    totalPrice: 0.55,
     icon: "/icons/reddit.png",
   },
   {
@@ -371,66 +338,9 @@ export const bundles: Bundle[] = [
     services: [
       { name: "views", quantity: "1,000,000", price: 1.01 },
       { name: "shares", quantity: "100,000", price: 0.10 },
-      { name: "upvotes", quantity: "50,000", price: 0.05 },
-      { name: "comments", quantity: "5,000", price: 0.05 },
-      { name: "gold awards", quantity: "10", price: 0.40 },
     ],
-    totalPrice: 1.61,
+    totalPrice: 1.11,
     icon: "/icons/reddit.png",
-  },
-  
-  // Snapchat Bundles
-  {
-    id: "snapchat-starter",
-    platform: "Snapchat",
-    name: "Snapchat Starter Pack",
-    services: [
-      { name: "followers", quantity: "5,000", price: 32.40 },
-      { name: "likes", quantity: "500", price: 2.02 },
-    ],
-    totalPrice: 34.42,
-    icon: "/icons/snapchat.svg",
-    popular: true,
-  },
-  {
-    id: "snapchat-growth",
-    platform: "Snapchat",
-    name: "Snapchat Growth Pack",
-    services: [
-      { name: "followers", quantity: "10,000", price: 64.80 },
-      { name: "likes", quantity: "1,000", price: 4.04 },
-      { name: "story views", quantity: "5,000", price: 0.36 },
-    ],
-    totalPrice: 69.20, // Scaled down to 40€ below
-    icon: "/icons/snapchat.svg",
-    bestValue: true,
-  },
-  {
-    id: "snapchat-premium",
-    platform: "Snapchat",
-    name: "Snapchat Premium Pack",
-    services: [
-      { name: "followers", quantity: "20,000", price: 129.60 },
-      { name: "likes", quantity: "2,000", price: 8.08 },
-      { name: "story views", quantity: "10,000", price: 0.72 },
-      { name: "snapscore", quantity: "10,000", price: 0.30 },
-    ],
-    totalPrice: 138.70, // Scaled down to 40€ below
-    icon: "/icons/snapchat.svg",
-  },
-  {
-    id: "snapchat-mega",
-    platform: "Snapchat",
-    name: "Snapchat Mega Pack",
-    services: [
-      { name: "followers", quantity: "40,000", price: 259.20 },
-      { name: "likes", quantity: "4,000", price: 16.16 },
-      { name: "story views", quantity: "20,000", price: 1.44 },
-      { name: "snapscore", quantity: "50,000", price: 1.50 },
-      { name: "friend requests", quantity: "1,000", price: 0.65 },
-    ],
-    totalPrice: 278.95, // Scaled down to 40€ below
-    icon: "/icons/snapchat.svg",
   },
 ]
 
@@ -586,7 +496,7 @@ function PlatformTab({
   )
 }
 
-// Bundle Card Component
+// Bundle Card Component - Redesigned
 function BundleCard({
   bundle,
   formatPrice,
@@ -599,47 +509,50 @@ function BundleCard({
   onBundleClick: (bundle: Bundle) => void
 }) {
   return (
-    <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1">
-      <div className="flex items-start gap-4">
+    <div className="bg-gray-900/60 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1 flex flex-col h-full">
+      <div className="flex items-center mb-4">
         <img 
           src={bundle.icon} 
           alt={bundle.platform} 
-          className="w-10 h-10 object-contain rounded-lg mt-1"
+          className="w-8 h-8 object-contain rounded-lg"
         />
-        <div className="flex-1">
-          <div className="flex items-start justify-between mb-3">
-            <h3 className="text-xl font-semibold text-white">{bundle.name}</h3>
-            <div className="flex gap-1">
-              {bundle.popular && (
-                <Badge className="bg-purple-600/20 text-purple-400 border-purple-500/50">
-                  <Star className="w-3 h-3 mr-1" /> Popular
-                </Badge>
-              )}
-              {bundle.bestValue && (
-                <Badge className="bg-green-600/20 text-green-400 border-green-500/50">
-                  <Zap className="w-3 h-3 mr-1" /> Best Value
-                </Badge>
-              )}
-            </div>
-          </div>
-          <div className="space-y-2 mb-4">
-            {bundle.services.map((service, index) => (
-              <div key={index} className="flex justify-between text-sm text-gray-300">
-                <span className="text-left">{service.quantity} {service.name}</span>
-                <span className="text-right">{formatPrice(service.price, currency)}</span>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-between items-center pt-4 border-t border-gray-800/50">
-            <span className="text-lg font-bold text-white text-left">Total: {formatPrice(bundle.totalPrice, currency)}</span>
-            <button
-              onClick={() => onBundleClick(bundle)}
-              className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
-            >
-              Order Now
-            </button>
+        <div className="ml-3 flex-1">
+          <h3 className="text-lg font-semibold text-white">{bundle.name}</h3>
+          <div className="flex gap-1 mt-1">
+            {bundle.popular && (
+              <Badge className="bg-purple-600/20 text-purple-400 border-purple-500/50">
+                <Star className="w-3 h-3 mr-1" /> Popular
+              </Badge>
+            )}
+            {bundle.bestValue && (
+              <Badge className="bg-green-600/20 text-green-400 border-green-500/50">
+                <Zap className="w-3 h-3 mr-1" /> Best Value
+              </Badge>
+            )}
           </div>
         </div>
+      </div>
+      
+      <div className="flex-1 mb-4">
+        <div className="space-y-2">
+          {bundle.services.map((service, index) => (
+            <div key={index} className="flex items-center text-sm text-gray-300">
+              <span className="text-left flex-1">{service.quantity} {service.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div className="flex justify-between items-center pt-4 border-t border-gray-800/50">
+        <div className="text-left">
+          <span className="text-lg font-bold text-white">Total: {formatPrice(bundle.totalPrice, currency)}</span>
+        </div>
+        <button
+          onClick={() => onBundleClick(bundle)}
+          className="px-4 py-2 bg-indigo-600/80 hover:bg-indigo-500 transition-all duration-300 rounded-xl text-white font-medium text-sm sm:text-base hover:scale-105"
+        >
+          Order Now
+        </button>
       </div>
     </div>
   )
@@ -858,7 +771,7 @@ function OrderDialog({
                 <div className="space-y-2">
                   {selectedService?.services.map((service, index) => (
                     <div key={index} className="flex justify-between text-sm text-gray-300">
-                      <span className="text-left">{service.quantity} {service.name}</span>
+                      <span className="text-left flex-1">{service.quantity} {service.name}</span>
                       <span className="text-right">{formatPrice(service.price, selectedCurrency)}</span>
                     </div>
                   ))}
@@ -1043,46 +956,6 @@ export default function BundlesPage() {
           ))}
         </div>
       </main>
-
-      {/* Footer with additional information */}
-      <footer className="bg-gray-900/50 border-t border-gray-800/50 py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">About Luminar Services</h3>
-              <p className="text-gray-400 text-sm">
-                We provide high-quality social media growth services to help you increase your online presence and engagement.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Why Choose Us?</h3>
-              <ul className="text-gray-400 text-sm space-y-2">
-                <li>• Fast delivery times</li>
-                <li>• High-quality services</li>
-                <li>• Affordable pricing</li>
-                <li>• 24/7 customer support</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Need Help?</h3>
-              <p className="text-gray-400 text-sm mb-2">
-                Contact our support team for any questions or assistance.
-              </p>
-              <a 
-                href="https://discord.gg/dtTCCxu3TA" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-indigo-400 hover:text-indigo-300 text-sm inline-flex items-center"
-              >
-                Join our Discord <span className="ml-1">→</span>
-              </a>
-            </div>
-          </div>
-          <div className="mt-8 pt-6 border-t border-gray-800/50 text-center text-gray-500 text-sm">
-            © 2023 Luminar Services. All rights reserved.
-          </div>
-        </div>
-      </footer>
 
       <OrderDialog
         selectedService={selectedBundle}
