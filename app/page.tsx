@@ -63,9 +63,9 @@ function ProfileModal({ isOpen, onClose }) {
                     speed="3s"
                     className="p-1"
                   >
-                    <img 
-                      src="rex.png" 
-                      alt="unrexl avatar" 
+                    <img
+                      src="rex.png"
+                      alt="unrexl avatar"
                       className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
                     />
                   </StarBorder>
