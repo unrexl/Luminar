@@ -64,7 +64,7 @@ function ProfileModal({ isOpen, onClose }) {
                     className="p-1"
                   >
                     <img 
-                      src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&" 
+                      src="/rex.png" 
                       alt="unrexl avatar" 
                       className="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover"
                     />
