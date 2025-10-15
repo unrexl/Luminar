@@ -200,7 +200,7 @@ export default function HomePage() {
                   onClick={() => setIsProfileModalOpen(true)}
                 >
                   <div className="flex items-center gap-2 sm:gap-4">
-                    <img src="https://cdn.discordapp.com/attachments/1216480919414771823/1426979132126007418/Uj3hnBgazn4OBVwsFYgoKg6fKCcqiArOWqgnPjKYqxmFTAvQ94.png?ex=68ed3161&is=68ebdfe1&hm=a9d79f20062c8b126a576dd2bbcc44efb9c400f5c8a6aee3f2b7b9b98403aa56&size=2048" alt="unrexl avatar" className="w-14 h-14 sm:w-14 sm:h-14 rounded-full object-cover" />
+                    <img src="/icons/rex.png" alt="unrexl avatar" className="w-14 h-14 sm:w-14 sm:h-14 rounded-full object-cover" />
                     <div className="flex flex-col">
                       <span className="text-white font-bold text-base sm:text-lg">rex</span>
                       <span className="text-red-400 font-semibold text-xs sm:text-sm mb-1">Owner</span>
