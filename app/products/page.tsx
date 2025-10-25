@@ -68,7 +68,7 @@ function Header() {
           {/* Left: Brand Logo and Name */}
           <div className="flex items-center space-x-3">
             <img 
-              src="https://media.discordapp.net/attachments/1091030774012186685/1417600581354389645/IQvHiQnv4ahXoYqFq8gS84ivFINDZB3qlceFTDSZBjLsfcgLHC.png?ex=68ecb12c&is=68eb5fac&hm=9478fdf6299c72670ff465269fa2c94d21d700685bafe4f52ed2055ed03f1059&=&format=png&quality=lossless"
+              src="/luminar-logo.png"
               alt="Luminar Services"
               className="h-8 sm:h-10 w-8 sm:w-10 object-contain rounded-lg"
             />
